@@ -1,0 +1,31 @@
+/*
+ * Box Sizing
+ *
+ * Set that shit to border-box, yo. And fix those pesky pseudo elements
+ */
+/* ==========================================================================
+   Border-box all the things!
+   ========================================================================== */
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+.html {
+  background: $c-gray;
+
+}
+
+body {
+  color: $dark-gray;
+  background: $c-gray;
+}
+
+a {
+  color: $ligth-blue;
+  &:hover {
+    color:$dark-blue;
+    text-decoration: underline;
+  }
+}
