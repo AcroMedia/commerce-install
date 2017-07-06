@@ -1,5 +1,5 @@
 header {
-  background: $c-black url('../gfx/header-bg.png')no-repeat;
+  background: $c-black url('../gfx/header-bg.png')repeat-y;
   padding: 20px 0;
 }
 
@@ -7,32 +7,80 @@ header {
   display: inline-block;
   vertical-align: middle;
   margin-right: 35px;
+  @include bp(mobil) {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
 }
+
 .site-header__slogan {
   display: inline-block;
   vertical-align: middle;
   font-size: 24px;
   color: #ccc;
   font-weight: 300;
+  @include bp(mobil) {
+    width: 100%;
+    text-align: center;
+  }
 }
+
 .site-header__right {
   float: right;
   color: $c-blue;
   font-size: 22px;
   margin-top: 20px;
+  @include bp(mobil) {
+    width: 100%;
+    float: inherit;
+    font-size: 18px;
+    text-align: center;
+  }
+  @media(max-width: 860px) and (min-width: 769px) {
+    float: inherit;
+    text-align: center;
+  }
+
   span {
     font-size: 30px;
+    @include bp(mobil) {
+      font-size: 18px;
+    }
+    @media(max-width: 860px) and (min-width: 769px) {
+      font-size: 20px;
+    }
     color: $dark-gray;
+
     a {
-      color:$dark-gray;
+      color: $dark-gray;
       text-decoration: none;
     }
-
   }
 }
 
 .main__section {
   padding: 0 14px;
+  @media(max-width: 864px) and (min-width: 769px) {
+    width: 100%;
+    display: inline-block;
+  }
+}
+
+.main__wrapper.columns {
+  @media(max-width: 864px) and (min-width: 769px) {
+    display: inline-block;
+  }
+  @include bp(mobil) {
+    margin: 0;
+  }
+}
+
+.product__content.columns {
+  @media(max-width: 864px) and (min-width: 769px) {
+    width: 100%;
+    display: inline-block;
+  }
 }
 
 .main_description {
@@ -53,19 +101,83 @@ h1 {
   font-weight: 300;
 }
 
-
 h2 {
   font-size: 27px;
   font-family: $roboto;
   font-weight: 300;
 }
 
+.arrow_up {
+  width: 28px;
+  position: relative;
+  display: block;
+  top: 10px;
+  float: right;
+  margin-right: 20px;
+  height: 28px;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:before {
+    content: '\E316';
+    font-size: 24px;
+    text-align: center;
+    top: 9px;
+    color: #7a7a7a;
+    cursor: pointer;
+    line-height: 1;
+    width: 28px;
+    height: 28px;
+    position: relative;
+    font-family: 'Material Icons';
+    border-radius: 50%;
+    border: solid 2px #d1d1d1;
+  }
+}
+
+.down {
+  width: 28px;
+  position: relative;
+  display: block;
+  top: 10px;
+  float: right;
+  margin-right: 20px;
+  height: 28px;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:before {
+    content: '\E313';
+    font-size: 24px;
+    text-align: center;
+    top: 9px;
+    color: #7a7a7a;
+    cursor: pointer;
+    line-height: 1;
+    width: 28px;
+    height: 28px;
+    position: relative;
+    font-family: 'Material Icons';
+    border-radius: 50%;
+    border: solid 2px #d1d1d1;
+  }
+}
+
 .product__build {
   margin-bottom: 60px;
 }
 
+.product__content.off {
+  display: none;
+  max-height: 0;
+}
+
 .box__content {
-  padding: 38px;
+  padding: 10px 38px 38px;
 }
 
 .top__info {
@@ -74,7 +186,8 @@ h2 {
 
 .product__content {
   background: $c-white;
-  padding: 20px 30px 38px 30px;
+  opacity: 1;
+  padding: 20px 30px 38px;
   margin-left: 0;
   margin-right: 0;
   border-bottom: 10px solid $gray-02;
@@ -86,11 +199,16 @@ h2 {
   border-bottom: 1px solid $gray-01;
   border-left: 1px solid $gray-01;
   margin: 10px 8px;
+
   h3 {
     text-align: center;
     color: $ligth-blue;
     font-size: 22px;
+    @include bp(mobil) {
+      padding-top: 10px;
+    }
   }
+
   &:hover {
     cursor: pointer;
     border-top: 4px solid $c-blue;
@@ -99,22 +217,33 @@ h2 {
     border-left: 1px solid $c-blue;
   }
 }
+
 .box__description {
   text-align: center;
   font-size: 16px;
+  @include bp(mobil) {
+    padding: 5px;
+  }
 }
 
 .location__build {}
+
 .payments {
   .box__item {
     width: 220px;
     display: inline-block;
     padding: 18px;
     margin: 10px 4px;
+    @include bp(mobil) {
+      width: 100%;
+    }
   }
+
   .pay__logo {
     min-height: 113px;
+    text-align: center;
   }
+
   .pay-sponsor {
     color: $ligth-blue;
     display: block;
@@ -124,17 +253,32 @@ h2 {
   }
 }
 
+.download__link {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .build__content {
+  .product__content {
+    padding-top: 40px;
+  }
+
   .box__content {
     background: $c-blue;
+
     h2 {
-      color:$c-white;
+      color: $c-white;
     }
+
     p {
       color: $c-white;
     }
   }
 }
+
 .icon-world:before {
   content: '\E894';
   color: $ligth-blue;
@@ -144,7 +288,6 @@ h2 {
   font-size: 35px;
   font-family: 'Material Icons';
 }
-
 
 .icon-security:before {
   content: '\E32A';
@@ -178,20 +321,35 @@ h2 {
 }
 
 .icon-drupal:before {
-  background:$c-blue url('../gfx/drupal-icon.png')no-repeat;
+  background: $c-blue url('../gfx/drupal-icon.png')no-repeat;
   content: '';
   display: inline-block;
   position: relative;
-
   top: 7px;
   left: -7px;
   width: 38px;
   height: 43px;
 }
+
 .sidebar {
-  position: relative;
+  position: fixed;
   top: 232px;
+  width: calc(20% - 40px);
+  z-index: 10;
+  @include bp(mobil) {
+    position: relative;
+    top: inherit;
+    width: 100%;
+  }
+  @media(max-width: 864px) and (min-width: 769px) {
+    width: 30%;
+    right: 0;
+  }
+  @media(max-width: 1400px) and (min-width: 898px) {
+    width: 25%;
+  }
 }
+
 .sidebar__help {
   display: inline-block;
   color: $c-white;
@@ -199,14 +357,17 @@ h2 {
   padding: 5px 20px;
   margin: 0 6px;
   text-align: center;
+
   h2 {
     font-size: 22px;
     padding-top: 5px;
     font-weight: 500;
   }
+
   .side__description {
     font-size: 15px;
   }
+
   .btn__primary {
     background: $c-white;
     margin: 0 auto;
@@ -221,23 +382,25 @@ h2 {
     border-bottom: 4px solid $c-blue;
   }
 }
+
 .sidebar__summary {
   margin-top: 50px;
   display: inline-block;
   color: #fff;
   padding: 10px 0;
   text-align: center;
+
   h2 {
     font-size: 22px;
     background: #00aeef;
     font-weight: 500;
     padding: 15px;
   }
+
   .side__description {
     background: $c-white;
     min-height: 200px;
     padding: 30px 15px;
-
   }
 
   .btn__secondary {
@@ -268,6 +431,7 @@ h2 {
   color: $ligth-blue;
   text-transform: capitalize;
   border: solid 1px $ligth-blue;
+
   &:before {
     content: '\E2C4';
     color: $c-white;
@@ -284,41 +448,59 @@ h2 {
     height: 50px;
   }
 }
+
 footer {
   background: $c-black;
 }
+
 .footer__section {
   padding: 40px;
 }
+
 .portfolio__content {
   background: $c-white;
   width: 100%;
   padding: 40px 0;
-}
-.footer__logos {
-  img {
-      margin: 15px 20px;
+
+  h3 {
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    font-weight: 300;
+    font-family: $roboto;
   }
 }
+
+.footer__logos {
+  img {
+    margin: 15px 20px;
+  }
+}
+
 .brand__logos {
   margin-left: 80px;
-  .commerce-guy, .acromedia {
+
+  .acromedia,
+  .commerce-guy {
     width: 190px;
+
     img {
       width: 100%;
     }
   }
+
   div {
     display: inline-block;
   }
-
 }
+
 .logo__slogan {
   font-size: 23px;
   margin-left: 18px;
   font-weight: 300;
   color: #999;
 }
+
 .contact__section {
   text-align: center;
   margin-bottom: 20px;
@@ -327,40 +509,72 @@ footer {
   border-top: 1px solid $black-01;
   border-bottom: 1px solid $black-01;
 }
+
 .site-url__block {
   display: inline-block;
   color: $dark-gray;
   font-size: 20px;
+
   &:hover {
     color: $c-white;
   }
+
   &:before {
-    content:'\E894';
-    font-family: 'Material Icons';
-    top: 5px;
-    position: relative;
-  }
-}
-.email__block {
-  display: inline-block;
-  margin-left: 20px;
-  font-size: 20px;
-  &:hover {
-    color: $c-white;
-  }
-  &:before {
-    content:'\E0BE';
+    content: '\E894';
     font-family: 'Material Icons';
     top: 5px;
     position: relative;
   }
 }
 
+.email__block {
+  display: inline-block;
+  margin-left: 20px;
+  font-size: 20px;
+
+  &:hover {
+    color: $c-white;
+  }
+
+  &:before {
+    content: '\E0BE';
+    font-family: 'Material Icons';
+    top: 5px;
+    position: relative;
+  }
+}
+
+.select__box {
+  .select__title {
+    padding-left: 5px;
+    padding-bottom: 5px;
+    display: block;
+  }
+}
+
+.select {
+  select:focus {
+    border-color: $ligth-blue;
+  }
+
+  &:after {
+    border-color: $ligth-blue;
+  }
+}
+
+.email__form {
+  input {
+    height: 2.8em;
+  }
+}
+
 .footer__copyright {
   text-align: center;
   font-size: 12px;
+
   a:first-child {
     color: $dark-gray;
+
     &:hover {
       color: #999999;
     }

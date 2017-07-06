@@ -5,9 +5,9 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Drupal Commerce | Welcome</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css">
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -31,7 +31,7 @@
 
 </header>
 <div class="container">
-  <div class="columns">
+  <div class="main__wrapper columns">
     <div class="main__section column is-9">
       <div class="main_description">
         <h1>Kickstart: Build & install</h1>
@@ -45,6 +45,7 @@
       </div>
 
         <div class="product__build location">
+          <a class="arrow_up" href="#"></a>
           <div class="top__info">
             <div class="box__content">
               <h2 class="icon-world">Location</h2>
@@ -89,6 +90,7 @@
         </div>
 
         <div class="product__build package">
+          <a class="arrow_up" href="#"></a>
           <div class="top__info">
             <div class="box__content">
               <h2 class="icon-package">Package</h2>
@@ -130,6 +132,7 @@
         </div>
 
         <div class="product__build payments">
+            <a class="arrow_up" href="#"></a>
           <div class="top__info">
             <div class="box__content">
               <h2 class="icon-payment">Payments</h2>
@@ -199,6 +202,7 @@
         </div>
 
         <div class="product__build dummy__content">
+            <a class="arrow_up" href="#"></a>
           <div class="top__info">
             <div class="box__content">
               <h2 class="icon-package">Content</h2>
@@ -210,8 +214,8 @@
             </div>
 
           </div>
-          <div class="product__content columns">
-
+          <div class="product__content">
+              <div class=" columns">
                 <div class="box__item column ">
                   <h3>Migrate</h3>
                   <div class="box__description">
@@ -230,8 +234,22 @@
                     Do we need a description with these things?
                   </div>
                 </div>
+              </div>
+            <div class="select__box">
+              <span class="select__title">Migration Source</span>
+              <div class="field">
+                <p class="control">
 
+                  <span class="select ">
+                    <select>
+                      <option>Select dropdown</option>
+                      <option>With options</option>
+                    </select>
+                  </span>
+                </p>
+              </div>
 
+            </div>
 
           </div>
 
@@ -241,6 +259,7 @@
 
 
         <div class="product__build security__content">
+            <a class="arrow_up" href="#"></a>
           <div class="top__info">
             <div class="box__content">
               <h2 class="icon-security">Updates & Security</h2>
@@ -253,15 +272,20 @@
 
           </div>
           <div class="product__content columns">
+            <div class="column is-6">
+              <div class="email__form">
+                <div class="field">
+                    <p class="control">
+                      <input class="input" type="text" placeholder="Email Address*">
+                    </p>
+                </div>
+              </div>
 
-
-
+            </div>
 
           </div>
 
         </div>
-
-
 
 
         <div class="product__build build__content">
@@ -276,43 +300,43 @@
             </div>
 
           </div>
+          <a class="download__link" href="#">
           <div class="product__content columns">
 
             <div class="btn_download">
               download
             </div>
 
-
+          </a>
           </div>
 
         </div>
 
 
 
-
-
-
     </div>
-    <div class="column is-3 sidebar">
-       <div class="sidebar__help">
-         <h2>Need a Hand ?</h2>
-         <div class="side__description">
-            Want to setup a Drupal Commerce site, but not sure what all this means?
-         </div>
-         <div class="btn__primary">
-            Yeah, Help Me Out!
-         </div>
-       </div>
+    <div class="column is-3 ">
+      <div class="sidebar">
+        <div class="sidebar__help">
+          <h2>Need a Hand ?</h2>
+          <div class="side__description">
+             Want to setup a Drupal Commerce site, but not sure what all this means?
+          </div>
+          <div class="btn__primary">
+             Yeah, Help Me Out!
+          </div>
+        </div>
+        <div class="sidebar__summary">
+          <h2>Build Summary</h2>
+          <div class="side__description">
+             Want to setup a Drupal Commerce site, but not sure what all this means?
+          </div>
+          <div class="btn__secondary">
+             Generate package
+          </div>
+        </div>
+      </div>
 
-       <div class="sidebar__summary">
-         <h2>Build Summary</h2>
-         <div class="side__description">
-            Want to setup a Drupal Commerce site, but not sure what all this means?
-         </div>
-         <div class="btn__secondary">
-            Generate package
-         </div>
-       </div>
     </div>
 
   </div>
@@ -321,6 +345,7 @@
 
 <footer>
  <div class="portfolio__content">
+   <h3>Who uses Drupal Commerce?</h3>
    <div class="footer__logos container">
      <img src="./gfx/telus-logo.png" alt="">
      <img src="./gfx/koodo-logo.png" alt="">
@@ -374,7 +399,8 @@
 </div>
 
 </footer>
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 
 </body>
 </html>
