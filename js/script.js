@@ -18,6 +18,17 @@ $(document).ready(function ($) {
       });
   });
 
+  // sticky sidebar
+  var top = $('.sidebar').offset().top;
+  $(window).scroll(function (event) {
+    var y = $(this).scrollTop();
+    if (y >= top)
+      $('.sidebar').addClass('fixed');
+    else
+      $('.sidebar').removeClass('fixed');
+    $('.sidebar').width($('.sidebar').parent().width());
+  });
+
   Vue.component('card', {
     template: '\
     <div class="box__item column">\
