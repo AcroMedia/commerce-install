@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css">
 <link rel="stylesheet" href="/css/style.css">
+<script src="https://unpkg.com/vue"></script>
 </head>
 <body>
 
@@ -44,6 +45,7 @@
          </p>
       </div>
 
+      <!--todo break this guy up into container component?-->
         <div class="product__build location">
           <a class="arrow_up" href="#"></a>
           <div class="top__info">
@@ -57,34 +59,14 @@
             </div>
 
           </div>
-          <div class="product__content columns">
 
-                <div class="box__item column ">
-                  <h3>International</h3>
-                  <div class="box__description">
-                    Do we need a description with these things?
-                  </div>
-                </div>
-                <div class="box__item column">
-                  <h3>North America</h3>
-                  <div class="box__description">
-                    Do we need a description with these things?
-                  </div>
-                </div>
-                <div class="box__item column ">
-                  <h3>EU</h3>
-                  <div class="box__description">
-                    Do we need a description with these things?
-                  </div>
-                </div>
-                <div class="box__item column">
-                  <h3>USA</h3>
-                  <div class="box__description">
-                    Do we need a description with these things?
-                  </div>
-                </div>
-
-
+          <!--list items for locations-->
+          <div id="location-cards" class="product__content columns" >
+              <card
+                v-for="location of locations"
+                :item="location"
+                :key="location.id">
+              </card>
           </div>
 
         </div>
@@ -102,31 +84,15 @@
             </div>
 
           </div>
-          <div class="product__content columns">
-
-                <div class="box__item column ">
-                  <h3>Base</h3>
-                  <div class="box__description">
-                    Do we need a description with these things?
-                  </div>
-                </div>
-                <div class="box__item column">
-                  <h3>Catalog</h3>
-                  <div class="box__description">
-                    Do we need a description with these things?
-                  </div>
-                </div>
-                <div class="box__item column ">
-                  <h3>Events</h3>
-                  <div class="box__description">
-                    Do we need a description with these things?
-                  </div>
-                </div>
-                <div class="box__item column">
-                  <h3>Subscriptions</h3>
-                </div>
 
 
+          <!--list items for packages-->
+          <div id="package-cards" class="product__content columns">
+              <card
+                  v-for="package of packages"
+                  :item="package"
+                  :key="package.id">
+              </card>
           </div>
 
         </div>
@@ -144,58 +110,14 @@
             </div>
 
           </div>
-          <div class="product__content">
+
+          <div id="payment-cards" class="product__content">
               <span class="pay-sponsor">Sponsored Providers</span>
-                <div class="box__item">
-                  <div class="pay__logo">
-                    <img src="./gfx/paylogos/paypal.png" alt="">
-                  </div>
-                  <h3>Paypal</h3>
-                  <div class="box__description">
-                    Do we need a description with these things?
-                  </div>
-                </div>
-                <div class="box__item ">
-                  <div class="pay__logo">
-                    <img src="./gfx/paylogos/braintree.png" alt="">
-                  </div>
-                  <h3>BrainTree</h3>
-                  <div class="box__description">
-                    Do we need a description with these things?
-                  </div>
-                </div>
-                <div class="box__item">
-                  <div class="pay__logo">
-                    <img src="./gfx/paylogos/apple-pay.png" alt="">
-                  </div>
-                  <h3>Apple Pay</h3>
-                  <div class="box__description">
-                    Do we need a description with these things?
-                  </div>
-                </div>
-                <div class="box__item">
-                  <div class="pay__logo">
-                    <img src="./gfx/paylogos/authorize.png" alt="">
-                  </div>
-                  <h3>Auth.net</h3>
-                  <div class="box__description">
-                    Do we need a description with these things?
-                  </div>
-                </div>
-                <div class="box__item">
-                  <h3>Moneris</h3>
-                  <div class="box__description">
-                    Do we need a description with these things?
-                  </div>
-                </div>
-
-                <div class="box__item">
-                  <h3>Pay With Chickens</h3>
-                  <div class="box__description">
-                    Do we need a description with these things?
-                  </div>
-                </div>
-
+              <card
+                  v-for="payment of payments"
+                  :item="payment"
+                  :key="payment.id">
+              </card>
 
           </div>
 
@@ -214,26 +136,16 @@
             </div>
 
           </div>
-          <div class="product__content">
+          <div id="content-cards" class="product__content">
               <div class=" columns">
-                <div class="box__item column ">
-                  <h3>Migrate</h3>
-                  <div class="box__description">
-                    Do we need a description with these things?
-                  </div>
-                </div>
-                <div class="box__item column">
-                  <h3>Demo Content</h3>
-                  <div class="box__description">
-                    Do we need a description with these things?
-                  </div>
-                </div>
-                <div class="box__item column ">
-                  <h3>Clean</h3>
-                  <div class="box__description">
-                    Do we need a description with these things?
-                  </div>
-                </div>
+                <card
+                    v-for="content of contents"
+                    :item="content"
+                    :key="content.id">
+                </card>
+
+
+
               </div>
             <div class="select__box">
               <span class="select__title">Migration Source</span>
