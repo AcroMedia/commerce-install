@@ -50,10 +50,10 @@ header {
     @media(max-width: 860px) and (min-width: 769px) {
       font-size: 20px;
     }
-    color: $dark-gray;
+    color: $dark-grey;
 
     a {
-      color: $dark-gray;
+      color: $dark-grey;
       text-decoration: none;
     }
   }
@@ -91,7 +91,7 @@ header {
     font-size: 16px;
     font-weight: normal;
     font-family: $roboto;
-    color: $dark-gray;
+    color: $dark-grey;
   }
 }
 
@@ -190,14 +190,14 @@ h2 {
   padding: 20px 30px 38px;
   margin-left: 0;
   margin-right: 0;
-  border-bottom: 10px solid $gray-02;
+  border-bottom: 10px solid $grey-02;
 }
 
 .box__item {
-  border-top: 4px solid $gray-01;
-  border-right: 1px solid $gray-01;
-  border-bottom: 1px solid $gray-01;
-  border-left: 1px solid $gray-01;
+  border-top: 4px solid $grey-01;
+  border-right: 1px solid $grey-01;
+  border-bottom: 1px solid $grey-01;
+  border-left: 1px solid $grey-01;
   margin: 10px 8px;
 
   h3 {
@@ -522,7 +522,7 @@ footer {
 
 .site-url__block {
   display: inline-block;
-  color: $dark-gray;
+  color: $dark-grey;
   font-size: 20px;
 
   &:hover {
@@ -583,7 +583,7 @@ footer {
   font-size: 12px;
 
   a:first-child {
-    color: $dark-gray;
+    color: $dark-grey;
 
     &:hover {
       color: #999999;
