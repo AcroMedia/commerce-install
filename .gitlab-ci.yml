@@ -7,8 +7,6 @@ stages:
 
 #code_standards:
   #stage: test
-before_script:
-  - npm install
   
 build:
   stage: build
@@ -16,7 +14,8 @@ build:
     paths:
       - vendor
   script:
-    - gulp
+    - npm install
+    - gulp sass
 
 deploy-production:
   stage: deploy
