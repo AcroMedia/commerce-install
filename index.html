@@ -30,9 +30,27 @@
       </div>
    </div>
 
+  <script type="x/template" id="kickstart-section-template">
+    <div class="product__build location">
+      <a class="arrow_up" href="#"></a>
+      <div class="top__info">
+        <div class="box__content">
+          <h2 v-bind:class="iconClass">{{ title }}</h2>
+          <p>
+            {{ description }}
+          </p>
+        </div>
+      </div>
+      <div class="product__content columns">
+        <slot></slot>
+      </div>
+
+    </div>
+  </script>
+
 </header>
 <div class="container">
-  <div class="main__wrapper columns">
+  <div class="main__wrapper columns" id="app">
     <div class="main__section column is-9">
       <div class="main_description">
         <h1>Kickstart: Build & install</h1>
@@ -45,83 +63,81 @@
          </p>
       </div>
 
-      <!--todo break this guy up into container component?-->
-        <div class="product__build location">
-          <a class="arrow_up" href="#"></a>
-          <div class="top__info">
-            <div class="box__content">
-              <h2 class="icon-world">Location</h2>
-              <p>
-                Explain stuff good... ok? commmerce is an open source Adaptive Sales
-                Platfasily configured and integrated into the tools that drive your
-                business today and in the future.
-              </p>
-            </div>
+      <!-- Locations -->
+      <kickstart-section
+          title="Locations"
+          description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."
+          v-on:click="activateIndex = 1">
+        <card
+            v-for="option of locations.options"
+            :item="option"
+            :key="option.id"
+        >
+        </card>
 
-          </div>
-
-          <!--list items for locations-->
-          <div id="location-cards" class="product__content columns" >
-              <card
-                v-for="location of locations"
-                :item="location"
-                :key="location.id">
-              </card>
-          </div>
-
-        </div>
-
-        <div class="product__build package">
-          <a class="arrow_up" href="#"></a>
-          <div class="top__info">
-            <div class="box__content">
-              <h2 class="icon-package">Package</h2>
-              <p>
-                Explain stuff good... ok? commmerce is an open source Adaptive Sales
-                Platfasily configured and integrated into the tools that drive your
-                business today and in the future.
-              </p>
-            </div>
-
-          </div>
+      </kickstart-section>
 
 
-          <!--list items for packages-->
-          <div id="package-cards" class="product__content columns">
-              <card
-                  v-for="package of packages"
-                  :item="package"
-                  :key="package.id">
-              </card>
-          </div>
+      <!-- Package -->
+      <kickstart-section
+          title="Package"
+          description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."
+          <!--iconClass="icon-world"-->
+      >
+        <card
+            v-for="option of packages.options"
+            :item="option"
+            :key="option.id">
+        </card>
 
-        </div>
+      </kickstart-section>
 
-        <div class="product__build payments">
-            <a class="arrow_up" href="#"></a>
-          <div class="top__info">
-            <div class="box__content">
-              <h2 class="icon-payment">Payments</h2>
-              <p>
-                Explain stuff good... ok? commmerce is an open source Adaptive Sales
-                Platfasily configured and integrated into the tools that drive your
-                business today and in the future.
-              </p>
-            </div>
 
-          </div>
+      <!-- Payments -->
+      <kickstart-section
+          title="Payments"
+          description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."
+          icon-class="icon-world"
+      >
+        <span class="pay-sponsor">Sponsored Providers</span>
+        <card
+            v-for="option of payments.options"
+            :item="option"
+            :key="option.id">
+        </card>
 
-          <div id="payment-cards" class="product__content">
-              <span class="pay-sponsor">Sponsored Providers</span>
-              <card
-                  v-for="payment of payments"
-                  :item="payment"
-                  :key="payment.id">
-              </card>
+      </kickstart-section>
 
+
+      <!-- Content -->
+      <kickstart-section
+          title="Content"
+          description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."
+          iconClass="icon-world">
+        <card
+            v-for="option of contents.options"
+            :item="option"
+            :key="option.id">
+        </card>
+
+        <div class="select__box">
+          <span class="select__title">Migration Source</span>
+          <div class="field">
+            <p class="control">
+
+                  <span class="select ">
+                    <select>
+                      <option>Select dropdown</option>
+                      <option>With options</option>
+                    </select>
+                  </span>
+            </p>
           </div>
 
         </div>
+
+      </kickstart-section>
+
 
         <div class="product__build dummy__content">
             <a class="arrow_up" href="#"></a>
@@ -143,8 +159,6 @@
                     :item="content"
                     :key="content.id">
                 </card>
-
-
 
               </div>
             <div class="select__box">

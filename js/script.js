@@ -18,9 +18,14 @@ $(document).ready(function ($) {
       });
   });
 
+  Vue.component('kickstart-section', {
+      props: ['title', 'description', 'iconClass', 'options', 'activeIndex', 'options', 'selectSection'],
+      template: '#kickstart-section-template',
+  });
+
   Vue.component('card', {
     template: '\
-    <div class="box__item column">\
+    <div class="box__item column" v-on:click="greet">\
     <div v-if="item.image" class="pay__logo">\
     <img :src="item.image_src" alt="">\
     </div>\
@@ -33,53 +38,53 @@ $(document).ready(function ($) {
     props: ['item']
   });
 
-  var vm1 = new Vue({
-    el: '#location-cards',
-    data: {
-      locations: [
-        { id: 0, title: 'International', description: 'Do we need a description with these things?'},
-        { id: 1, title: 'North America', description: 'Do we need a description with these things?'},
-        { id: 2, title: 'EU', description: 'Do we need a description with these things?'},
-        { id: 3, title: 'USA', description: 'Do we need a description with these things?'}
-      ]
-    }
-  });
-
-  var vm2 = new Vue({
-    el: '#package-cards',
-    data: {
-      packages: [
-        { id: 0, title: 'Base', description: 'Do we need a description with these things?'},
-        { id: 1, title: 'Catalog', description: 'Do we need a description with these things?'},
-        { id: 2, title: 'Events', description: 'Do we need a description with these things?'},
-        { id: 3, title: 'Subscriptions', description: ''}
-      ]
-    }
-  });
-
-  var vm3 = new Vue({
-    el: '#payment-cards',
-    data: {
-      payments: [
-        { id: 0, title: 'Paypal', description: 'Do we need a description with these things?', image: true, image_src: './gfx/paylogos/paypal.png'},
-        { id: 1, title: 'BrainTree', description: 'Do we need a description with these things?', image: true, image_src: './gfx/paylogos/braintree.png'},
-        { id: 3, title: 'Apple Pay', description: 'Do we need a description with these things', image: true, image_src: './gfx/paylogos/apple-pay.png'},
-        { id: 2, title: 'Auth.net', description: 'Do we need a description with these things?', image: true, image_src: './gfx/paylogos/authorize.png'},
-        { id: 4, title: 'Moneris', description: 'Do we need a description with these things'},
-        { id: 5, title: 'Pay With Chickens', description: 'Do we need a description with these things'}
-      ]
-    }
-  });
-
-  var vm4 = new Vue({
-    el: '#content-cards',
-    data: {
-      contents: [
-        { id: 0, title: 'Migrate', description: 'Do we need a description with these things?'},
-        { id: 1, title: 'Demo Content', description: 'Do we need a description with these things?'},
-        { id: 2, title: 'Clean', description: 'Do we need a description with these things?'}
-      ]
-    }
-  });
-
+    new Vue({
+        el: '#app',
+        data: {
+            locations: {
+                options: [
+                    { id: 0, title: 'International', description: 'Do we need a description with these things?'},
+                    { id: 1, title: 'North America', description: 'Do we need a description with these things?'},
+                    { id: 2, title: 'EU', description: 'Do we need a description with these things?'},
+                    { id: 3, title: 'USA', description: 'Do we need a description with these things?'}
+                ],
+            },
+            packages: {
+                options: [
+                    {id: 0, title: 'Base', description: 'Do we need a description with these things?'},
+                    {id: 1, title: 'Catalog', description: 'Do we need a description with these things?'},
+                    {id: 2, title: 'Events', description: 'Do we need a description with these things?'},
+                    {id: 3, title: 'Subscriptions', description: ''}
+                ]
+            },
+            payments: {
+                options: [
+                    { id: 0, title: 'Paypal', description: 'Do we need a description with these things?', image: true, image_src: './gfx/paylogos/paypal.png'},
+                    { id: 1, title: 'BrainTree', description: 'Do we need a description with these things?', image: true, image_src: './gfx/paylogos/braintree.png'},
+                    { id: 3, title: 'Apple Pay', description: 'Do we need a description with these things', image: true, image_src: './gfx/paylogos/apple-pay.png'},
+                    { id: 2, title: 'Auth.net', description: 'Do we need a description with these things?', image: true, image_src: './gfx/paylogos/authorize.png'},
+                    { id: 4, title: 'Moneris', description: 'Do we need a description with these things'},
+                    { id: 5, title: 'Pay With Chickens', description: 'Do we need a description with these things'}
+                ]
+            },
+            contents: {
+                options: [
+                    {id: 0, title: 'Migrate', description: 'Do we need a description with these things?'},
+                    {id: 1, title: 'Demo Content', description: 'Do we need a description with these things?'},
+                    {id: 2, title: 'Clean', description: 'Do we need a description with these things?'}
+                ]
+            }
+        },
+        // define methods under the `methods` object
+        methods: {
+            greet: function (event) {
+                // `this` inside methods points to the Vue instance
+                alert('Hello ' + this.name + '!')
+                // `event` is the native DOM event
+                if (event) {
+                    alert(event.target.tagName)
+                }
+            }
+        }
+    });
 });
