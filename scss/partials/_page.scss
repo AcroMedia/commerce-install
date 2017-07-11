@@ -44,6 +44,9 @@ header {
 
   span {
     font-size: 30px;
+    a:hover {
+      color:$dark-blue;
+    }
     @include bp(mobil) {
       font-size: 18px;
     }
@@ -523,7 +526,7 @@ footer {
 
 .logo__slogan {
   font-size: 23px;
-  margin-left: 18px;
+  margin-left: 17px;
   font-weight: 300;
   color: #999;
 }
