@@ -7,14 +7,16 @@ stages:
 
 #code_standards:
   #stage: test
-
+before_script:
+  - npm install
+  
 build:
   stage: build
   artifacts:
     paths:
       - vendor
   script:
-    - composer install
+    - gulp
 
 deploy-production:
   stage: deploy
