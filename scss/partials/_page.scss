@@ -279,42 +279,18 @@ h2 {
   }
 }
 
-.icon-world:before {
-  content: '\E894';
+.section-icon {
   color: $light-blue;
-  position: relative;
-  top: 7px;
-  left: -7px;
-  font-size: 35px;
-  font-family: 'Material Icons';
-}
-
-.material-icons.section-icon {
-  color: $ligth-blue;
-  position: relative;
-  top: 7px;
-  left: -7px;
-  font-size: 35px;
-}
-
-.icon-package:before {
-  background: url('../gfx/package-icon.png')no-repeat;
-  content: '';
   display: inline-block;
   position: relative;
   top: 7px;
   left: -7px;
+  font-size: 35px;
   width: 36px;
   height: 32px;
 }
 
-.icon-drupal:before {
-  background: $c-blue url('../gfx/drupal-icon.png')no-repeat;
-  content: '';
-  display: inline-block;
-  position: relative;
-  top: 7px;
-  left: -7px;
+.icon-drupal img {
   width: 38px;
   height: 43px;
 }
