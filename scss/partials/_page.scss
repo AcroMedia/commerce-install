@@ -334,20 +334,27 @@ h2 {
 .sidebar {
   position: relative;
   top: 232px;
-  width: calc(20% - 40px);
+  width: 100%;
   z-index: 10;
   @include bp(mobil) {
     position: relative;
     top: inherit;
     width: 100%;
   }
+  @media(max-width: 1380px) and (min-width: 1190px) {
+    top: 256px;
+  }
+  @media(max-width: 1190px) and (min-width: 1026px) {
+    top: 279px;
+  }
+  @media(max-width: 1026px) and (min-width: 1026px) {
+    top: 279px;
+  }
   @media(max-width: 864px) and (min-width: 769px) {
-    width: 30%;
+    position: absolute;
     right: 0;
   }
-  @media(max-width: 1400px) and (min-width: 898px) {
-    width: 25%;
-  }
+
 }
 .fixed {
   position:fixed;
@@ -365,7 +372,7 @@ h2 {
   color: $c-white;
   background: $light-blue;
   padding: 5px 20px;
-  margin: 0 6px;
+  width: 100%;
   text-align: center;
 
   h2 {
@@ -376,6 +383,9 @@ h2 {
 
   .side__description {
     font-size: 15px;
+  }
+  @include bp(mobil) {
+    margin: 0;
   }
 
   .btn__primary {
@@ -390,6 +400,9 @@ h2 {
     font-size: 18px;
     font-weight: bold;
     border-bottom: 4px solid $c-blue;
+    @media(max-width: 1192px) and (min-width: 769px) {
+      width: 100%;
+    }
   }
 }
 
@@ -428,6 +441,10 @@ h2 {
     border-top: 1px solid $orange;
     border-right: 1px solid $orange;
     border-left: 1px solid $orange;
+  }
+  @include bp(mobil) {
+
+    width: 100%;
   }
 }
 
