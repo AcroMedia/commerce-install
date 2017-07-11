@@ -289,24 +289,12 @@ h2 {
   font-family: 'Material Icons';
 }
 
-.icon-security:before {
-  content: '\E32A';
-  color: $light-blue;
+.material-icons.section-icon {
+  color: $ligth-blue;
   position: relative;
   top: 7px;
   left: -7px;
   font-size: 35px;
-  font-family: 'Material Icons';
-}
-
-.icon-payment:before {
-  content: '\E870';
-  color: $light-blue;
-  position: relative;
-  top: 7px;
-  left: -7px;
-  font-size: 35px;
-  font-family: 'Material Icons';
 }
 
 .icon-package:before {
