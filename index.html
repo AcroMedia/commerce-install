@@ -80,16 +80,19 @@
          </p>
       </div>
 
+
+      <cart-summary></cart-summary>
+
       <!-- Locations -->
       <kickstart-section
           title="Locations"
           description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."
       >
-        <kickstart-options
+        <cards
             :activeIndex="sections.locations.activeIndex"
-            :options="sections.locations.options"
-            section="location">
-        </kickstart-options>
+            :activeIndex="sections.locations.activeIndex"
+            section="locations">
+        </cards>
 
       </kickstart-section>
 
