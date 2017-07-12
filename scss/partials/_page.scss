@@ -281,14 +281,16 @@ h2 {
     }
   }
 }
-
-.section-icon {
+.material-icons.section-icons {
   color: $light-blue;
-  display: inline-block;
   position: relative;
   top: 7px;
   left: -7px;
   font-size: 35px;
+  font-family: 'Material Icons';
+}
+
+.section-icons {
   width: 36px;
   height: 32px;
 }
