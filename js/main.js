@@ -99,6 +99,9 @@ var sections = {
   },
   security: {
     title: "Updates & Security"
+  },
+  build: {
+    title: "Build & Install"
   }
 };
 
@@ -115,7 +118,11 @@ Vue.component('kickstart-section', {
     <a class="arrow_up" href="#"></a>
     <div class="top__info">
       <div class="box__content">
-        <h2><i class="material-icons section-icons">{{ iconClass }}</i>{{ title }}</h2>
+        <h2>
+          <i v-if="iconClass" class="material-icons section-icons">{{ iconClass }}</i>
+          <i v-else class="material-icons section-icons">dashboard</i>
+          {{ title }}
+        </h2>
         <p>
           {{ description }}
         </p>
