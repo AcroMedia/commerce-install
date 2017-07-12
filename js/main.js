@@ -83,7 +83,22 @@ Vue.component('kickstart-section', {
       title: sections[this.section].title
     };
   },
-  template: '#kickstart-section-template',
+  template: `
+  <div class="product__build location">
+    <a class="arrow_up" href="#"></a>
+    <div class="top__info">
+      <div class="box__content">
+        <h2><i class="material-icons section-icons">{{ iconClass }}</i>{{ title }}</h2>
+        <p>
+          {{ description }}
+        </p>
+      </div>
+    </div>
+    <div class="product__content">
+      <slot></slot>
+    </div>
+  </div>
+  `,
 });
 
 Vue.component('cards', {
@@ -94,7 +109,21 @@ Vue.component('cards', {
       activeIndex: sections[this.section].activeIndex
     };
   },
-  template: '#kickstart-options-template',
+  template: `
+  <div class="columns">
+    <div
+        v-for="(option, index) in options"
+        v-on:click="emit(index, section)"
+        v-bind:class="[activeIndex === index ? 'active-option': '']"
+        class="box__item column">
+      <h3>{{ option.title }}</h3>
+      <div class="box__description">
+        {{ option.description }}
+      </div>
+    </div>
+  </div>
+
+  `,
   methods: {
     emit: function(index, section) {
       var sectionTitle = sections[section].title;
@@ -108,8 +137,22 @@ Vue.component('cards', {
 });
 
 Vue.component('cart-summary', {
-  template: '#cart-summary-template',
-  props: ['summary']
+  props: ['summary'],
+  template: `
+          <div>
+          <h2>Build Summary</h2>
+          <div class="side__description">
+            <!--Want to setup a Drupal Commerce site, but not sure what all this means?-->
+            <div v-for="item in summary">
+              <span class="module__title">{{ item.section }}</span>
+              <span class="module__product">{{ item.index }}</span>
+            </div>
+          </div>
+          <div class="btn__secondary">
+            Generate package
+          </div>
+          </div>
+  `
 });
 
 var app = new Vue({

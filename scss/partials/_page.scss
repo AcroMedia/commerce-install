@@ -379,6 +379,7 @@ h2 {
   margin-top: 50px;
   display: inline-block;
   color: #fff;
+  width: 100%;
   padding: 10px 0;
   text-align: center;
 
@@ -575,4 +576,17 @@ footer {
       color: #999999;
     }
   }
+}
+// Summary Order
+.module__title {
+  text-align: center;
+  color: $c-blue;
+  display: block;
+  font-weight: 800;
+}
+
+.module__product {
+  color: $black-01;
+  display: inline-block;
+  margin-bottom: 10px;
 }
