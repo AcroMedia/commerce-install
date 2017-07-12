@@ -1,5 +1,4 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -11,63 +10,61 @@
 <link rel="stylesheet" href="/css/style.css">
 <script src="https://unpkg.com/vue"></script>
 </head>
+
+<script type="x/template" id="kickstart-section-template">
+  <div class="product__build location">
+    <a class="arrow_up" href="#"></a>
+    <div class="top__info">
+      <div class="box__content">
+        <h2><i class="material-icons section-icons">{{ iconClass }}</i>{{ title }}</h2>
+        <p>
+          {{ description }}
+        </p>
+      </div>
+    </div>
+
+    <div class="product__content">
+      <slot></slot>
+    </div>
+
+  </div>
+</script>
+
+<script type="x/template" id="kickstart-options-template">
+  <div class="columns">
+    <div
+        v-for="(option, index) in options"
+        v-on:click="emit(index, section)"
+        v-bind:class="[activeIndex === index ? 'active-option': '']"
+        class="box__item column">
+      <h3>{{ option.title }}</h3>
+      <div class="box__description">
+        {{ option.description }}
+      </div>
+    </div>
+  </div>
+</script>
+
 <body>
-
-
 <header>
 
   <div class="container">
 
-      <div class="site-header__logo">
-        <img src="./gfx/logo.png" alt="Drupal Commerce">
-      </div>
-      <div class="site-header__slogan">
-        The Adaptive Sales Platform
-
-      </div>
-      <div class="site-header__right">
-        Toll Free <span><a href="tel:18778834697">1.877.883.4697</a></span>
-      </div>
-   </div>
-
-  <script type="x/template" id="kickstart-section-template">
-    <div class="product__build location" v-on:update:foo="value = 1">
-      <a class="arrow_up" href="#"></a>
-      <div class="top__info">
-        <div class="box__content">
-          <h2 v-bind:class="iconClass">{{ title }}</h2>
-          <p>
-            {{ description }}
-          </p>
-        </div>
-      </div>
-
-        <slot></slot>
+    <div class="site-header__logo">
+      <img src="./gfx/logo.png" alt="Drupal Commerce">
+    </div>
+    <div class="site-header__slogan">
+      The Adaptive Sales Platform
 
     </div>
-  </script>
-  <script type="x/template" id="kickstart-options-template">
-    <div class="product__content columns">
-
-      <div
-          v-for="(option, index) in options"
-          v-on:click="emit(index, section)"
-          v-bind:class="[activeIndex === index ? 'active-option': '']"
-          class="box__item column">
-        <h3>{{ option.title }}</h3>
-        <div class="box__description">
-          {{ option.description }}
-        </div>
-      </div>
-
+    <div class="site-header__right">
+      Toll Free <span><a href="tel:18778834697">1.877.883.4697</a></span>
     </div>
-
-
-  </script>
+  </div>
 
 </header>
-<div class="container">
-  <div class="main__wrapper columns" id="app">
+<div id="app" class="container">
+  <div class="main__wrapper columns">
     <div class="main__section column is-9">
       <div class="main_description">
         <h1>Kickstart: Build & install</h1>
@@ -80,184 +77,102 @@
          </p>
       </div>
 
-
-      <cart-summary></cart-summary>
-
       <!-- Locations -->
       <kickstart-section
-          title="Locations"
+          section="locations"
           description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."
+          icon-class="language"
       >
-        <cards
-            :activeIndex="sections.locations.activeIndex"
-            :activeIndex="sections.locations.activeIndex"
-            section="locations">
+        <cards section="locations">
+        </cards>
+
+    </kickstart-section>
+
+      <!-- Packages -->
+      <kickstart-section
+          section="packages"
+          description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."
+          icon-class="language"
+      >
+        <cards section="packages">
         </cards>
 
       </kickstart-section>
 
+      <!-- Payments -->
+      <kickstart-section
+          section="payments"
+          description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."
+          icon-class="credit_card"
+      >
+        <cards section="payments">
+        </cards>
 
-      <!-- Package -->
-      <!--<kickstart-section-->
-          <!--title="Package"-->
-          <!--description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."-->
-          <!--&lt;!&ndash;iconClass="icon-world"&ndash;&gt;-->
-      <!--&gt;-->
-        <!--<card-->
-            <!--v-for="option of sections.packages.options"-->
-            <!--:item="option"-->
-            <!--:key="option.id">-->
-        <!--</card>-->
+      </kickstart-section>
 
-      <!--</kickstart-section>-->
+      <!-- Content -->
+      <kickstart-section
+          section="contents"
+          description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."
+          icon-class="language"
+      >
+        <cards section="contents">
+        </cards>
 
+        <div class="select__box">
+          <span class="select__title">Migration Source</span>
+          <div class="field">
+            <p class="control">
+                  <span class="select ">
+                    <select>
+                      <option>Select dropdown</option>
+                      <option>With options</option>
+                    </select>
+                  </span>
+            </p>
+          </div>
 
-      <!--&lt;!&ndash; Payments &ndash;&gt;-->
-      <!--<kickstart-section-->
-          <!--title="Payments"-->
-          <!--description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."-->
-          <!--icon-class="icon-world"-->
-      <!--&gt;-->
-        <!--<span class="pay-sponsor">Sponsored Providers</span>-->
-        <!--<card-->
-            <!--v-for="option of sections.payments.options"-->
-            <!--:item="option"-->
-            <!--:key="option.id">-->
-        <!--</card>-->
+        </div>
 
-      <!--</kickstart-section>-->
-
-
-      <!--&lt;!&ndash; Content &ndash;&gt;-->
-      <!--<kickstart-section-->
-          <!--title="Content"-->
-          <!--description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."-->
-          <!--iconClass="icon-world">-->
-        <!--<card-->
-            <!--v-for="option of sections.contents.options"-->
-            <!--:item="option"-->
-            <!--:key="option.id">-->
-        <!--</card>-->
-
-        <!--<div class="select__box">-->
-          <!--<span class="select__title">Migration Source</span>-->
-          <!--<div class="field">-->
-            <!--<p class="control">-->
-
-                  <!--<span class="select ">-->
-                    <!--<select>-->
-                      <!--<option>Select dropdown</option>-->
-                      <!--<option>With options</option>-->
-                    <!--</select>-->
-                  <!--</span>-->
-            <!--</p>-->
-          <!--</div>-->
-
-        <!--</div>-->
-
-      <!--</kickstart-section>-->
+      </kickstart-section>
 
 
-        <!--<div class="product__build dummy__content">-->
-            <!--<a class="arrow_up" href="#"></a>-->
-          <!--<div class="top__info">-->
-            <!--<div class="box__content">-->
-              <!--<h2 class="icon-package">Content</h2>-->
-              <!--<p>-->
-                <!--Explain stuff good... ok? commmerce is an open source Adaptive Sales-->
-                <!--Platfasily configured and integrated into the tools that drive your-->
-                <!--business today and in the future.-->
-              <!--</p>-->
-            <!--</div>-->
+      <!-- Updates & Security -->
+      <kickstart-section
+          section="security"
+          description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."
+          icon-class="security"
+      >
 
-          <!--</div>-->
-          <!--<div id="content-cards" class="product__content">-->
-              <!--<div class=" columns">-->
-                <!--<card-->
-                    <!--v-for="content of contents"-->
-                    <!--:item="content"-->
-                    <!--:key="content.id">-->
-                <!--</card>-->
-
-              <!--</div>-->
-            <!--<div class="select__box">-->
-              <!--<span class="select__title">Migration Source</span>-->
-              <!--<div class="field">-->
-                <!--<p class="control">-->
-
-                  <!--<span class="select ">-->
-                    <!--<select>-->
-                      <!--<option>Select dropdown</option>-->
-                      <!--<option>With options</option>-->
-                    <!--</select>-->
-                  <!--</span>-->
-                <!--</p>-->
-              <!--</div>-->
-
-            <!--</div>-->
-
-          <!--</div>-->
-
-        <!--</div>-->
-
-
-
-
-        <div class="product__build security__content">
-            <a class="arrow_up" href="#"></a>
-          <div class="top__info">
-            <div class="box__content">
-              <h2 class="icon-security">Updates & Security</h2>
-              <p>
-                Explain stuff good... ok? commmerce is an open source Adaptive Sales
-                Platfasily configured and integrated into the tools that drive your
-                business today and in the future.
+        <div class="column is-6">
+          <div class="email__form">
+            <div class="field">
+              <p class="control">
+                <input class="input" type="text" placeholder="Email Address*">
               </p>
             </div>
-
           </div>
+
+        </div>
+
+      </kickstart-section>
+
+
+      <div id="build-section" class="product__build build__content">
+        <!--<section_header-->
+            <!--:section="info">-->
+        <!--</section_header>-->
+
+        <a class="download__link" href="#">
           <div class="product__content columns">
-            <div class="column is-6">
-              <div class="email__form">
-                <div class="field">
-                    <p class="control">
-                      <input class="input" type="text" placeholder="Email Address*">
-                    </p>
-                </div>
-              </div>
-
+            <div class="btn_download">
+              download
             </div>
-
           </div>
-
+        </a>
         </div>
 
-
-        <div class="product__build build__content">
-          <div class="top__info">
-            <div class="box__content">
-              <h2 class="icon-drupal">Build & Install</h2>
-              <p>
-                Explain stuff good... ok? commmerce is an open source Adaptive Sales
-                Platfasily configured and integrated into the tools that drive your
-                business today and in the future.
-              </p>
-            </div>
-
-          </div>
-          <a class="download__link" href="#">
-            <div class="product__content columns">
-
-              <div class="btn_download">
-                download
-              </div>
-
-            </div>
-          </a>
-
-        </div>
-
-
+      </div>
 
     </div>
     <div class="column is-3 ">
@@ -273,10 +188,8 @@
         </div>
         <div class="sidebar__summary">
           <h2>Build Summary</h2>
-          <div class="side__description" style="color: #333;">
-            <div v-for="section in summary">
-              {{ section.title }}: {{ section.value }}
-            </div>
+          <div class="side__description">
+             Want to setup a Drupal Commerce site, but not sure what all this means?
           </div>
           <div class="btn__secondary">
              Generate package
@@ -303,51 +216,52 @@
    </div>
  </div>
 
-<div class="footer__section container">
-  <div class="brand__logos">
-    <div class="columns">
-      <div class="column">
-        <a href="#">
-          <div class="commerce-guy">
-            <img src="./gfx/commerce-guy-logo.png" alt="">
-          </div>
-        <div class="logo__slogan">
-          Creators of<br>
-          Drupal Commerce
-
-        </div>
-        </a>
-      </div>
-      <div class="column">
+  <div class="footer__section container">
+    <div class="brand__logos">
+      <div class="columns">
+        <div class="column">
           <a href="#">
-        <div class="acromedia">
-          <img src="./gfx/acromedia-logo.png" alt="">
+            <div class="commerce-guy">
+              <img src="./gfx/commerce-guy-logo.png" alt="">
+            </div>
+          <div class="logo__slogan">
+            Creators of<br>
+            Drupal Commerce
+
+          </div>
+          </a>
         </div>
-        <div class="logo__slogan">
-          North America's #1<br>
-          Drupal Commerce Provider
+        <div class="column">
+          <a href="#">
+            <div class="acromedia">
+              <img src="./gfx/acromedia-logo.png" alt="">
+            </div>
+            <div class="logo__slogan">
+              North America's #1<br>
+              Drupal Commerce Provider
+            </div>
+          </a>
         </div>
       </div>
-      </a>
     </div>
-  </div>
- <div class="contact__section">
-   <div class="site-url__block">
-     drupalcommerce.com
+   <div class="contact__section">
+     <div class="site-url__block">
+       drupalcommerce.com
+     </div>
+     <div class="email__block">
+      solution@drupalcommerce.com
+     </div>
    </div>
-   <div class="email__block">
-    solution@drupalcommerce.com
-   </div>
- </div>
-<div class="footer__copyright">
+  <div class="footer__copyright">
 
-            © 1998 - 2017 <a href="#">Acro Media Inc.</a> <a href="#">Privacy Policy </a>
-</div>
-</div>
+              © 1998 - 2017 <a href="#">Acro Media Inc.</a> <a href="#">Privacy Policy </a>
+  </div>
+  </div>
 
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 
 </body>
 </html>

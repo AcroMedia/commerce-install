@@ -13,17 +13,17 @@
 }
 
 .html {
-  background: $c-gray;
+  background: $c-grey;
 
 }
 
 body {
-  color: $dark-gray;
-  background: $c-gray;
+  color: $dark-grey;
+  background: $c-grey;
 }
 
 a {
-  color: $ligth-blue;
+  color: $light-blue;
   &:hover {
     color:$dark-blue;
     text-decoration: underline;
