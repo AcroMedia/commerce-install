@@ -103,17 +103,12 @@ Vue.component('cards', {
       Vue.set(app.summary, section, {section: sectionTitle, index: indexTitle});
       Vue.set(sections[section], 'activeIndex', index);
       this.activeIndex = index;
-      this.$emit('updateMessage');
     }
   }
 });
 
 Vue.component('cart-summary', {
   template: '#cart-summary-template',
-  data: function () {
-    console.log(sections.locations.activeIndex);
-    return { test: sections.locations.activeIndex };
-  },
   props: ['summary']
 });
 
