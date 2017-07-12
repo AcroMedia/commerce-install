@@ -1,7 +1,6 @@
 
 
-
-
+// toggle btn
 $(document).ready(function ($) {
   $('.arrow_up').on('click', function(e) {
      $(this).toggleClass('down').siblings().removeClass('down');

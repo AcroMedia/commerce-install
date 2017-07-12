@@ -1,0 +1,44 @@
+image: smmccabe/drupal:latest
+
+stages:
+  - test
+  - build
+  - deploy
+
+#code_standards:
+  #stage: test
+  
+build:
+  stage: build
+  script:
+    - npm install
+    - gulp sass
+
+deploy-production:
+  stage: deploy
+  only:
+    - master
+  environment:
+    name: production
+    url: https://install.drupalcommerce.com
+  script:
+    # Install ssh-agent if not already installed, it is required by Docker.
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+
+    # Run ssh-agent (inside the build environment).
+    - eval $(ssh-agent -s)
+
+    # Add the SSH key stored in SSH_PRIVATE_KEY variable to the agent store.
+    - ssh-add <(echo "$DEPLOY_KEY_PRODUCTION")
+
+    # For Docker builds disable host key checking. Be aware that by adding that
+    # you are susceptible to man-in-the-middle attacks.
+    # WARNING: Use this only with the Docker executor, if you use it with shell
+    # you will overwrite your user's SSH config.
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+    # Move updated files up to deployment server, exclude custom list of files plus .git since it's not needed.
+    # If you want to add any additional excludes, add them to the .gitlabci-rsync-exclude.txt file in the repository root.
+    # WARNING - Any files not in the repo AND not in the exclude list will be removed, it is assumed they are not meant to be there and have been moved.
+    - rsync -av --no-perms --no-owner --no-group --exclude-from '.gitlabci-rsync-exclude.txt' --exclude '.git' --delete ./ kickstart@cloud4.acromedia.com:/home/kickstart/www/kickstart-frontend/
