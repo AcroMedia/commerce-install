@@ -111,7 +111,7 @@ Vue.component('kickstart-section', {
     };
   },
   template: `
-  <div class="product__build location">
+  <div class="product__build">
     <a class="arrow_up" href="#"></a>
     <div class="top__info">
       <div class="box__content">
@@ -125,7 +125,7 @@ Vue.component('kickstart-section', {
       <slot></slot>
     </div>
   </div>
-  `,
+  `
 });
 
 Vue.component('cards', {
@@ -136,13 +136,18 @@ Vue.component('cards', {
       activeIndex: null
     };
   },
-  template: `
-  <div class="columns">
+  template: `<div class="columns">
     <div
         v-for="(option, index) in options"
         v-on:click="emit(index, section)"
         v-bind:class="[activeIndex === index ? 'active-option': '']"
         class="box__item column">
+      <div
+          v-if="option.image_src"
+          class="pay__logo"
+      >
+        <img v-bind:src="option.image_src" v-bind:alt="option.title">
+      </div>
       <h3>{{ option.title }}</h3>
       <div class="box__description">
         {{ option.description }}
@@ -162,22 +167,26 @@ Vue.component('cards', {
 });
 
 Vue.component('cart-summary', {
-  props: ['summary'],
   template: `
-          <div>
-          <h2>Build Summary</h2>
-          <div class="side__description">
-            <!--Want to setup a Drupal Commerce site, but not sure what all this means?-->
-            <div v-for="item in summary">
-              <span class="module__title">{{ item.section }}</span>
-              <span class="module__product">{{ item.index }}</span>
-            </div>
-          </div>
-          <div class="btn__secondary">
-            Generate package
-          </div>
-          </div>
+    <div>
+      <h2>Build Summary</h2>
+      <div class="side__description" style="color: #666">
+        <!--Want to setup a Drupal Commerce site, but not sure what all this means?-->
+        <div v-for="item in summary" v-if="item.section" class="side__summary">
+          <p class="side__summary-section">{{ item.section }}</p>
+          <ul v-if="item.index">
+            <li class="side__summary-selected-card"><span>{{ item.index }}</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="btn__secondary"
+           v-on:click="generatePackage"
+      >
+        Generate package
+      </div>
+  </div>
   `,
+  props: ['summary'],
   methods: {
     generatePackage: function () {
       console.log('only a test');
