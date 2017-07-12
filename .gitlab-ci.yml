@@ -10,6 +10,9 @@ stages:
   
 build:
   stage: build
+  artifacts:
+    paths: 
+      - css/
   script:
     - npm install
     - gulp sass
