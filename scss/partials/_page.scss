@@ -1,5 +1,5 @@
 header {
-  background: $c-black url('../gfx/header-bg.png')repeat-y;
+  background: $c-black url('../gfx/header-bg.png') repeat-y;
   padding: 20px 0;
 }
 
@@ -45,7 +45,7 @@ header {
   span {
     font-size: 30px;
     a:hover {
-      color:$dark-blue;
+      color: $dark-blue;
     }
     @include bp(mobil) {
       font-size: 18px;
@@ -229,7 +229,6 @@ h2 {
   }
 }
 
-.location__build {}
 
 .payments {
   .box__item {
@@ -281,6 +280,7 @@ h2 {
     }
   }
 }
+
 .material-icons.section-icons {
   color: $light-blue;
   position: relative;
@@ -325,10 +325,11 @@ h2 {
   }
 
 }
+
 .fixed {
-  position:fixed;
-  top:0;
-  z-index:10;
+  position: fixed;
+  top: 0;
+  z-index: 10;
   @include bp(mobil) {
     position: relative;
     top: inherit;
@@ -377,6 +378,7 @@ h2 {
 
 .sidebar__summary {
   margin-top: 50px;
+  width: 100%;
   display: inline-block;
   color: #fff;
   padding: 10px 0;
@@ -392,7 +394,25 @@ h2 {
   .side__description {
     background: $c-white;
     min-height: 200px;
-    padding: 30px 15px;
+    padding: 20px 15px 30px;
+  }
+  .side__summary {
+    text-align: left;
+    margin-bottom: 15px;
+    &-section {
+      color: $light-blue;
+      font-weight: bold;
+    }
+    &-selected-card {
+      margin-left: 15px;
+      list-style: initial;
+      font-size: .8em;
+      color: $dark-grey;
+      & span {
+        position: relative;
+        left: -5px;
+      }
+    }
   }
 
   .btn__secondary {

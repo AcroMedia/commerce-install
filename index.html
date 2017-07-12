@@ -50,9 +50,11 @@
     <h2>Build Summary</h2>
     <div class="side__description" style="color: #666">
       <!--Want to setup a Drupal Commerce site, but not sure what all this means?-->
-      <div v-for="item in summary">
-        <h3>{{ item.section }}</h3>
-        <h3>{{ item.index }}</h3>
+      <div v-for="item in summary" v-if="item.section" class="side__summary">
+        <p class="side__summary-section">{{ item.section }}</p>
+        <ul v-if="item.index">
+          <li class="side__summary-selected-card"><span>{{ item.index }}</span></li>
+        </ul>
       </div>
     </div>
     <div class="btn__secondary">
