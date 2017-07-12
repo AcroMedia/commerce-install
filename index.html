@@ -31,7 +31,7 @@
    </div>
 
   <script type="x/template" id="kickstart-section-template">
-    <div class="product__build location">
+    <div class="product__build location" v-on:update:foo="value = 1">
       <a class="arrow_up" href="#"></a>
       <div class="top__info">
         <div class="box__content">
@@ -41,11 +41,28 @@
           </p>
         </div>
       </div>
-      <div class="product__content columns">
+
         <slot></slot>
+
+    </div>
+  </script>
+  <script type="x/template" id="kickstart-options-template">
+    <div class="product__content columns">
+
+      <div
+          v-for="(option, index) in options"
+          v-on:click="emit(index, section)"
+          v-bind:class="[activeIndex === index ? 'active-option': '']"
+          class="box__item column">
+        <h3>{{ option.title }}</h3>
+        <div class="box__description">
+          {{ option.description }}
+        </div>
       </div>
 
     </div>
+
+
   </script>
 
 </header>
@@ -67,119 +84,118 @@
       <kickstart-section
           title="Locations"
           description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."
-          v-on:click="activateIndex = 1">
-        <card
-            v-for="option of locations.options"
-            :item="option"
-            :key="option.id"
-        >
-        </card>
+      >
+        <kickstart-options
+            :activeIndex="sections.locations.activeIndex"
+            :options="sections.locations.options"
+            section="location">
+        </kickstart-options>
 
       </kickstart-section>
 
 
       <!-- Package -->
-      <kickstart-section
-          title="Package"
-          description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."
-          <!--iconClass="icon-world"-->
-      >
-        <card
-            v-for="option of packages.options"
-            :item="option"
-            :key="option.id">
-        </card>
+      <!--<kickstart-section-->
+          <!--title="Package"-->
+          <!--description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."-->
+          <!--&lt;!&ndash;iconClass="icon-world"&ndash;&gt;-->
+      <!--&gt;-->
+        <!--<card-->
+            <!--v-for="option of sections.packages.options"-->
+            <!--:item="option"-->
+            <!--:key="option.id">-->
+        <!--</card>-->
 
-      </kickstart-section>
-
-
-      <!-- Payments -->
-      <kickstart-section
-          title="Payments"
-          description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."
-          icon-class="icon-world"
-      >
-        <span class="pay-sponsor">Sponsored Providers</span>
-        <card
-            v-for="option of payments.options"
-            :item="option"
-            :key="option.id">
-        </card>
-
-      </kickstart-section>
+      <!--</kickstart-section>-->
 
 
-      <!-- Content -->
-      <kickstart-section
-          title="Content"
-          description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."
-          iconClass="icon-world">
-        <card
-            v-for="option of contents.options"
-            :item="option"
-            :key="option.id">
-        </card>
+      <!--&lt;!&ndash; Payments &ndash;&gt;-->
+      <!--<kickstart-section-->
+          <!--title="Payments"-->
+          <!--description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."-->
+          <!--icon-class="icon-world"-->
+      <!--&gt;-->
+        <!--<span class="pay-sponsor">Sponsored Providers</span>-->
+        <!--<card-->
+            <!--v-for="option of sections.payments.options"-->
+            <!--:item="option"-->
+            <!--:key="option.id">-->
+        <!--</card>-->
 
-        <div class="select__box">
-          <span class="select__title">Migration Source</span>
-          <div class="field">
-            <p class="control">
-
-                  <span class="select ">
-                    <select>
-                      <option>Select dropdown</option>
-                      <option>With options</option>
-                    </select>
-                  </span>
-            </p>
-          </div>
-
-        </div>
-
-      </kickstart-section>
+      <!--</kickstart-section>-->
 
 
-        <div class="product__build dummy__content">
-            <a class="arrow_up" href="#"></a>
-          <div class="top__info">
-            <div class="box__content">
-              <h2 class="icon-package">Content</h2>
-              <p>
-                Explain stuff good... ok? commmerce is an open source Adaptive Sales
-                Platfasily configured and integrated into the tools that drive your
-                business today and in the future.
-              </p>
-            </div>
+      <!--&lt;!&ndash; Content &ndash;&gt;-->
+      <!--<kickstart-section-->
+          <!--title="Content"-->
+          <!--description="Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future."-->
+          <!--iconClass="icon-world">-->
+        <!--<card-->
+            <!--v-for="option of sections.contents.options"-->
+            <!--:item="option"-->
+            <!--:key="option.id">-->
+        <!--</card>-->
 
-          </div>
-          <div id="content-cards" class="product__content">
-              <div class=" columns">
-                <card
-                    v-for="content of contents"
-                    :item="content"
-                    :key="content.id">
-                </card>
+        <!--<div class="select__box">-->
+          <!--<span class="select__title">Migration Source</span>-->
+          <!--<div class="field">-->
+            <!--<p class="control">-->
 
-              </div>
-            <div class="select__box">
-              <span class="select__title">Migration Source</span>
-              <div class="field">
-                <p class="control">
+                  <!--<span class="select ">-->
+                    <!--<select>-->
+                      <!--<option>Select dropdown</option>-->
+                      <!--<option>With options</option>-->
+                    <!--</select>-->
+                  <!--</span>-->
+            <!--</p>-->
+          <!--</div>-->
 
-                  <span class="select ">
-                    <select>
-                      <option>Select dropdown</option>
-                      <option>With options</option>
-                    </select>
-                  </span>
-                </p>
-              </div>
+        <!--</div>-->
 
-            </div>
+      <!--</kickstart-section>-->
 
-          </div>
 
-        </div>
+        <!--<div class="product__build dummy__content">-->
+            <!--<a class="arrow_up" href="#"></a>-->
+          <!--<div class="top__info">-->
+            <!--<div class="box__content">-->
+              <!--<h2 class="icon-package">Content</h2>-->
+              <!--<p>-->
+                <!--Explain stuff good... ok? commmerce is an open source Adaptive Sales-->
+                <!--Platfasily configured and integrated into the tools that drive your-->
+                <!--business today and in the future.-->
+              <!--</p>-->
+            <!--</div>-->
+
+          <!--</div>-->
+          <!--<div id="content-cards" class="product__content">-->
+              <!--<div class=" columns">-->
+                <!--<card-->
+                    <!--v-for="content of contents"-->
+                    <!--:item="content"-->
+                    <!--:key="content.id">-->
+                <!--</card>-->
+
+              <!--</div>-->
+            <!--<div class="select__box">-->
+              <!--<span class="select__title">Migration Source</span>-->
+              <!--<div class="field">-->
+                <!--<p class="control">-->
+
+                  <!--<span class="select ">-->
+                    <!--<select>-->
+                      <!--<option>Select dropdown</option>-->
+                      <!--<option>With options</option>-->
+                    <!--</select>-->
+                  <!--</span>-->
+                <!--</p>-->
+              <!--</div>-->
+
+            <!--</div>-->
+
+          <!--</div>-->
+
+        <!--</div>-->
 
 
 
@@ -227,14 +243,14 @@
 
           </div>
           <a class="download__link" href="#">
-          <div class="product__content columns">
+            <div class="product__content columns">
 
-            <div class="btn_download">
-              download
+              <div class="btn_download">
+                download
+              </div>
+
             </div>
-
           </a>
-          </div>
 
         </div>
 
@@ -254,8 +270,10 @@
         </div>
         <div class="sidebar__summary">
           <h2>Build Summary</h2>
-          <div class="side__description">
-             Want to setup a Drupal Commerce site, but not sure what all this means?
+          <div class="side__description" style="color: #333;">
+            <div v-for="section in summary">
+              {{ section.title }}: {{ section.value }}
+            </div>
           </div>
           <div class="btn__secondary">
              Generate package
