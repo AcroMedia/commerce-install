@@ -114,7 +114,7 @@ Vue.component('kickstart-section', {
     };
   },
   template: `
-  <div class="product__build">
+  <div v-bind:class="section" class="product__build">
     <a class="arrow_up" href="#"></a>
     <div class="top__info">
       <div class="box__content">
