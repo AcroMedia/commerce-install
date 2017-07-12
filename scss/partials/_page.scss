@@ -375,15 +375,19 @@ h2 {
     }
   }
 }
-
+// Summary Order
 .sidebar__summary {
   margin-top: 50px;
   width: 100%;
   display: inline-block;
   color: #fff;
+  width: 100%;
   padding: 10px 0;
   text-align: center;
-
+  .side__description div {
+    text-align: left;
+    margin-left: 20px;
+  }
   h2 {
     font-size: 22px;
     background: #00aeef;
@@ -435,6 +439,17 @@ h2 {
 
     width: 100%;
   }
+}
+.module__title {
+  color: $c-blue;
+  display: block;
+  font-weight: 800;
+}
+
+.module__product {
+  color: $black-01;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
 .btn_download {

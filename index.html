@@ -10,67 +10,6 @@
 <link rel="stylesheet" href="/css/style.css">
 <script src="https://unpkg.com/vue"></script>
 </head>
-
-<script type="x/template" id="kickstart-section-template">
-  <div class="product__build location">
-    <a class="arrow_up" href="#"></a>
-    <div class="top__info">
-      <div class="box__content">
-        <h2><i class="material-icons section-icons">{{ iconClass }}</i>{{ title }}</h2>
-        <p>
-          {{ description }}
-        </p>
-      </div>
-    </div>
-
-    <div class="product__content">
-      <slot></slot>
-    </div>
-
-  </div>
-</script>
-
-<script type="x/template" id="kickstart-options-template">
-  <div class="columns">
-    <div
-        v-for="(option, index) in options"
-        v-on:click="emit(index, section)"
-        v-bind:class="[activeIndex === index ? 'active-option': '']"
-        class="box__item column">
-      <div
-          v-if="option.image_src"
-          class="pay__logo"
-      >
-        <img v-bind:src="option.image_src" v-bind:alt="option.title">
-      </div>
-      <h3>{{ option.title }}</h3>
-      <div class="box__description">
-        {{ option.description }}
-      </div>
-    </div>
-  </div>
-</script>
-
-<script type="x/template" id="cart-summary-template">
-  <div>
-    <h2>Build Summary</h2>
-    <div class="side__description" style="color: #666">
-      <!--Want to setup a Drupal Commerce site, but not sure what all this means?-->
-      <div v-for="item in summary" v-if="item.section" class="side__summary">
-        <p class="side__summary-section">{{ item.section }}</p>
-        <ul v-if="item.index">
-          <li class="side__summary-selected-card"><span>{{ item.index }}</span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="btn__secondary"
-         v-on:click="generatePackage"
-    >
-      Generate package
-    </div>
-  </div>
-</script>
-
 <body>
 <header>
 
