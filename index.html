@@ -42,185 +42,133 @@
          </p>
       </div>
 
-      <!--todo break this guy up into container component?-->
-        <div class="product__build location">
-          <a class="arrow_up" href="#"></a>
-          <div class="top__info">
-            <div class="box__content">
-              <h2 class="icon-world"><i class="material-icons section-icon">language</i>Location</h2>
-              <p>
-                Explain stuff good... ok? commmerce is an open source Adaptive Sales
-                Platfasily configured and integrated into the tools that drive your
-                business today and in the future.
+      <div id="location-section" class="product__build location">
+        <a class="arrow_up" href="#"></a>
+        <section_header
+            :section="info">
+        </section_header>
+
+        <!--list items for locations-->
+        <div id="location-cards" class="product__content columns" >
+            <card
+              v-for="location of locations"
+              :item="location"
+              :key="location.id">
+            </card>
+        </div>
+      </div>
+
+      <div id="package-section" class="product__build package">
+        <a class="arrow_up" href="#"></a>
+        <section_header
+            :section="info">
+        </section_header>
+
+        <!--list items for packages-->
+        <div id="package-cards" class="product__content columns">
+            <card
+                v-for="package of packages"
+                :item="package"
+                :key="package.id">
+            </card>
+        </div>
+
+      </div>
+
+      <div id="payment-section" class="product__build payments">
+        <a class="arrow_up" href="#"></a>
+        <section_header
+            :section="info">
+        </section_header>
+
+        <div id="payment-cards" class="product__content">
+            <span class="pay-sponsor">Sponsored Providers</span>
+            <card
+                v-for="payment of payments"
+                :item="payment"
+                :key="payment.id">
+            </card>
+
+        </div>
+
+      </div>
+
+      <div id="content-section" class="product__build dummy__content">
+        <a class="arrow_up" href="#"></a>
+        <section_header
+            :section="info">
+        </section_header>
+
+        <div id="content-cards" class="product__content">
+            <div class=" columns">
+              <card
+                  v-for="content of contents"
+                  :item="content"
+                  :key="content.id">
+              </card>
+
+            </div>
+          <div class="select__box">
+            <span class="select__title">Migration Source</span>
+            <div class="field">
+              <p class="control">
+
+                <span class="select ">
+                  <select>
+                    <option>Select dropdown</option>
+                    <option>With options</option>
+                  </select>
+                </span>
               </p>
             </div>
 
-          </div>
-
-          <!--list items for locations-->
-          <div id="location-cards" class="product__content columns" >
-              <card
-                v-for="location of locations"
-                :item="location"
-                :key="location.id">
-              </card>
           </div>
 
         </div>
 
-        <div class="product__build package">
-          <a class="arrow_up" href="#"></a>
-          <div class="top__info">
-            <div class="box__content">
-              <h2 class="icon-package"><image class="section-icon" src="../gfx/package-icon.png"/>Package</h2>
-              <p>
-                Explain stuff good... ok? commmerce is an open source Adaptive Sales
-                Platfasily configured and integrated into the tools that drive your
-                business today and in the future.
-              </p>
-            </div>
-
-          </div>
-
-          <!--list items for packages-->
-          <div id="package-cards" class="product__content columns">
-              <card
-                  v-for="package of packages"
-                  :item="package"
-                  :key="package.id">
-              </card>
-          </div>
-
-        </div>
-
-        <div class="product__build payments">
-            <a class="arrow_up" href="#"></a>
-          <div class="top__info">
-            <div class="box__content">
-              <h2 class="icon-payment"><i class="material-icons section-icon">credit_card</i>Payments</h2>
-              <p>
-                Explain stuff good... ok? commmerce is an open source Adaptive Sales
-                Platfasily configured and integrated into the tools that drive your
-                business today and in the future.
-              </p>
-            </div>
-
-          </div>
-
-          <div id="payment-cards" class="product__content">
-              <span class="pay-sponsor">Sponsored Providers</span>
-              <card
-                  v-for="payment of payments"
-                  :item="payment"
-                  :key="payment.id">
-              </card>
-
-          </div>
-
-        </div>
-
-        <div class="product__build dummy__content">
-            <a class="arrow_up" href="#"></a>
-          <div class="top__info">
-            <div class="box__content">
-              <h2 class="icon-package"><image class="section-icon" src="../gfx/package-icon.png"/>Content</h2>
-              <p>
-                Explain stuff good... ok? commmerce is an open source Adaptive Sales
-                Platfasily configured and integrated into the tools that drive your
-                business today and in the future.
-              </p>
-            </div>
-
-          </div>
-          <div id="content-cards" class="product__content">
-              <div class=" columns">
-                <card
-                    v-for="content of contents"
-                    :item="content"
-                    :key="content.id">
-                </card>
+      </div>
 
 
 
-              </div>
-            <div class="select__box">
-              <span class="select__title">Migration Source</span>
+
+      <div id="security-section" class="product__build security__content">
+        <a class="arrow_up" href="#"></a>
+        <section_header
+            :section="info">
+        </section_header>
+
+        <div class="product__content columns">
+          <div class="column is-6">
+            <div class="email__form">
               <div class="field">
-                <p class="control">
-
-                  <span class="select ">
-                    <select>
-                      <option>Select dropdown</option>
-                      <option>With options</option>
-                    </select>
-                  </span>
-                </p>
+                  <p class="control">
+                    <input class="input" type="text" placeholder="Email Address*">
+                  </p>
               </div>
-
             </div>
 
           </div>
 
         </div>
 
+      </div>
 
 
+      <div id="build-section" class="product__build build__content">
+        <section_header
+            :section="info">
+        </section_header>
 
-        <div class="product__build security__content">
-            <a class="arrow_up" href="#"></a>
-          <div class="top__info">
-            <div class="box__content">
-              <h2 class="icon-security"><i class="material-icons section-icon">security</i>Updates & Security</h2>
-              <p>
-                Explain stuff good... ok? commmerce is an open source Adaptive Sales
-                Platfasily configured and integrated into the tools that drive your
-                business today and in the future.
-              </p>
-            </div>
-
-          </div>
+        <a class="download__link" href="#">
           <div class="product__content columns">
-            <div class="column is-6">
-              <div class="email__form">
-                <div class="field">
-                    <p class="control">
-                      <input class="input" type="text" placeholder="Email Address*">
-                    </p>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="product__build build__content">
-          <div class="top__info">
-            <div class="box__content">
-              <h2 class="icon-drupal"><image class="section-icon" src="../gfx/drupal-icon.png"/>Build & Install</h2>
-              <p>
-                Explain stuff good... ok? commmerce is an open source Adaptive Sales
-                Platfasily configured and integrated into the tools that drive your
-                business today and in the future.
-              </p>
-            </div>
-
-          </div>
-          <a class="download__link" href="#">
-          <div class="product__content columns">
-
             <div class="btn_download">
               download
             </div>
-
-          </a>
           </div>
-
+        </a>
         </div>
 
-
+      </div>
 
     </div>
     <div class="column is-3 ">
@@ -264,51 +212,52 @@
    </div>
  </div>
 
-<div class="footer__section container">
-  <div class="brand__logos">
-    <div class="columns">
-      <div class="column">
-        <a href="#">
-          <div class="commerce-guy">
-            <img src="./gfx/commerce-guy-logo.png" alt="">
-          </div>
-        <div class="logo__slogan">
-          Creators of<br>
-          Drupal Commerce
-
-        </div>
-        </a>
-      </div>
-      <div class="column">
+  <div class="footer__section container">
+    <div class="brand__logos">
+      <div class="columns">
+        <div class="column">
           <a href="#">
-        <div class="acromedia">
-          <img src="./gfx/acromedia-logo.png" alt="">
+            <div class="commerce-guy">
+              <img src="./gfx/commerce-guy-logo.png" alt="">
+            </div>
+          <div class="logo__slogan">
+            Creators of<br>
+            Drupal Commerce
+
+          </div>
+          </a>
         </div>
-        <div class="logo__slogan">
-          North America's #1<br>
-          Drupal Commerce Provider
+        <div class="column">
+          <a href="#">
+            <div class="acromedia">
+              <img src="./gfx/acromedia-logo.png" alt="">
+            </div>
+            <div class="logo__slogan">
+              North America's #1<br>
+              Drupal Commerce Provider
+            </div>
+          </a>
         </div>
       </div>
-      </a>
     </div>
-  </div>
- <div class="contact__section">
-   <div class="site-url__block">
-     drupalcommerce.com
+   <div class="contact__section">
+     <div class="site-url__block">
+       drupalcommerce.com
+     </div>
+     <div class="email__block">
+      solution@drupalcommerce.com
+     </div>
    </div>
-   <div class="email__block">
-    solution@drupalcommerce.com
-   </div>
- </div>
-<div class="footer__copyright">
+  <div class="footer__copyright">
 
-            © 1998 - 2017 <a href="#">Acro Media Inc.</a> <a href="#">Privacy Policy </a>
-</div>
-</div>
+              © 1998 - 2017 <a href="#">Acro Media Inc.</a> <a href="#">Privacy Policy </a>
+  </div>
+  </div>
 
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 
 </body>
 </html>
