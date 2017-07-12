@@ -1,27 +1,44 @@
-var cart = {
-  items: {
-
-  }
-};
 var sections = {
   locations: {
     title: "Locations",
-    description: "Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future.",
     options: [
-      {id: 0, title: 'International', description: 'Do we need a description with these things?'},
-      {id: 1, title: 'North America', description: 'Do we need a description with these things?'},
-      {id: 2, title: 'EU', description: 'Do we need a description with these things?'},
-      {id: 3, title: 'USA', description: 'Do we need a description with these things?'}
+      {
+        title: 'International',
+        description: 'Do we need a description with these things?'
+      },
+      {
+        title: 'North America',
+        description: 'Do we need a description with these things?'
+      },
+      {
+        title: 'EU',
+        description: 'Do we need a description with these things?'
+      },
+      {
+        title: 'USA',
+        description: 'Do we need a description with these things?'
+      }
     ],
-    activeIndex: false,
   },
   packages: {
     title: "Packages",
     options: [
-      {id: 0, title: 'Base', description: 'Do we need a description with these things?'},
-      {id: 1, title: 'Catalog', description: 'Do we need a description with these things?'},
-      {id: 2, title: 'Events', description: 'Do we need a description with these things?'},
-      {id: 3, title: 'Subscriptions', description: ''}
+      {
+        title: 'Base',
+        description: 'Do we need a description with these things?'
+      },
+      {
+        title: 'Catalog',
+        description: 'Do we need a description with these things?'
+      },
+      {
+        title: 'Events',
+        description: 'Do we need a description with these things?'
+      },
+      {
+        title: 'Subscriptions',
+        description: ''
+      }
     ],
     activeIndex: false,
   },
@@ -29,46 +46,56 @@ var sections = {
     title: "Payments",
     options: [
       {
-        id: 0,
         title: 'Paypal',
         description: 'Do we need a description with these things?',
-        image: true,
-        image_src: './gfx/paylogos/paypal.png'
+        image_src: './gfx/paylogos/paypal.png',
+        sponsored: true,
+        composer_package: 'drupal/commerce_paypal'
       },
       {
-        id: 1,
         title: 'BrainTree',
         description: 'Do we need a description with these things?',
-        image: true,
-        image_src: './gfx/paylogos/braintree.png'
+        image_src: './gfx/paylogos/braintree.png',
+        sponsored: true,
+        composer_package: 'drupal/commerce_braintree'
       },
       {
-        id: 3,
         title: 'Apple Pay',
         description: 'Do we need a description with these things',
-        image: true,
-        image_src: './gfx/paylogos/apple-pay.png'
+        image_src: './gfx/paylogos/apple-pay.png',
+        sponsored: true,
+        composer_package: 'drupal/commerce_applepay'
       },
       {
-        id: 2,
         title: 'Auth.net',
         description: 'Do we need a description with these things?',
-        image: true,
         image_src: './gfx/paylogos/authorize.png'
       },
-      {id: 4, title: 'Moneris', description: 'Do we need a description with these things'},
-      {id: 5, title: 'Pay With Chickens', description: 'Do we need a description with these things'}
+      {
+        title: 'Moneris',
+        description: 'Do we need a description with these things'
+      },
+      {
+        title: 'Pay With Chickens',
+        description: 'Do we need a description with these things'
+      }
     ],
-    activeIndex: false,
+    multiselect: true
   },
   contents: {
     title: "Content",
     options: [
-      {id: 0, title: 'Migrate', description: 'Do we need a description with these things?'},
-      {id: 1, title: 'Demo Content', description: 'Do we need a description with these things?'},
-      {id: 2, title: 'Clean', description: 'Do we need a description with these things?'}
+      {
+        title: 'Migrate',
+        description: 'Do we need a description with these things?'
+      },
+      {
+        title: 'Demo Content', description: 'Do we need a description with these things?'
+      },
+      {
+        title: 'Clean', description: 'Do we need a description with these things?'
+      }
     ],
-    activeIndex: false,
   },
   security: {
     title: "Updates & Security"
@@ -106,7 +133,7 @@ Vue.component('cards', {
   data: function() {
     return {
       options: sections[this.section].options,
-      activeIndex: sections[this.section].activeIndex
+      activeIndex: null
     };
   },
   template: `
@@ -122,15 +149,13 @@ Vue.component('cards', {
       </div>
     </div>
   </div>
-
   `,
   methods: {
     emit: function(index, section) {
       var sectionTitle = sections[section].title;
       var indexTitle = sections[section].options[index].title;
 
-      Vue.set(app.summary, section, {section: sectionTitle, index: indexTitle});
-      Vue.set(sections[section], 'activeIndex', index);
+      Vue.set(app.summary, section, {section: sectionTitle, index: indexTitle, item: sections[section].options[index]});
       this.activeIndex = index;
     }
   }
@@ -152,7 +177,16 @@ Vue.component('cart-summary', {
             Generate package
           </div>
           </div>
-  `
+  `,
+  methods: {
+    generatePackage: function () {
+      console.log('only a test');
+      console.log(app.summary);
+      for (var property in app.summary) {
+        console.log(property);
+      }
+    }
+  }
 });
 
 var app = new Vue({
