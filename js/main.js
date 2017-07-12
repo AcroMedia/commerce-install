@@ -1,4 +1,8 @@
-var cart = {items: {}};
+var cart = {
+  items: {
+
+  }
+};
 var sections = {
   locations: {
     title: "Locations",
@@ -93,30 +97,34 @@ Vue.component('cards', {
   template: '#kickstart-options-template',
   methods: {
     emit: function(index, section) {
-      console.log(sections[section]);
-      Vue.set(cart.items, section, {section: section, index: index});
+      var sectionTitle = sections[section].title;
+      var indexTitle = sections[section].options[index].title;
+
+      Vue.set(app.summary, section, {section: sectionTitle, index: indexTitle});
       Vue.set(sections[section], 'activeIndex', index);
       this.activeIndex = index;
+      this.$emit('updateMessage');
     }
   }
 });
 
 Vue.component('cart-summary', {
-  template: '<div id="a-tester"><div class="cart-item" v-for="item in items">{{ item.section }}: {{ item.index }}</div></div>',
+  template: '#cart-summary-template',
   data: function () {
-    return cart;
-  }
+    console.log(sections.locations.activeIndex);
+    return { test: sections.locations.activeIndex };
+  },
+  props: ['summary']
 });
 
 var app = new Vue({
   el: '#app',
   data: {
-    summary: []
-  },
-  methods: {
-    selectOption: function(index) {
-      console.log('a test');
-      console.log(index);
+    summary: {
+      locations: '',
+      packages: '',
+      payments: '',
+      contents: '',
     }
-  }
+  },
 });
