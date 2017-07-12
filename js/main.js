@@ -114,7 +114,7 @@ Vue.component('kickstart-section', {
     };
   },
   template: `
-  <div v-bind:class="section" class="product__build">
+  <div :class="section" class="product__build">
     <a class="arrow_up" href="#"></a>
     <div class="top__info">
       <div class="box__content">
@@ -146,14 +146,14 @@ Vue.component('cards', {
   template: `<div class="columns">
     <div
         v-for="(option, index) in options"
-        v-on:click="emit(index, section)"
-        v-bind:class="[activeIndex === index ? 'active-option': '']"
+        @click="emit(index, section)"
+        :class="[activeIndex === index ? 'active-option': '']"
         class="box__item column">
       <div
           v-if="option.image_src"
           class="pay__logo"
       >
-        <img v-bind:src="option.image_src" v-bind:alt="option.title">
+        <img :src="option.image_src" :alt="option.title">
       </div>
       <h3>{{ option.title }}</h3>
       <div class="box__description">
@@ -177,7 +177,7 @@ Vue.component('cart-summary', {
   template: `
     <div>
       <h2>Build Summary</h2>
-      <div class="side__description" style="color: #666">
+      <div class="side__description">
         <!--Want to setup a Drupal Commerce site, but not sure what all this means?-->
         <div v-for="item in summary" v-if="item.section" class="side__summary">
           <p class="side__summary-section">{{ item.section }}</p>
@@ -187,7 +187,7 @@ Vue.component('cart-summary', {
         </div>
       </div>
       <div class="btn__secondary"
-           v-on:click="generatePackage"
+           @click="generatePackage"
       >
         Generate package
       </div>
