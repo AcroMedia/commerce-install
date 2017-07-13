@@ -40,7 +40,6 @@ var sections = {
         description: ''
       }
     ],
-    activeIndex: false,
   },
   payments: {
     title: "Payments",
@@ -140,14 +139,14 @@ Vue.component('cards', {
   data: function() {
     return {
       options: sections[this.section].options,
-      activeIndex: null
+      activeIndex: []
     };
   },
   template: `<div class="columns">
     <div
         v-for="(option, index) in options"
         @click="emit(index, section)"
-        :class="[activeIndex === index ? 'active-option': '']"
+        :class="[activeIndex.indexOf(index) > -1 ? 'active-option': '']"
         class="box__item column">
       <div
           v-if="option.image_src"
@@ -165,10 +164,28 @@ Vue.component('cards', {
   methods: {
     emit: function(index, section) {
       var sectionTitle = sections[section].title;
-      var indexTitle = sections[section].options[index].title;
 
-      Vue.set(app.summary, section, {section: sectionTitle, index: indexTitle, item: sections[section].options[index]});
-      this.activeIndex = index;
+      var clicked = this.activeIndex.indexOf(index);
+      var activeOptions = [];
+
+      if(!sections[section].multiselect) {
+        this.activeIndex = [];
+        this.activeIndex.push(index);
+      }
+      else {
+        if(clicked > -1) {
+          this.activeIndex.splice(clicked, 1);
+        }
+        else {
+          this.activeIndex.push(index);
+        }
+      }
+
+      for(var i = 0; i < this.activeIndex.length; i++) {
+        activeOptions.push(sections[section].options[this.activeIndex[i]]);
+      }
+
+      Vue.set(app.summary, section, {section: sectionTitle, activeOptions: activeOptions});
     }
   }
 });
@@ -180,10 +197,13 @@ Vue.component('cart-summary', {
       <div class="side__description">
         <!--Want to setup a Drupal Commerce site, but not sure what all this means?-->
         <div v-for="item in summary" v-if="item.section" class="side__summary">
-          <p class="side__summary-section">{{ item.section }}</p>
-          <ul v-if="item.index">
-            <li class="side__summary-selected-card"><span>{{ item.index }}</span></li>
-          </ul>
+          <div v-if="item.activeOptions.length > 0">
+            <p class="side__summary-section">{{ item.section }}</p>
+            <ul>
+              <li v-for="card in item.activeOptions"
+               class="side__summary-selected-card"><span>{{ card.title }}</span></li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="btn__secondary"
@@ -196,11 +216,9 @@ Vue.component('cart-summary', {
   props: ['summary'],
   methods: {
     generatePackage: function () {
-      console.log('only a test');
-      console.log(app.summary);
-      for (var property in app.summary) {
-        console.log(property);
-      }
+      $.get("https://install-service.drupalcommerce.com/", function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+      });
     }
   }
 });
