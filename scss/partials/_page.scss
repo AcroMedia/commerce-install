@@ -212,7 +212,14 @@ h2 {
     }
   }
 
-  &:hover, &.active-option {
+  &:hover {
+    cursor: pointer;
+    border-top: 4px solid $grey-03;
+    border-right: 1px solid $grey-03;
+    border-bottom: 1px solid $grey-03;
+    border-left: 1px solid $grey-03;
+  }
+   &.active-option {
     cursor: pointer;
     border-top: 4px solid $c-blue;
     border-right: 1px solid $c-blue;
@@ -301,6 +308,12 @@ h2 {
 .icon-drupal img {
   width: 38px;
   height: 43px;
+}
+.drupal {
+  background: url('../gfx/drupal-icon.png')no-repeat;
+  height: 44px;
+  width: 44px;
+  margin-bottom: 16px;
 }
 
 .sidebar {
@@ -515,6 +528,12 @@ footer {
 
   div {
     display: inline-block;
+  }
+  a {
+    color:transparent;
+    &:hover {
+      color: transparent;
+    }
   }
 }
 
