@@ -231,6 +231,9 @@ h2 {
 
 
 .payments {
+  .columns {
+    display: inline-block;
+  }
   .box__item {
     width: 220px;
     display: inline-block;
