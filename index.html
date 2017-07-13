@@ -113,7 +113,7 @@
           <div class="email__form">
             <div class="field">
               <p class="control">
-                <input class="input" type="text" placeholder="Email Address*">
+                <input v-model="emailAddress" class="input" type="text" placeholder="Email Address*">
               </p>
             </div>
           </div>
@@ -129,7 +129,7 @@
           icon-class=""
       >
 
-        <a class="download__link" href="#">
+        <a class="download__link" :href="downloadURL">
             <div class="btn_download">
               download
             </div>

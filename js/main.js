@@ -164,7 +164,6 @@ Vue.component('cards', {
   methods: {
     emit: function(index, section) {
       var sectionTitle = sections[section].title;
-
       var clicked = this.activeIndex.indexOf(index);
       var activeOptions = [];
 
@@ -215,10 +214,38 @@ Vue.component('cart-summary', {
   `,
   props: ['summary'],
   methods: {
+    // @TODO move this to methods in the Vue instance?
     generatePackage: function () {
-      $.get("https://install-service.drupalcommerce.com/", function(data, status){
-        alert("Data: " + data + "\nStatus: " + status);
-      });
+      // @TODO validate stuff?
+
+      // @TODO is there a better way to validate the email address field.
+      var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
+
+      if (!pattern.test(app.emailAddress)) {
+        alert("Enter a valid email address to continue");
+        return false;
+      }
+
+      // @TODO set proper url. 
+      var url = 'http://localhost:8888/web';
+
+      console.log(app.summary);
+      var projects = [];
+
+      for(i in app.summary.payments.activeOptions) {
+        if(app.summary.payments.activeOptions[i].composer_package !== undefined) {
+          projects.push(app.summary.payments.activeOptions[i].composer_package);
+        }
+      }
+
+      $.get(url, { projects: projects })
+        .done(function (data) {
+          console.log(data);
+          app.downloadURL = url + '/' + data;
+        })
+        .fail(function(data) {
+          alert("Something went wrong");
+        });
     }
   }
 });
@@ -226,11 +253,12 @@ Vue.component('cart-summary', {
 var app = new Vue({
   el: '#app',
   data: {
-    summary: {
-      locations: '',
-      packages: '',
-      payments: '',
-      contents: '',
-    }
+    summary: {},
+    downloadURL: '',
+    projects: [],
+    emailAddress: ''
   },
+  methods: {
+
+  }
 });
