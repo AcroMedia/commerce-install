@@ -167,13 +167,12 @@ Vue.component('cards', {
       var clicked = this.activeIndex.indexOf(index);
       var activeOptions = [];
 
-      if(!sections[section].multiselect) {
-        this.activeIndex = [];
-        this.activeIndex.push(index);
+      if(clicked > -1) {
+        this.activeIndex.splice(clicked, 1);
       }
       else {
-        if(clicked > -1) {
-          this.activeIndex.splice(clicked, 1);
+        if(!sections[section].multiselect) {
+          this.activeIndex = [index];
         }
         else {
           this.activeIndex.push(index);
