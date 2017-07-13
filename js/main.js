@@ -115,11 +115,11 @@ Vue.component('kickstart-section', {
   },
   template: `
   <div :class="section" class="product__build">
-    <a class="arrow_up" href="#"></a>
+    <a class="arrow_up" v-if="section!='build'" href="#"></a>
     <div class="top__info">
       <div class="box__content">
         <h2>
-          <i v-if="iconClass" class="material-icons section-icons">{{ iconClass }}</i>
+          <i v-if="iconClass" :class="iconClass" class="material-icons section-icons">{{ iconClass }}</i>
           <i v-else class="material-icons section-icons">dashboard</i>
           {{ title }}
         </h2>
@@ -143,24 +143,25 @@ Vue.component('cards', {
       activeIndex: null
     };
   },
-  template: `<div class="columns">
-    <div
-        v-for="(option, index) in options"
-        @click="emit(index, section)"
-        :class="[activeIndex === index ? 'active-option': '']"
-        class="box__item column">
-      <div
-          v-if="option.image_src"
-          class="pay__logo"
-      >
-        <img :src="option.image_src" :alt="option.title">
+  template: `
+      <div class="columns">
+          <div
+              v-for="(option, index) in options"
+              @click="emit(index, section)"
+              :class="[activeIndex === index ? 'active-option': '']"
+              class="box__item column">
+            <div
+                v-if="option.image_src"
+                class="pay__logo"
+            >
+              <img :src="option.image_src" :alt="option.title">
+            </div>
+            <h3>{{ option.title }}</h3>
+            <div class="box__description">
+              {{ option.description }}
+            </div>
+          </div>
       </div>
-      <h3>{{ option.title }}</h3>
-      <div class="box__description">
-        {{ option.description }}
-      </div>
-    </div>
-  </div>
   `,
   methods: {
     emit: function(index, section) {
