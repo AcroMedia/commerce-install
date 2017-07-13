@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css">
 <link rel="stylesheet" href="/css/style.css">
 <script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue-resource@1.3.4"></script>
 </head>
 <body>
 <header>
@@ -129,7 +130,7 @@
           icon-class=""
       >
 
-        <a class="download__link" href="#">
+        <a id=:download" class="download__link" v-bind:href="download">
             <div class="btn_download">
               download
             </div>
@@ -206,10 +207,10 @@
     </div>
    <div class="contact__section">
      <div class="site-url__block">
-       drupalcommerce.com
+       acromedia.com
      </div>
      <div class="email__block">
-      solution@drupalcommerce.com
+      solution@acromediainc.com
      </div>
    </div>
   <div class="footer__copyright">

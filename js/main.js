@@ -196,11 +196,18 @@ Vue.component('cart-summary', {
   props: ['summary'],
   methods: {
     generatePackage: function () {
-      console.log('only a test');
-      console.log(app.summary);
-      for (var property in app.summary) {
-        console.log(property);
-      }
+      let packages = [];
+      packages.push(app.summary.payments.item.composer_package);
+      let parameters = jQuery.param({packages});
+      console.log(packages);
+      console.log(parameters);
+      // GET /someUrl
+      this.$http.get('https://install-service.drupalcommerce.com?' + parameters).then(response => {
+        app.download = response.body;
+        //jQuery.scrollTop('#download');
+      }, response => {
+          // error callback
+      })
     }
   }
 });
@@ -212,7 +219,15 @@ var app = new Vue({
       locations: '',
       packages: '',
       payments: '',
-      contents: '',
-    }
-  },
+      contents: ''
+    },
+    download: ''
+  }
+});
+
+var download = new Vue('download', {
+  el: '#download',
+  model: {
+    download: app.download
+  }
 });
