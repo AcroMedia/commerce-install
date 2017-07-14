@@ -118,8 +118,9 @@ Vue.component('kickstart-section', {
     <div class="top__info">
       <div class="box__content">
         <h2>
-          <i v-if="iconClass" :class="iconClass" class="material-icons section-icons">{{ iconClass }}</i>
-          <i v-else class="material-icons section-icons">dashboard</i>
+          <i v-if="iconClass != 'custom'" :class="iconClass" 
+          class="material-icons section-icons">{{ iconClass }}</i>
+          <div v-else :class="section" class="section-icons section-icons__custom" />
           {{ title }}
         </h2>
         <p>

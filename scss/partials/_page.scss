@@ -219,7 +219,7 @@ h2 {
     border-bottom: 1px solid $grey-03;
     border-left: 1px solid $grey-03;
   }
-   &.active-option {
+  &.active-option {
     cursor: pointer;
     border-top: 4px solid $c-blue;
     border-right: 1px solid $c-blue;
@@ -235,7 +235,6 @@ h2 {
     padding: 5px;
   }
 }
-
 
 .payments {
   .columns {
@@ -273,7 +272,7 @@ h2 {
   }
 }
 
-.build {
+.product__build.build {
   .product__content {
     padding-top: 40px;
   }
@@ -291,29 +290,36 @@ h2 {
   }
 }
 
-.material-icons.section-icons {
-  color: $light-blue;
-  position: relative;
-  top: 7px;
-  left: -7px;
-  font-size: 35px;
-  font-family: 'Material Icons';
-}
-
 .section-icons {
   width: 36px;
   height: 32px;
-}
+  display: inline-block;
+  &.material-icons {
+    color: $light-blue;
+    position: relative;
+    top: 7px;
+    left: -3px;
+    font-size: 35px;
+    font-family: 'Material Icons';
+  }
+  // Custom Icons
+  &.build {
+    background-image: url('../gfx/drupal-icon.png');
+    width: 37px;
+    height: 42px;
+    margin-right: 4px;
+    top: 4px;
+  }
+  &.packages,
+  &.contents {
+    background-image: url('../gfx/package-icon.png');
+    margin-right: 4px;
+  }
 
-.icon-drupal img {
-  width: 38px;
-  height: 43px;
-}
-.drupal {
-  background: url('../gfx/drupal-icon.png')no-repeat;
-  height: 44px;
-  width: 44px;
-  margin-bottom: 16px;
+  &__custom {
+    position: relative;
+    background-size: contain;
+  }
 }
 
 .sidebar {
@@ -391,6 +397,7 @@ h2 {
     }
   }
 }
+
 // Summary Order
 .sidebar__summary {
   margin-top: 50px;
@@ -456,7 +463,6 @@ h2 {
     width: 100%;
   }
 }
-
 
 .btn_download {
   width: 230px;
@@ -530,7 +536,7 @@ footer {
     display: inline-block;
   }
   a {
-    color:transparent;
+    color: transparent;
     &:hover {
       color: transparent;
     }
