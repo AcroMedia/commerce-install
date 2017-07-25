@@ -41,6 +41,27 @@ var sections = {
       }
     ],
   },
+  base: {
+    title: "Base",
+    options: [
+      {
+        title: 'Drupal',
+        description: 'Do we need a description with these things?'
+      },
+      {
+        title: 'Lightning',
+        description: 'Do we need a description with these things?'
+      },
+      {
+        title: 'Thunder',
+        description: 'Do we need a description with these things?'
+      },
+      {
+        title: 'Open Social',
+        description: ''
+      }
+    ],
+  },
   payments: {
     title: "Payments",
     options: [
@@ -247,6 +268,7 @@ var app = new Vue({
     summary: {
       locations: '',
       packages: '',
+      base: '',
       payments: '',
       contents: ''
     },

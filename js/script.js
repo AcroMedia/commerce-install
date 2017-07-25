@@ -16,7 +16,10 @@ $(document).ready(function ($) {
         }
       });
   });
-
+  
+  // Set a default value
+  $('.product__build.base .box__item:first').trigger('click');
+  
   // sticky sidebar
   var top = $('.sidebar').offset().top;
   $(window).scroll(function (event) {
