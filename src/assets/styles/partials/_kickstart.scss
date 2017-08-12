@@ -1,0 +1,32 @@
+.kickstart {
+  &__main {
+    padding: 0 14px;
+    @media(max-width: 864px) and (min-width: 769px) {
+      width: 100%;
+      display: inline-block;
+    }
+  }
+
+  &__wrapper {
+    &.columns {
+      @media(max-width: 864px) and (min-width: 769px) {
+        display: inline-block;
+      }
+      @include bp(mobil) {
+        margin: 0;
+      }
+    }
+  }
+
+  &__description {
+    margin-top: 60px;
+    margin-bottom: 50px;
+
+    p {
+      font-size: 16px;
+      font-weight: normal;
+      font-family: $roboto;
+      color: $dark-grey;
+    }
+  }
+}

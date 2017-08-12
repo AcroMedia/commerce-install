@@ -1,0 +1,63 @@
+header {
+  background: $c-black url('../assets/gfx/header-bg.png') repeat-y;
+  padding: 20px 0;
+}
+
+.site-header__logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 35px;
+  @include bp(mobil) {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.site-header__slogan {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 24px;
+  color: #ccc;
+  font-weight: 300;
+  @include bp(mobil) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.site-header__right {
+  float: right;
+  color: $c-blue;
+  font-size: 22px;
+  margin-top: 20px;
+  @include bp(mobil) {
+    width: 100%;
+    float: inherit;
+    font-size: 18px;
+    text-align: center;
+  }
+  @media(max-width: 860px) and (min-width: 769px) {
+    float: inherit;
+    text-align: center;
+  }
+
+  span {
+    font-size: 30px;
+    a:hover {
+      color: $dark-blue;
+    }
+    @include bp(mobil) {
+      font-size: 18px;
+    }
+    @media(max-width: 860px) and (min-width: 769px) {
+      font-size: 20px;
+    }
+    color: $dark-grey;
+
+    a {
+      color: $dark-grey;
+      text-decoration: none;
+    }
+  }
+}

@@ -7,15 +7,15 @@ stages:
 
 #code_standards:
   #stage: test
-  
+
 build:
   stage: build
   artifacts:
-    paths: 
+    paths:
       - css/
   script:
     - npm install
-    - gulp sass
+    - npm run build
 
 deploy-production:
   stage: deploy
