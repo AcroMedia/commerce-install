@@ -85,7 +85,7 @@ const sections = {
       {
         title: 'Paypal',
         description: 'Do we need a description with these things?',
-        image_src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png',
+        image_src: '/static/gfx/paylogos/paypal.png',
         sponsored: true,
         composer_package: 'drupal/commerce_paypal',
         location: 'all',
@@ -93,7 +93,7 @@ const sections = {
       {
         title: 'BrainTree',
         description: 'Do we need a description with these things?',
-        image_src: '/static/braintree.png',
+        image_src: '/static/gfx/paylogos/braintree.png',
         sponsored: true,
         composer_package: 'drupal/commerce_braintree',
         location: 'all',
@@ -101,7 +101,7 @@ const sections = {
       {
         title: 'Apple Pay',
         description: 'Do we need a description with these things',
-        image_src: '../assets/gfx/paylogos/apple-pay.png',
+        image_src: '/static/gfx/paylogos/apple-pay.png',
         sponsored: true,
         composer_package: 'drupal/commerce_applepay',
         location: 'na',
@@ -109,7 +109,7 @@ const sections = {
       {
         title: 'Auth.net',
         description: 'Do we need a description with these things?',
-        image_src: '../assets/gfx/paylogos/authorize.png',
+        image_src: '/static/gfx/paylogos/authorize.png',
         location: 'all',
       },
       {
