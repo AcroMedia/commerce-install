@@ -9,14 +9,15 @@
         ]"
         :class="[
         cardIsActive(index,section) ? 'active-option': '',
-        !cardAvailableForLocation(index, section) ? 'disabled' : 'jacer'
+        !cardAvailableForLocation(index, section) ? 'disabled' : ''
         ]"
         class="box__item column noselect">
       <div
           v-if="option.image_src"
           class="pay__logo"
       >
-        <img :src="option.image_src" :alt="option.title">
+        <img :src="option.image_src + ''" :alt="option.title">
+        <!--<img src="../assets/gfx/paylogos/paypal.png" :alt="option.title">-->
       </div>
       <h3>{{ option.title }}</h3>
       <div class="box__description">
@@ -27,7 +28,7 @@
 </template>
 
 <script>
-  import { mapState, mapMutations } from 'vuex'
+  import {mapState, mapMutations} from 'vuex'
 
   export default {
     name: 'cards',
