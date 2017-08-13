@@ -56,23 +56,9 @@
 
   let $ = window.jQuery = require('jquery')
 
-  // Maybe try to do this in a more vue like fashion
-  // sticky sidebar
   $(function () {
-    $('.arrow_up').on('click', function (e) {
-      $(this).toggleClass('down').siblings().removeClass('down')
-
-      $(this).parent().toggleClass('show').siblings().removeClass('show')
-      e.preventDefault()
-      $('.product__build').each(function () {
-        if ($(this).hasClass('show')) {
-          $(this).closest('.product__build').children('.product__content').toggleClass('off', 800).siblings().removeClass('off')
-        } else {
-          $(this).closest('.product__build').children('.product__content').removeClass('off')
-        }
-      })
-    })
-
+    // Maybe try to do this in a more vue like fashion
+    // sticky sidebar
     let top = $('.sidebar').offset().top
     $(window).scroll(function (event) {
       let y = $(this).scrollTop()

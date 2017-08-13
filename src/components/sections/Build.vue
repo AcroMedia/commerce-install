@@ -40,6 +40,7 @@
   @import '../../assets/styles/partials/mixins';
   @import '../../assets/styles/partials/variables';
   @import '../../assets/styles/partials/sections';
+  @import '../../assets/styles/partials/card-transitions';
 
   .product {
     &__build {

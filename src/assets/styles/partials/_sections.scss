@@ -7,6 +7,7 @@ h2 {
 .arrow_up {
   width: 28px;
   position: relative;
+  z-index: 2;
   display: block;
   top: 10px;
   float: right;
@@ -97,6 +98,8 @@ h2 {
 .top {
   &__info {
     background: $light-grey;
+    position: relative;
+    z-index: 1;
   }
 }
 

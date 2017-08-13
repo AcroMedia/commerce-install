@@ -1,0 +1,33 @@
+.cards-slide-enter {
+}
+
+.cards-slide-enter-active {
+  animation: slide-in .5s ease-out forwards;
+}
+
+.cards-slide-leave {
+}
+
+.cards-slide-leave-active {
+  animation: slide-out .5s ease-out forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-1175px);
+  }
+  to {
+    transform: translateX(0);
+  }
+
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-1175px);
+  }
+
+}

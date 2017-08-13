@@ -1,6 +1,6 @@
 <template>
   <div class="locations product__build">
-    <a class="arrow_up" href="#"></a>
+    <a class="arrow_up" @click="show = !show" :class="show ? '' : 'down'"></a>
     <div class="top__info">
       <div class="box__content">
         <h2>
@@ -12,9 +12,11 @@
         </p>
       </div>
     </div>
-    <div class="product__content">
-      <cards section="locations"></cards>
-    </div>
+    <transition name="cards-slide">
+      <div class="product__content" v-if="show">
+        <cards section="locations"></cards>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -23,6 +25,11 @@
 
   export default {
     name: 'locations',
+    data () {
+      return {
+        show: true
+      }
+    },
     components: {
       Cards
     }
@@ -34,5 +41,6 @@
   @import '../../assets/styles/partials/mixins';
   @import '../../assets/styles/partials/variables';
   @import '../../assets/styles/partials/sections';
+  @import '../../assets/styles/partials/card-transitions';
 </style>
 
