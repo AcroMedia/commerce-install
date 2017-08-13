@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="product__content">
-      <a id="download" class="download__link" :href="download">
+      <a id="download" class="download__link" href="getDownloadLink">
         <div class="btn_download">
           download
         </div>
@@ -22,17 +22,17 @@
 </template>
 
 <script>
+  import { mapState, mapGetters } from 'vuex'
   import Cards from '@/components/Cards'
 
   export default {
     name: 'build',
-    data () {
-      return {
-        download: ''
-      }
-    },
     components: {
+      ...mapState(['downloadLink']),
       Cards
+    },
+    methods: {
+      ...mapGetters(['getDownloadLink'])
     }
   }
 </script>

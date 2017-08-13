@@ -1,3 +1,5 @@
+var locations = require('./locations')
+
 const sections = {
   locations: {
     title: 'Locations',
@@ -6,23 +8,23 @@ const sections = {
       {
         title: 'International',
         description: 'Do we need a description with these things?',
-        location: 'all',
+        location: locations.LOCATION_INTL,
         default: true,
       },
       {
         title: 'USA',
         description: 'Do we need a description with these things?',
-        location: 'us',
+        location: locations.LOCATION_US,
       },
       {
         title: 'North America',
         description: 'Do we need a description with these things?',
-        location: 'na',
+        location: locations.LOCATION_NA,
       },
       {
         title: 'EU',
         description: 'Do we need a description with these things?',
-        location: 'eu',
+        location: locations.LOCATION_EU,
       },
     ]
   },
@@ -33,22 +35,26 @@ const sections = {
         title: 'Base',
         description: 'Do we need a description with these things?',
         location: 'all',
+        composer_package: 'drupal/base',
         default: true,
       },
       {
         title: 'Catalog',
         description: 'Do we need a description with these things?',
-        location: 'eu',
+        composer_package: 'drupal/catalog',
+        location: locations.LOCATION_EU,
       },
       {
         title: 'Events',
         description: 'Do we need a description with these things?',
-        location: 'us',
+        composer_package: 'drupal/events',
+        location: locations.LOCATION_US,
       },
       {
         title: 'Subscriptions',
         description: '',
-        location: 'na',
+        composer_package: 'drupal/subs',
+        location: locations.LOCATION_NA,
       }
     ]
   },
@@ -60,22 +66,26 @@ const sections = {
         title: 'Drupal',
         description: 'Do we need a description with these things?',
         location: 'all',
+        composer_package: 'drupal/base',
         default: true,
       },
       {
         title: 'Lightning',
         description: 'Do we need a description with these things?',
         location: 'all',
+        composer_package: 'drupal/lightning',
       },
       {
         title: 'Thunder',
         description: 'Do we need a description with these things?',
         location: 'all',
+        composer_package: 'drupal/thunder',
       },
       {
         title: 'Open Social',
+        description: '',
         location: 'all',
-        description: ''
+        composer_package: 'drupal/open-social',
       }
     ]
   },
@@ -104,7 +114,7 @@ const sections = {
         image_src: '/static/gfx/paylogos/apple-pay.png',
         sponsored: true,
         composer_package: 'drupal/commerce_applepay',
-        location: 'na',
+        location: locations.LOCATION_NA,
       },
       {
         title: 'Auth.net',
@@ -115,12 +125,12 @@ const sections = {
       {
         title: 'Moneris',
         description: 'Do we need a description with these things',
-        location: 'na',
+        location: locations.LOCATION_NA,
       },
       {
         title: 'Pay With Chickens',
         description: 'Do we need a description with these things',
-        location: 'us',
+        location: locations.LOCATION_US,
       }
     ],
     multiselect: true

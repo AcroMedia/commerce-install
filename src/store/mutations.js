@@ -1,4 +1,7 @@
 export default {
+  setDownloadLink (state, payload) {
+    state.downloadLink = payload
+  },
   setStoreLocation (state, payload) {
     state.location = payload
   },

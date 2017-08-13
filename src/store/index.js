@@ -11,7 +11,7 @@ export default {
     summary,
     location: 'all',
     emailAddress: '',
-    download: ''
+    downloadLink: ''
   },
   actions,
   mutations,

@@ -15,9 +15,9 @@
       </div>
     </div>
     <div
-      id="generate-package"
-      class="btn__secondary"
-      @click="generatePackage"
+        id="generate-package"
+        class="btn__secondary"
+        @click="generatePackage"
     >
       Generate package
     </div>
@@ -25,9 +25,7 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
-
-  //  let $ = window.jQuery = require('jquery')
+  import { mapState, mapMutations } from 'vuex'
 
   export default {
     name: 'summary',
@@ -35,32 +33,40 @@
       ...mapState(['sections', 'summary']),
     },
     methods: {
-      generatePackage: function () {
+      ...mapMutations(['setDownloadLink']),
+      createParams (packages) {
+        return 'packages%5B%5D=drupal%2Fcommerce_applepay'
+      },
+      generatePackage () {
         // @TODO validate email address?
         // if(!app.emailAddress) // do something
         let packages = []
-        for (let i in this.summary.payments.activeOptions) {
-          if (this.summary.payments.activeOptions[i].composer_package) {
-            packages.push(this.summary.payments.activeOptions[i].composer_package)
+        let vSections = this.sections
+        for (let section in this.summary) {
+          if (section !== 'locations') {
+            this.summary[section].activeIndex.forEach(function (index) {
+              console.log(index)
+              packages.push(vSections[section].options[index].composer_package)
+            })
           }
         }
 
-//        let container = this.$el.querySelector("#container");
-//        container.scrollTop = container.scrollHeight;
-//        console.log(container)
+        console.log(packages)
+        // todo fix this scroll to
+//        let container = this.$el.querySelector('#generate-package')
 //        container.scrollTop = container.scrollHeight
-//        alert(container.scrollHeight)
-//        let parameters = $.param({packages})
-//        console.log(parameters)
-//        // GET /someUrl
-//        this.$http.get('https://install-service.drupalcommerce.com?packages%5B%5D=drupal%2Fcommerce_applepay').then(response => {
+        let parameters = this.createParams(packages)
+
+        // Get package download link.
+        this.$http.get('https://install-service.drupalcommerce.com?' + parameters).then(response => {
+          this.setDownloadLink(response.body)
 //          alert(response.body)
 //          let container = this.$el.querySelector('#download')
 //          container.scrollTop = container.scrollHeight
-//        }, response => {
-//          // error callback
-//          console.log(response)
-//        })
+        }, response => {
+          // error callback
+          console.log(response)
+        })
       }
     }
   }
