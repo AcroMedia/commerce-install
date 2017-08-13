@@ -17,7 +17,6 @@
           class="pay__logo"
       >
         <img :src="option.image_src + ''" :alt="option.title">
-        <!--<img src="../assets/gfx/paylogos/paypal.png" :alt="option.title">-->
       </div>
       <h3>{{ option.title }}</h3>
       <div class="box__description">
