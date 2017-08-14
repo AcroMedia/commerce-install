@@ -22,7 +22,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 ## JSON Schemas
 - Sections: 
-```json
+```
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "A representation of a section in Commerce Kickstart.",
