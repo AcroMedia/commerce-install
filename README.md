@@ -4,7 +4,7 @@
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
@@ -20,9 +20,15 @@ npm run build --report
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-## JSON Schemas
-- Sections: 
-```
+## Adding Sections
+1. Go to `/src/store/sections.js`.
+2. Follow the schema guide below or take a look at an active section.
+3. Create a `.vue` file in `/src/components/sections` (e.g. Example.vue).
+4. This is a [Single File Component](https://vuejs.org/v2/guide/single-file-components.html). Add your `<template>` tag, and if your section has options/cards to select, add the `<cards>` tag to have them included.
+5. Go to `/src/components/Kickstart.vue` and import and add the `<example>`
+
+#####JSON Schema:
+```json
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "A representation of a section in Commerce Kickstart.",
@@ -35,7 +41,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
     },
     "description": {
       "type": "string",
-      "description": "The descriptions of the section."
+      "description": "The description/sub-heading of the section."
     },
     "required": {
       "type": "boolean",
