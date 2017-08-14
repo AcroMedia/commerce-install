@@ -14,13 +14,15 @@
         </div>
       </div>
     </div>
-    <div
+    <a
         id="generate-package"
         class="btn__secondary"
+        href="#"
+        v-scroll-to="'#scroll-to-offset'"
         @click="generatePackage"
     >
       Generate package
-    </div>
+    </a>
   </div>
 </template>
 
@@ -51,18 +53,11 @@
           }
         }
 
-        console.log(packages)
-        // todo fix this scroll to
-//        let container = this.$el.querySelector('#generate-package')
-//        container.scrollTop = container.scrollHeight
         let parameters = this.createParams(packages)
 
         // Get package download link.
         this.$http.get('https://install-service.drupalcommerce.com?' + parameters).then(response => {
           this.setDownloadLink(response.body)
-//          alert(response.body)
-//          let container = this.$el.querySelector('#download')
-//          container.scrollTop = container.scrollHeight
         }, response => {
           // error callback
           console.log(response)
@@ -79,6 +74,7 @@
 
   #generate-package {
     &:hover {
+      text-decoration: none;
       cursor: pointer;
       background: $orange;
       color: $c-white;

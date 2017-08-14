@@ -1,5 +1,6 @@
 <template>
   <div class="build product__build">
+    <div id="scroll-to-offset"></div>
     <div class="top__info">
       <div class="box__content">
         <h2>
@@ -12,7 +13,9 @@
       </div>
     </div>
     <div class="product__content">
-      <a id="download" class="download__link" :href="downloadLink">
+      <a id="download" class="download__link" :href="downloadLink"
+         v-smoothscroll="{ duration : 500 }"
+         @click.prevent="generatePackage">
         <div class="btn_download">
           download
         </div>
@@ -22,17 +25,17 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+  import {mapState} from 'vuex'
   import Cards from '@/components/Cards'
 
   export default {
     name: 'build',
     components: {
-      Cards
+      Cards,
     },
     computed: {
       ...mapState(['downloadLink']),
-    }
+    },
   }
 </script>
 
@@ -111,5 +114,10 @@
     &:hover {
       text-decoration: none;
     }
+  }
+
+  #scroll-to-offset {
+    position: relative;
+    top: -35px;
   }
 </style>

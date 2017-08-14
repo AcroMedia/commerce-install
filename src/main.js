@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import VueResource from 'vue-resource'
+import VueScrollTo from 'vue-scrollto'
 
 import kickstartInfo from '@/store/index'
 import App from './App'
@@ -13,6 +14,16 @@ import '@/assets/styles/style.scss'
 
 Vue.use(Vuex)
 Vue.use(VueResource)
+Vue.use(VueScrollTo, {
+  container: 'body',
+  duration: 800,
+  easing: 'ease-out',
+  offset: 0,
+  cancelable: true,
+  onDone: false,
+  onCancel: false,
+})
+
 Vue.config.productionTip = false
 
 const store = new Vuex.Store(kickstartInfo)
