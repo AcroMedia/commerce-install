@@ -1,15 +1,13 @@
 <template>
-  <div class="content product__build">
+  <div class="drupal-content product__build">
     <a class="arrow_up" @click="show = !show" :class="show ? 'down' : ''"></a>
     <div class="top__info">
       <div class="box__content">
         <h2>
           <div class="section-icons__custom section-icons content"></div>
-          Content
+          {{ sections[section].title }}
         </h2>
-        <p>
-          Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future.
-        </p>
+        <p>{{ sections[section].description }}</p>
       </div>
     </div>
     <transition name="cards-slide">
@@ -21,14 +19,19 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   import Cards from '@/components/Cards'
 
   export default {
     name: 'content',
+    props: ['section'],
     data () {
       return {
         show: true
       }
+    },
+    computed: {
+      ...mapState(['sections']),
     },
     components: {
       Cards

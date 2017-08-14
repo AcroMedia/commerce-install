@@ -14,13 +14,13 @@
           </p>
         </div>
 
-        <locations></locations>
-        <drupal-base></drupal-base>
-        <packages></packages>
-        <payments></payments>
-        <drupal-content></drupal-content>
-        <security></security>
-        <build></build>
+        <locations section="locations"></locations>
+        <drupal-base section="drupalBase"></drupal-base>
+        <packages section="packages"></packages>
+        <payments section="payments"></payments>
+        <drupal-content section="content"></drupal-content>
+        <security section="security"></security>
+        <build section="build"></build>
 
       </div>
       <div class="column is-3 ">

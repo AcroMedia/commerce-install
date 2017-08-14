@@ -5,11 +5,9 @@
       <div class="box__content">
         <h2>
           <i class="material-icons section-icons credit_card">credit_card</i>
-          Payments
+          {{ sections[section].title }}
         </h2>
-        <p>
-          Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future.
-        </p>
+        <p>{{ sections[section].description }}</p>
       </div>
     </div>
     <transition name="cards-slide">
@@ -21,10 +19,12 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   import Cards from '@/components/Cards'
 
   export default {
     name: 'payments',
+    props: ['section'],
     data () {
       return {
         show: true
@@ -32,7 +32,10 @@
     },
     components: {
       Cards
-    }
+    },
+    computed: {
+      ...mapState(['sections']),
+    },
   }
 </script>
 

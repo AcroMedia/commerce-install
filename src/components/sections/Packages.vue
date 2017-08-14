@@ -1,32 +1,30 @@
 <template>
-  <div class="packages">
-    <div class="product__build">
-      <a class="arrow_up" @click="show = !show" :class="show ? '' : 'down'"></a>
-      <div class="top__info">
-        <div class="box__content">
-          <h2>
-            <div class="section-icons__custom section-icons packages"></div>
-            Packages
-          </h2>
-          <p>
-            Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future.
-          </p>
-        </div>
+  <div class="packages product__build">
+    <a class="arrow_up" @click="show = !show" :class="show ? '' : 'down'"></a>
+    <div class="top__info">
+      <div class="box__content">
+        <h2>
+          <div class="section-icons__custom section-icons packages"></div>
+          {{ sections[section].title }}
+        </h2>
+        <p>{{ sections[section].description }}</p>
       </div>
-      <transition name="cards-slide">
-        <div class="product__content" v-if="show">
-          <cards section="packages"></cards>
-        </div>
-      </transition>
     </div>
+    <transition name="cards-slide">
+      <div class="product__content" v-if="show">
+        <cards section="packages"></cards>
+      </div>
+    </transition>
   </div>
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   import Cards from '@/components/Cards'
 
   export default {
     name: 'packages',
+    props: ['section'],
     data () {
       return {
         show: true
@@ -34,7 +32,10 @@
     },
     components: {
       Cards
-    }
+    },
+    computed: {
+      ...mapState(['sections']),
+    },
   }
 </script>
 

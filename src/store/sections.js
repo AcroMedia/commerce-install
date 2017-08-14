@@ -1,73 +1,9 @@
-/**
- * Static content for each section.
- *
- * {
- *   "$schema" : "http://json-schema.org/draft-04/schema#",
- *   "description" : "A representation of a section in Commerce Kickstart.",
- *   "type" : "object",
- *   "required" : ["title"],
- *   "properties" :  {
- *     "title" : {
- *       "type": "string",
- *       "description" : "The title to display on the section."
- *     },
- *     "description" : {
- *       "type": "string",
- *       "description" : "The descriptions of the section."
- *     },
- *     "required" : {
- *       "type": "boolean",
- *       "description" : "Determines if a card from this section must be selected."
- *     },
- *     "options" : {
- *       "type": "object",
- *       "description" : "The options/cards made available to be selected by the user."
- *       "required" : ["title", "description", "location"],
- *       "properties" : {
- *         "title" : {
- *           "type": "string",
- *           "description" : "The title to display on the section."
- *         },
- *         "description" : {
- *           "type": "string",
- *           "description" : "The descriptions of the section. Empty string allowed."
- *         },
- *         "location" : {
- *           "type": "string",
- *           "description" : "The location for which this card is available."
- *         },
- *         "default" : {
- *           "type" : "boolean",
- *           "description" : "If set, this card will be selected by default. The default card MUST be the first option for the section."
- *         },
- *         "composer_package" : {
- *           "type" : "string",
- *           "description" : "The composer package to be added to the download."
- *         },
- *         "sponsored" : {
- *           "type" : "boolean",
- *           "description" : "Flag a sponsored card."
- *         },
- *         "img_src" : {
- *           "type" : "string",
- *           "description" : "The path to the image file to be displayed on the card. Must be in the static folder to be properly rendered."
- *         },
- *         "multiselect" : {
- *           "type" : "boolean",
- *           "description" : "Determines if the section can have multiple selections."
- *         },
- *       },
- *     },
- *   },
- * }
- *
- */
-
 let locations = require('./locations')
 
 const sections = {
   locations: {
     title: 'Locations',
+    description: 'Explain stuffs good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future.',
     required: true,
     options: [
       {
@@ -95,6 +31,7 @@ const sections = {
   },
   packages: {
     title: 'Packages',
+    description: 'Explain stuffs good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future.',
     options: [
       {
         title: 'Base',
@@ -125,6 +62,7 @@ const sections = {
   },
   drupalBase: {
     title: 'Base',
+    description: 'Explain stuffs good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future.',
     required: true,
     options: [
       {
@@ -156,6 +94,7 @@ const sections = {
   },
   payments: {
     title: 'Payments',
+    description: 'Explain stuffs good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future.',
     options: [
       {
         title: 'Paypal',
@@ -202,6 +141,7 @@ const sections = {
   },
   content: {
     title: 'Content',
+    description: 'Explain stuffs good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future.',
     options: [
       {
         title: 'Migrate',
@@ -219,9 +159,11 @@ const sections = {
   },
   security: {
     title: 'Updates & Security',
+    description: 'Explain stuffs good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future.',
   },
   build: {
     title: 'Build & Install',
+    description: 'Explain stuffs good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future.',
   },
 }
 

@@ -5,11 +5,9 @@
       <div class="box__content">
         <h2>
           <span class="section-icons__custom section-icons build"></span>
-          Build & Install
+          {{ sections[section].title }}
         </h2>
-        <p>
-          Explain stuff good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future.
-        </p>
+        <p>{{ sections[section].description }}</p>
       </div>
     </div>
     <div class="product__content">
@@ -25,16 +23,17 @@
 </template>
 
 <script>
-  import {mapState} from 'vuex'
+  import { mapState } from 'vuex'
   import Cards from '@/components/Cards'
 
   export default {
     name: 'build',
+    props: ['section'],
     components: {
       Cards,
     },
     computed: {
-      ...mapState(['downloadLink']),
+      ...mapState(['sections', 'downloadLink']),
     },
   }
 </script>
