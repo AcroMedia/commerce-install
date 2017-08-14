@@ -27,7 +27,7 @@
 </template>
 
 <script>
-  import {mapState, mapMutations} from 'vuex'
+  import { mapState, mapMutations } from 'vuex'
 
   export default {
     name: 'cards',
@@ -69,7 +69,16 @@
           if (!this.sections[section].required || this.summary[section].activeIndex.length > 1) {
             this.removeSelectedOption({section, clicked})
           } else {
-            alert('show message saying that its required')
+            let sectionTitle = this.sections[section].title
+            this.$notify({
+              group: 'required',
+              type: 'warning',
+              position: 'top center',
+              title: 'Required Section',
+              text: 'You must choose at least one option from the <b>' + sectionTitle + '</b> section.',
+              duration: 4500,
+              speed: 250
+            })
           }
         } else {
           if (!this.sections[section].multiselect) {

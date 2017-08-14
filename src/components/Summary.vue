@@ -47,7 +47,6 @@
         for (let section in this.summary) {
           if (section !== 'locations') {
             this.summary[section].activeIndex.forEach(function (index) {
-              console.log(index)
               packages.push(vSections[section].options[index].composer_package)
             })
           }

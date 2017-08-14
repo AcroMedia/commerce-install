@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import VueResource from 'vue-resource'
+import Notifications from 'vue-notification'
 import VueScrollTo from 'vue-scrollto'
 
 import kickstartInfo from '@/store/index'
@@ -14,6 +15,7 @@ import '@/assets/styles/style.scss'
 
 Vue.use(Vuex)
 Vue.use(VueResource)
+Vue.use(Notifications)
 Vue.use(VueScrollTo, {
   container: 'body',
   duration: 800,

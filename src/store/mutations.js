@@ -6,9 +6,7 @@ export default {
     state.location = payload
   },
   resetSummaryOptions (state) {
-    for (var section in state.summary) {
-      console.log(state.sections[section].required)
-      console.log(section)
+    for (let section in state.summary) {
       if (state.sections[section].required) {
         if (section !== 'locations') {
           let title = state.sections[section].options[0].title
