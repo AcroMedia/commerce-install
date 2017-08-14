@@ -46,15 +46,3 @@ a {
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
-
-.kickstart-notification {
-  background-color: $c-blue;
-  color: $c-white;
-  text-align: center;
-  margin-top: 20px;
-  margin-right: 20px;
-
-  .notification-title {
-    text-decoration: underline;
-  }
-}

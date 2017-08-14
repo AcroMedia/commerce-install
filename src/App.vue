@@ -19,3 +19,21 @@
     },
   }
 </script>
+
+<style lang="scss">
+  @import 'assets/styles/partials/mixins';
+  @import 'assets/styles/partials/variables';
+  @import 'assets/styles/partials/kickstart';
+
+  .kickstart-notification {
+    background-color: $c-blue;
+    color: $c-white;
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 20px;
+
+    .notification-title {
+      text-decoration: underline;
+    }
+  }
+</style>
