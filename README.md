@@ -27,7 +27,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 4. This is a [Single File Component](https://vuejs.org/v2/guide/single-file-components.html). Add your `<template>` tag, and if your section has options/cards to select, add the `<cards>` tag to have them included.
 5. Go to `/src/components/Kickstart.vue` and import and add the `<example>`
 
-#####JSON Schema:
+##### JSON Schema:
 ```json
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
