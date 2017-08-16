@@ -1,5 +1,6 @@
 <template>
   <div class="kickstart container">
+
     <div class="kickstart__wrapper columns">
       <div class="kickstart__main column is-9">
         <div class="kickstart__description">
@@ -23,7 +24,8 @@
         <build section="build"></build>
 
       </div>
-      <div class="column is-3 ">
+
+      <div class="column is-3" v-sticky="{ zIndex: 100, stickyTop: 0 }">
         <div class="sidebar">
           <div class="sidebar__help">
             <h2>Need a Hand?</h2>
@@ -38,8 +40,8 @@
             <cart-summary></cart-summary>
           </div>
         </div>
-
       </div>
+
     </div>
   </div>
 </template>
@@ -53,23 +55,7 @@
   import Security from '@/components/sections/Security'
   import Build from '@/components/sections/Build'
   import CartSummary from '@/components/Summary'
-
-  let $ = window.jQuery = require('jquery')
-
-  $(function () {
-    // Maybe try to do this in a more vue like fashion
-    // sticky sidebar
-    let top = $('.sidebar').offset().top
-    $(window).scroll(function (event) {
-      let y = $(this).scrollTop()
-      if (y >= top) {
-        $('.sidebar').addClass('fixed')
-      } else {
-        $('.sidebar').removeClass('fixed')
-        $('.sidebar').width($('.sidebar').parent().width())
-      }
-    })
-  })
+  import VueSticky from 'vue-sticky'
 
   export default {
     name: 'kickstart',
@@ -82,6 +68,9 @@
       Security,
       Build,
       CartSummary,
+    },
+    directives: {
+      'sticky': VueSticky,
     }
   }
 
