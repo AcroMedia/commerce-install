@@ -25,19 +25,23 @@
 
       </div>
 
-      <div class="column is-3" v-sticky="{ zIndex: 100, stickyTop: 0 }">
-        <div class="sidebar">
-          <div class="sidebar__help">
-            <h2>Need a Hand?</h2>
-            <div class="side__description">
-              Want to setup a Drupal Commerce site, but not sure what all this means?
+      <div class="column is-3">
+        <div v-sticky="{ zIndex: 100, stickyTop: -215 }">
+          <div>
+            <div class="sidebar">
+              <div class="sidebar__help">
+                <h2>Need a Hand?</h2>
+                <div class="side__description">
+                  Want to setup a Drupal Commerce site, but not sure what all this means?
+                </div>
+                <div class="btn__primary">
+                  Yeah, Help Me Out!
+                </div>
+              </div>
+              <div class="sidebar__summary">
+                <cart-summary></cart-summary>
+              </div>
             </div>
-            <div class="btn__primary">
-              Yeah, Help Me Out!
-            </div>
-          </div>
-          <div class="sidebar__summary">
-            <cart-summary></cart-summary>
           </div>
         </div>
       </div>
@@ -71,7 +75,7 @@
     },
     directives: {
       'sticky': VueSticky,
-    }
+    },
   }
 
 </script>

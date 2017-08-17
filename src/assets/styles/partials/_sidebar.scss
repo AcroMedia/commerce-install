@@ -1,6 +1,7 @@
 .sidebar {
   position: relative;
-  top: 232px;
+  //top: 232px;
+  padding-top: 232px;
   width: 100%;
   z-index: 10;
   @include bp(mobil) {
