@@ -1,5 +1,6 @@
 <template>
   <div class="kickstart container">
+
     <div class="kickstart__wrapper columns">
       <div class="kickstart__main column is-9">
         <div class="kickstart__description">
@@ -23,23 +24,28 @@
         <build section="build"></build>
 
       </div>
-      <div class="column is-3 ">
-        <div class="sidebar">
-          <div class="sidebar__help">
-            <h2>Need a Hand?</h2>
-            <div class="side__description">
-              Want to setup a Drupal Commerce site, but not sure what all this means?
+
+      <div class="column is-3">
+        <div v-sticky="{ zIndex: 100, stickyTop: -215 }">
+          <div>
+            <div class="sidebar">
+              <div class="sidebar__help">
+                <h2>Need a Hand?</h2>
+                <div class="side__description">
+                  Want to setup a Drupal Commerce site, but not sure what all this means?
+                </div>
+                <div class="btn__primary">
+                  Yeah, Help Me Out!
+                </div>
+              </div>
+              <div class="sidebar__summary">
+                <cart-summary></cart-summary>
+              </div>
             </div>
-            <div class="btn__primary">
-              Yeah, Help Me Out!
-            </div>
-          </div>
-          <div class="sidebar__summary">
-            <cart-summary></cart-summary>
           </div>
         </div>
-
       </div>
+
     </div>
   </div>
 </template>
@@ -53,23 +59,7 @@
   import Security from '@/components/sections/Security'
   import Build from '@/components/sections/Build'
   import CartSummary from '@/components/Summary'
-
-  let $ = window.jQuery = require('jquery')
-
-  $(function () {
-    // Maybe try to do this in a more vue like fashion
-    // sticky sidebar
-    let top = $('.sidebar').offset().top
-    $(window).scroll(function (event) {
-      let y = $(this).scrollTop()
-      if (y >= top) {
-        $('.sidebar').addClass('fixed')
-      } else {
-        $('.sidebar').removeClass('fixed')
-        $('.sidebar').width($('.sidebar').parent().width())
-      }
-    })
-  })
+  import VueSticky from 'vue-sticky'
 
   export default {
     name: 'kickstart',
@@ -82,7 +72,10 @@
       Security,
       Build,
       CartSummary,
-    }
+    },
+    directives: {
+      'sticky': VueSticky,
+    },
   }
 
 </script>
