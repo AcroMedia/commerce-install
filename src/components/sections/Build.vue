@@ -11,20 +11,38 @@
       </div>
     </div>
     <div class="product__content">
-      <a id="download" class="download__link" :href="downloadLink"
-
-         v-bind:class="{disabled: !downloadLink}">
-        <div class="btn_download"
-             v-bind:class="{disabled: !downloadLink}">
-          download
+      <div class="btn__row">
+        <div id="generate"
+             class="columns">
+          <a class="btn btn__generate btn--orange column is-4 build__link"
+             href="#"
+             @click.prevent="generatePackage">
+            <span>generate</span>
+          </a>
+          <span v-if="!downloadLink" class="column is-9">
+            Package Generation Ready</span>
         </div>
-      </a>
+      </div>
+      <div class="btn__row">
+        <div id="download"
+             class="columns">
+          <a class="btn btn__download btn--blue column is-4 build__link"
+             :href="downloadLink"
+             v-smoothscroll="{ duration : 500 }"
+             :class="downloadLink ? '' : 'disabled btn--grey'">
+            <span>download</span>
+          </a>
+          <span v-if="!downloadLink" class="column is-1">or</span>
+          <span v-if="!downloadLink" class="column is-6">
+            Package Generation Ready</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+  import { mapState, mapMutations } from 'vuex'
   import Cards from '@/components/Cards'
 
   export default {
@@ -35,6 +53,35 @@
     },
     computed: {
       ...mapState(['sections', 'downloadLink']),
+    },
+    methods: {
+      ...mapMutations(['setDownloadLink']),
+      createParams (packages) {
+        return 'packages%5B%5D=drupal%2Fcommerce_applepay'
+      },
+      generatePackage () {
+        // @TODO validate email address?
+        // if(!app.emailAddress) // do something
+        let packages = []
+        let vSections = this.sections
+        for (let section in this.summary) {
+          if (section !== 'locations') {
+            this.summary[section].activeIndex.forEach(function (index) {
+              packages.push(vSections[section].options[index].composer_package)
+            })
+          }
+        }
+
+        let parameters = this.createParams(packages)
+
+        // Get package download link.
+        this.$http.get('https://install-service.drupalcommerce.com?' + parameters).then(response => {
+          this.setDownloadLink(response.body)
+        }, response => {
+          // error callback
+          console.log(response)
+        })
+      },
     },
   }
 </script>
@@ -80,61 +127,91 @@
     top: 4px;
   }
 
-  .btn_download {
-    width: 230px;
+  .btn {
+    vertical-align: middle;
     height: 51px;
-    padding-top: 5px;
-    padding-left: 30px;
-    text-align: center;
+    line-height: 51px;
+    position: relative;
     font-size: 25px;
-    color: $light-blue;
+    text-align: center;
+    /*padding: 0 0 0px 75px;*/
     text-transform: capitalize;
-    border: solid 1px $light-blue;
-
-    &:before {
-      content: '\E2C4';
-      color: $c-white;
-      font-size: 30px;
-      margin-top: -5px;
-      font-family: 'Material Icons';
-      background: $light-blue;
-      width: 50px;
-      position: absolute;
-      padding-top: 2px;
-      left: 35px;
-      text-align: center;
-      display: inline-block;
-      height: 50px;
-    }
-
-    &.disabled {
-      color: $grey-01;
-      background: $light-grey;
-      border-color: $grey-01;
-      cursor: default;
-      pointer-events: none;
-      h3 {
-        color: lighten($c-blue, 30%)
-      }
-
-      &:before {
-        background: $grey-01;
-      }
-    }
-  }
-
-  .download__link {
     text-decoration: none;
-    width: 230px;
-    display: inline-block;
+
+    &__row {
+      margin: 0 0 20px;
+
+      & a {
+        & span {
+          top: -12px;
+          position: relative;
+        }
+        &.disabled {
+          pointer-events: none;
+          cursor: default;
+        }
+      }
+    }
 
     &:hover {
       text-decoration: none;
     }
 
-    &.disabled {
-      cursor: default;
-      pointer-events: none;
+    &:before {
+      position: absolute;
+      display: inline-block;
+      text-align: center;
+      height: 50px;
+      width: 50px;
+      left: 0;
+      top: 0;
+      background: $orange;
+      color: $c-white;
+      font-size: 30px;
+      font-family: 'Material Icons';
+    }
+
+    &--orange {
+      color: $orange;
+      border: solid 1px $orange;
+      &:before {
+        background: $orange;
+      }
+      &:hover {
+        color: $c-white;
+        background: $orange;
+      }
+    }
+    &--blue {
+      color: $light-blue;
+      border: solid 1px $light-blue;
+      &:before {
+        background: $light-blue;
+      }
+      &:hover {
+        color: $c-white;
+        background: $light-blue;
+      }
+    }
+    &--grey {
+      color: $grey-01;
+      border: solid 1px $grey-03;
+      background: $light-grey;
+      &:before {
+        background: $grey-03;
+      }
+    }
+
+    &__generate {
+      &:before {
+        content: '\E042';
+      }
+    }
+
+    &__download {
+      &:before {
+        content: '\E2C4';
+      }
     }
   }
 
@@ -142,4 +219,5 @@
     position: relative;
     top: -35px;
   }
+
 </style>

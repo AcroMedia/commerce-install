@@ -19,7 +19,7 @@
         class="btn__secondary"
         href="#"
         v-scroll-to="'#scroll-to-offset'"
-        @click="generatePackage"
+        @click.prevent="generatePackage"
     >
       Generate package
     </a>

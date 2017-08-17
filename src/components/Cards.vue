@@ -5,7 +5,7 @@
         v-for="(option, index) in sections[section].options"
         @click="[
         highlightSelection(index, section),
-        setLocation(index, section)
+        setLocation(index, section),
         ]"
         :class="[
         cardIsActive(index,section) ? 'active-option': '',
@@ -37,6 +37,7 @@
     },
     methods: {
       ...mapMutations([
+        'setDownloadLink',
         'setStoreLocation',
         'resetSummaryOptions',
         'setSelectedOption',
@@ -63,6 +64,7 @@
         }
       },
       highlightSelection (index, section) {
+        this.setDownloadLink('')
         let clicked = this.summary[section].activeIndex.indexOf(index)
         if (clicked > -1) {
           // If not required or another item is selected, do nothing
@@ -77,7 +79,7 @@
               title: 'Required Section',
               text: 'You must choose at least one option from the <b>' + sectionTitle + '</b> section.',
               duration: 4500,
-              speed: 250
+              speed: 250,
             })
           }
         } else {
