@@ -1,6 +1,5 @@
 .sidebar {
   position: relative;
-  //top: 232px;
   padding-top: 232px;
   width: 100%;
   z-index: 10;
@@ -9,31 +8,18 @@
     top: inherit;
     width: 100%;
   }
-  @media(max-width: 1380px) and (min-width: 1190px) {
-    top: 256px;
-  }
   @media(max-width: 1190px) and (min-width: 1026px) {
-    top: 279px;
+    padding-top: 255px;
   }
-  @media(max-width: 1026px) and (min-width: 1026px) {
-    top: 279px;
+  @media(max-width: 1026px) and (min-width: 864px) {
+    padding-top: 255px;
   }
-  @media(max-width: 864px) and (min-width: 769px) {
+  @media(max-width: 864px) {
+    display: none;
     position: absolute;
     right: 0;
   }
 
-}
-
-.fixed {
-  position: fixed;
-  top: 0;
-  z-index: 10;
-  @include bp(mobil) {
-    position: relative;
-    top: inherit;
-    width: 100%;
-  }
 }
 
 .sidebar__help {
@@ -136,7 +122,6 @@
     border-left: 1px solid $orange;
   }
   @include bp(mobil) {
-
     width: 100%;
   }
 }

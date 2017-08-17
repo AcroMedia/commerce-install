@@ -1,18 +1,21 @@
-
-
 /*
  * Mixin for easy media queries
  * @include bp(tablet) { SCSS here };
 */
 
 @mixin bp($point) {
-	@if $point == large {
-		@media (max-width : 1600px) { @content; }
-	}
-	@if $point == tablet {
-		@media (max-width : 1024px) { @content; }
-	}
-	@else if $point == mobil {
-		@media (max-width : 768px) { @content; }
-	}
+  @if $point == large {
+    @media (max-width: 1600px) {
+      @content;
+    }
+  }
+  @if $point == tablet {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $point == mobil {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
 }
