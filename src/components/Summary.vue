@@ -55,7 +55,7 @@
         let parameters = this.createParams(packages)
 
         // Get package download link.
-        this.$http.get('https://install-service.drupalcommerce.com?' + parameters).then(response => {
+        this.$http.get('https://install-service.acromedia.com?' + parameters).then(response => {
           this.setDownloadLink(response.body)
         }, response => {
           // error callback
