@@ -27,7 +27,8 @@
 </template>
 
 <script>
-  import {mapState, mapMutations} from 'vuex'
+  import { mapState, mapMutations } from 'vuex'
+  import param from 'jquery-param'
 
   export default {
     name: 'summary',
@@ -36,9 +37,6 @@
     },
     methods: {
       ...mapMutations(['setDownloadLink']),
-      createParams (packages) {
-        return 'packages%5B%5D=drupal%2Fcommerce_applepay'
-      },
       generatePackage () {
         // @TODO validate email address?
         // if(!app.emailAddress) // do something
@@ -51,11 +49,14 @@
             })
           }
         }
-
-        let parameters = this.createParams(packages)
+        let base = ['lightning']
+        let content = ['demo']
+        let params = {packages, base, content}
+        let parameters = param(params)
 
         // Get package download link.
-        this.$http.get('https://install-service.acromedia.com?' + parameters).then(response => {
+//        this.$http.get('https://install-service.acromedia.com?' + parameters).then(response => {
+        this.$http.get('http://kickstart-backend.localhost?' + parameters).then(response => {
           this.setDownloadLink(response.body)
         }, response => {
           // error callback
