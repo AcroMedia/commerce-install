@@ -5,6 +5,12 @@ import getters from '@/store/getters'
 import sections from '@/store/sections'
 import summary from '@/store/summary'
 
+let backendURL = 'https://install-service.acromedia.com'
+if (process.env.NODE_ENV === 'development') {
+  // This should be the URL defined in the backend docker-compose.yml file
+  backendURL = 'http://kickstart-backend.localhost'
+}
+
 export default {
   state: {
     sections,
@@ -12,8 +18,9 @@ export default {
     location: 'all',
     emailAddress: '',
     downloadLink: '',
+    backendURL,
   },
   actions,
   mutations,
-  getters
+  getters,
 }

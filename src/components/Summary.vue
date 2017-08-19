@@ -33,7 +33,7 @@
   export default {
     name: 'summary',
     computed: {
-      ...mapState(['sections', 'summary']),
+      ...mapState(['sections', 'summary', 'backendURL']),
     },
     methods: {
       ...mapMutations(['setDownloadLink']),
@@ -55,8 +55,7 @@
         let parameters = param(params)
 
         // Get package download link.
-//        this.$http.get('https://install-service.acromedia.com?' + parameters).then(response => {
-        this.$http.get('http://kickstart-backend.localhost?' + parameters).then(response => {
+        this.$http.get(this.backendURL + '?' + parameters).then(response => {
           this.setDownloadLink(response.body)
         }, response => {
           // error callback
