@@ -228,7 +228,6 @@
         h3 {
           color: lighten($c-blue, 30%)
         }
-
       }
     }
     &__description {

@@ -12,9 +12,10 @@
     </div>
     <div class="product__content">
       <a id="download" class="download__link" :href="downloadLink"
-         v-smoothscroll="{ duration : 500 }"
-         @click.prevent="generatePackage">
-        <div class="btn_download">
+
+         v-bind:class="{disabled: !downloadLink}">
+        <div class="btn_download"
+             v-bind:class="{disabled: !downloadLink}">
           download
         </div>
       </a>
@@ -100,18 +101,40 @@
       width: 50px;
       position: absolute;
       padding-top: 2px;
-      left: 31px;
+      left: 35px;
       text-align: center;
       display: inline-block;
       height: 50px;
+    }
+
+    &.disabled {
+      color: $grey-01;
+      background: $light-grey;
+      border-color: $grey-01;
+      cursor: default;
+      pointer-events: none;
+      h3 {
+        color: lighten($c-blue, 30%)
+      }
+
+      &:before {
+        background: $grey-01;
+      }
     }
   }
 
   .download__link {
     text-decoration: none;
+    width: 230px;
+    display: inline-block;
 
     &:hover {
       text-decoration: none;
+    }
+
+    &.disabled {
+      cursor: default;
+      pointer-events: none;
     }
   }
 
