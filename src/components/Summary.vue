@@ -27,8 +27,7 @@
 </template>
 
 <script>
-  import { mapState, mapMutations } from 'vuex'
-  import param from 'jquery-param'
+  import { mapState, mapMutations, mapActions } from 'vuex'
 
   export default {
     name: 'summary',
@@ -37,31 +36,7 @@
     },
     methods: {
       ...mapMutations(['setDownloadLink']),
-      generatePackage () {
-        // @TODO validate email address?
-        // if(!app.emailAddress) // do something
-        let packages = []
-        let vSections = this.sections
-        for (let section in this.summary) {
-          if (section !== 'locations') {
-            this.summary[section].activeIndex.forEach(function (index) {
-              packages.push(vSections[section].options[index].composer_package)
-            })
-          }
-        }
-        let base = ['lightning']
-        let content = ['demo']
-        let params = {packages, base, content}
-        let parameters = param(params)
-
-        // Get package download link.
-        this.$http.get(this.backendURL + '?' + parameters).then(response => {
-          this.setDownloadLink(response.body)
-        }, response => {
-          // error callback
-          console.log(response)
-        })
-      },
+      ...mapActions(['generatePackage']),
     },
   }
 </script>
