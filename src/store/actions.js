@@ -14,16 +14,12 @@ export default {
         })
       }
     }
-    let base = ['lightning']
+    let base = vSections.drupalBase.options[state.summary.drupalBase.activeIndex[0]].composer_package
     let content = ['demo']
     let obj = {packages, base, content}
     let parameters = param(obj)
-    let link = kickstartService.getKickstartPackageURL(state.backendURL + '?' + parameters).then(response =>
-    response
-  )
-    // let link = 'http://google.ca'
-    console.log(link)
 
-    commit('setDownloadLink', link)
+    // Set the download url when tarball link is returned.
+    commit('setDownloadLink', await kickstartService.getKickstartPackageURL(state.backendURL + '?' + parameters).then(response => response))
   }
 }
