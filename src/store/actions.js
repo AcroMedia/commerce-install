@@ -8,7 +8,7 @@ export default {
     let packages = []
     let vSections = state.sections
     for (let section in state.summary) {
-      if (section !== 'locations') {
+      if (section !== 'locations' && section !== 'drupalBase') {
         state.summary[section].activeIndex.forEach(function (index) {
           packages.push(vSections[section].options[index].composer_package)
         })
