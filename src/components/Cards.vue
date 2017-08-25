@@ -3,6 +3,8 @@
   <div class="cards columns is-multiline is-mobile">
     <div
         v-for="(option, index) in sections[section].options"
+        class="column is-one-quarter">
+      <div
         @click="[
         highlightSelection(index, section),
         setLocation(index, section),
@@ -10,15 +12,15 @@
         :class="[
         cardIsActive(index,section) ? 'active-option': '',
         !cardAvailableForLocation(index, section) ? 'disabled' : ''
-        ]" class="column is-one-quarter">
-      <div class="box__item noselect">
+        ]"
+        class="box__item noselect">
         <div
             v-if="option.image_src"
             class="pay__logo"
         >
           <img :src="option.image_src + ''" :alt="option.title">
         </div>
-        <h3>{{ option.title }}</h3>
+        <h3 v-else="option.image_src">{{ option.title }}</h3>
         <div class="box__description">
           {{ option.description }}
         </div>
@@ -197,7 +199,8 @@
     &__item {
       border: 1px solid $grey-01;
       border-top-width: 4px;
-      margin: 10px 8px;
+      padding: 0.75rem;
+      height: 100%;
 
       h3 {
         text-align: center;

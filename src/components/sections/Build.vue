@@ -12,18 +12,6 @@
     </div>
     <div class="product__content">
       <div class="btn__row">
-        <div id="generate"
-             class="columns">
-          <a class="btn btn__generate btn--orange column is-4 build__link"
-             href="#"
-             @click.prevent="generatePackage">
-            <span>generate</span>
-          </a>
-          <span v-if="!downloadLink" class="column is-9">
-            Package Generation Ready</span>
-        </div>
-      </div>
-      <div class="btn__row">
         <div id="download"
              class="columns">
           <a class="btn btn__download btn--blue column is-4 build__link"
@@ -32,9 +20,6 @@
              :class="downloadLink ? '' : 'disabled btn--grey'">
             <span>download</span>
           </a>
-          <span v-if="!downloadLink" class="column is-1">or</span>
-          <span v-if="!downloadLink" class="column is-6">
-            drush command here</span>
         </div>
       </div>
     </div>

@@ -37,26 +37,22 @@ const sections = {
         title: 'Base',
         description: 'Nothing extra pre-selected',
         location: locations.LOCATION_INTL,
-        composer_package: '',
         default: true,
       },
       {
         title: 'Catalog',
         description: 'Extra functionality commonly needed for a traditional catalog style site.',
-        composer_package: '',
-        location: locations.LOCATION_EU,
+        location: locations.LOCATION_INTL,
       },
       {
         title: 'Events',
         description: 'Extra functionality for events, such as concerts or training, with some of the more traditional product based extras removed.',
-        composer_package: '',
-        location: locations.LOCATION_US,
+        location: locations.LOCATION_INTL,
       },
       {
         title: 'Subscriptions',
-        description: '',
-        composer_package: 'Recurring billing functionality, to allow for subscriptions, licensing and other time based billing functionality.',
-        location: locations.LOCATION_NA,
+        description: 'Recurring billing functionality, to allow for subscriptions, licensing and other time based billing functionality.',
+        location: locations.LOCATION_INTL,
       },
     ],
   },
@@ -69,32 +65,32 @@ const sections = {
         title: 'Drupal',
         description: 'Stock Drupal, nothing extra',
         location: locations.LOCATION_INTL,
-        composer_package: 'drupal',
+        base: 'drupal',
         default: true,
       },
       {
         title: 'Lightning',
         description: 'A authoring based distribution built by Acquia, useful for managing lots of content that needs reviews and editors.',
         location: locations.LOCATION_INTL,
-        composer_package: 'lightning',
+        base: 'lightning',
       },
       {
         title: 'Thunder',
         description: 'A publishing based distribution for content publishers, like news or magazine sites.',
         location: locations.LOCATION_INTL,
-        composer_package: 'thunder',
+        base: 'thunder',
       },
       {
         title: 'Open Social',
         description: 'Open Social is a distribution for building social communities and intranets, a successor to Drupal Commons',
         location: locations.LOCATION_INTL,
-        composer_package: 'open-social',
+        base: 'open-social',
       },
       {
         title: 'OpenEDU',
         description: 'A pre-configured Drupal 8 implementation specifically built with the needs of higher education in mind.',
         location: locations.LOCATION_INTL,
-        composer_package: 'openedu',
+        base: 'openedu',
       },
     ],
   },
@@ -136,40 +132,40 @@ const sections = {
     multiselect: true,
   },
   shipping: {
-      title: 'Shipping',
-      description: 'Choose your shipping and fulfillment options.',
-      options: [
-        {
-          title: 'Commerce Shipping',
-          description: 'The basic options for shipping, allows simple flat rate shipping options',
-          composer_package: 'drupal/commerce_shipping',
-          location: locations.LOCATION_INTL,
-        },
-        {
-          title: 'UPS',
-          description: '',
-          composer_package: 'drupal/commerce_ups',
-          location: locations.LOCATION_INTL,
-        },
-        {
-          title: 'FedEx',
-          description: '',
-          composer_package: 'drupal/commerce_fedex',
-          location: locations.LOCATION_INTL,
-        },
-        {
-          title: 'USPS',
-          description: '',
-          composer_package: 'drupal/commerce_usps',
-          location: locations.LOCATION_NA,
-        },
-        {
-          title: "Postcode",
-          description: 'Provides simple postal code based shipping options that can be provided via CSV',
-          composer_package: 'drupal/commerce_postcode_delivery',
-          location: locations.LOCATION_INTL,
-        }
-      ]
+    title: 'Shipping',
+    description: 'Choose your shipping and fulfillment options.',
+    options: [
+      {
+        title: 'Commerce Shipping',
+        description: 'The basic options for shipping, allows simple flat rate shipping options',
+        composer_package: 'drupal/commerce_shipping',
+        location: locations.LOCATION_INTL,
+      },
+      {
+        title: 'UPS',
+        description: '',
+        composer_package: 'drupal/commerce_ups',
+        location: locations.LOCATION_INTL,
+      },
+      {
+        title: 'FedEx',
+        description: '',
+        composer_package: 'drupal/commerce_fedex',
+        location: locations.LOCATION_INTL,
+      },
+      {
+        title: 'USPS',
+        description: '',
+        composer_package: 'drupal/commerce_usps',
+        location: locations.LOCATION_NA,
+      },
+      {
+        title: 'Postcode',
+        description: 'Provides simple postal code based shipping options that can be provided via CSV',
+        composer_package: 'drupal/commerce_postcode_delivery',
+        location: locations.LOCATION_INTL,
+      }
+    ]
   },
   content: {
     title: 'Content',

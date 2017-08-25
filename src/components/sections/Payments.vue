@@ -46,18 +46,6 @@
   @import '../../assets/styles/partials/card-transitions';
 
   .payments {
-    .columns {
-      display: inline-block;
-    }
-    .box__item {
-      width: 220px;
-      display: inline-block;
-      padding: 18px;
-      @include bp(mobil) {
-        width: 100%;
-      }
-    }
-
     .pay__logo {
       min-height: 113px;
       text-align: center;

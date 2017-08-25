@@ -8,13 +8,13 @@ export default {
     let packages = []
     let vSections = state.sections
     for (let section in state.summary) {
-      if (section !== 'locations' && section !== 'drupalBase') {
-        state.summary[section].activeIndex.forEach(function (index) {
+      state.summary[section].activeIndex.forEach(function (index) {
+        if (vSections[section].options[index].composer_package) {
           packages.push(vSections[section].options[index].composer_package)
-        })
-      }
+        }
+      })
     }
-    let base = vSections.drupalBase.options[state.summary.drupalBase.activeIndex[0]].composer_package
+    let base = vSections.drupalBase.options[state.summary.drupalBase.activeIndex[0]].base
     let content = ['demo']
     let obj = {packages, base, content}
     let parameters = param(obj)
