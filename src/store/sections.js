@@ -2,103 +2,109 @@ let locations = require('./locations')
 
 const sections = {
   locations: {
-    title: 'Locations',
-    description: 'Explain stuffs good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future.',
+    title: 'Region',
+    description: 'If your Commerce site will not be serving the whole world, you can pick your region to hide options only available in other parts of the world',
     required: true,
     options: [
       {
         title: 'International',
-        description: 'Do we need a description with these things?',
+        description: 'Anywhere in the world, this will allow you to see all options.',
         location: locations.LOCATION_INTL,
         default: true,
       },
       {
-        title: 'USA',
-        description: 'Do we need a description with these things?',
-        location: locations.LOCATION_US,
-      },
-      {
         title: 'North America',
-        description: 'Do we need a description with these things?',
+        description: '',
         location: locations.LOCATION_NA,
       },
       {
-        title: 'EU',
-        description: 'Do we need a description with these things?',
+        title: 'European Union',
+        description: '',
         location: locations.LOCATION_EU,
+      },
+      {
+        title: 'Asia',
+        description: '',
+        location: locations.LOCATION_ASIA,
       },
     ],
   },
   packages: {
     title: 'Packages',
-    description: 'Explain stuffs good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future.',
+    description: 'Packages are pre-selected option to help get you started with certian types of sites, you can still customize, but they help give you a good starting point.',
     options: [
       {
         title: 'Base',
-        description: 'Do we need a description with these things?',
+        description: 'Nothing extra pre-selected',
         location: locations.LOCATION_INTL,
         composer_package: '',
         default: true,
       },
       {
         title: 'Catalog',
-        description: 'Do we need a description with these things?',
+        description: 'Extra functionality commonly needed for a traditional catalog style site.',
         composer_package: '',
         location: locations.LOCATION_EU,
       },
       {
         title: 'Events',
-        description: 'Do we need a description with these things?',
+        description: 'Extra functionality for events, such as concerts or training, with some of the more traditional product based extras removed.',
         composer_package: '',
         location: locations.LOCATION_US,
       },
       {
         title: 'Subscriptions',
         description: '',
-        composer_package: '',
+        composer_package: 'Recurring billing functionality, to allow for subscriptions, licensing and other time based billing functionality.',
         location: locations.LOCATION_NA,
       },
     ],
   },
   drupalBase: {
-    title: 'Base',
-    description: 'Explain stuffs good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future.',
+    title: 'Distribution',
+    description: 'Commerce can be added to any distribution and is not itself a distribution, below you can pick what Drupal distribution you want to base you site off. If you\'re not sure, just go with "Drupal"',
     required: true,
     options: [
       {
         title: 'Drupal',
-        description: 'Do we need a description with these things?',
+        description: 'Stock Drupal, nothing extra',
         location: locations.LOCATION_INTL,
         composer_package: 'drupal',
         default: true,
       },
       {
         title: 'Lightning',
-        description: 'Do we need a description with these things?',
+        description: 'A authoring based distribution built by Acquia, useful for managing lots of content that needs reviews and editors.',
         location: locations.LOCATION_INTL,
         composer_package: 'lightning',
       },
       {
         title: 'Thunder',
-        description: 'Do we need a description with these things?',
+        description: 'A publishing based distribution for content publishers, like news or magazine sites.',
         location: locations.LOCATION_INTL,
         composer_package: 'thunder',
       },
       {
         title: 'Open Social',
-        description: '',
+        description: 'Open Social is a distribution for building social communities and intranets, a successor to Drupal Commons',
         location: locations.LOCATION_INTL,
         composer_package: 'open-social',
+      },
+      {
+        title: 'OpenEDU',
+        description: 'A pre-configured Drupal 8 implementation specifically built with the needs of higher education in mind.',
+        location: locations.LOCATION_INTL,
+        composer_package: 'openedu',
       },
     ],
   },
   payments: {
     title: 'Payments',
-    description: 'Explain stuffs good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future.',
+    description: 'Add payment options to Drupal Commerce, you\'ll want to accept money somehow! You can also stack multiple different payment options.',
     options: [
       {
         title: 'Paypal',
-        description: 'Do we need a description with these things?',
+        description: '',
         image_src: '/static/gfx/paylogos/paypal.png',
         sponsored: true,
         composer_package: 'drupal/commerce_paypal',
@@ -106,64 +112,135 @@ const sections = {
       },
       {
         title: 'BrainTree',
-        description: 'Do we need a description with these things?',
+        description: '',
         image_src: '/static/gfx/paylogos/braintree.png',
         sponsored: true,
         composer_package: 'drupal/commerce_braintree',
         location: locations.LOCATION_INTL,
       },
       {
-        title: 'Apple Pay',
-        description: 'Do we need a description with these things',
-        image_src: '/static/gfx/paylogos/apple-pay.png',
-        sponsored: true,
-        composer_package: 'drupal/commerce_applepay',
-        location: locations.LOCATION_NA,
-      },
-      {
         title: 'Auth.net',
-        description: 'Do we need a description with these things?',
+        description: '',
         image_src: '/static/gfx/paylogos/authorize.png',
+        sponsored: true,
+        composer_package: 'drupal/commerce_authnet',
         location: locations.LOCATION_INTL,
       },
       {
         title: 'Moneris',
-        description: 'Do we need a description with these things',
+        description: '',
+        composer_package: 'drupal/commerce_moneris',
         location: locations.LOCATION_NA,
-      },
-      {
-        title: 'Pay With Chickens',
-        description: 'Do we need a description with these things',
-        location: locations.LOCATION_US,
       },
     ],
     multiselect: true,
   },
+  shipping: {
+      title: 'Shipping',
+      description: 'Choose your shipping and fulfillment options.',
+      options: [
+        {
+          title: 'Commerce Shipping',
+          description: 'The basic options for shipping, allows simple flat rate shipping options',
+          composer_package: 'drupal/commerce_shipping',
+          location: locations.LOCATION_INTL,
+        },
+        {
+          title: 'UPS',
+          description: '',
+          composer_package: 'drupal/commerce_ups',
+          location: locations.LOCATION_INTL,
+        },
+        {
+          title: 'FedEx',
+          description: '',
+          composer_package: 'drupal/commerce_fedex',
+          location: locations.LOCATION_INTL,
+        },
+        {
+          title: 'USPS',
+          description: '',
+          composer_package: 'drupal/commerce_usps',
+          location: locations.LOCATION_NA,
+        },
+        {
+          title: "Postcode",
+          description: 'Provides simple postal code based shipping options that can be provided via CSV',
+          composer_package: 'drupal/commerce_postcode_delivery',
+          location: locations.LOCATION_INTL,
+        }
+      ]
+  },
   content: {
     title: 'Content',
-    description: 'Explain stuffs good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future.',
+    description: 'Select what content, if any, you want to start with. You can migrate from an existing setup or use some provided demo content.',
     options: [
       {
-        title: 'Migrate',
-        description: 'Do we need a description with these things?',
+        title: 'Ubercart',
+        description: 'Migrate your content over from a Drupal 6 or Drupal 7 Ubercart install.',
+        composer_package: 'drupal/commerce_migrate',
+      },
+      {
+        title: 'Commerce',
+        description: 'Migrate your content from an existing Drupal 7 Commerce install.',
+        composer_package: 'drupal/commerce_migrate',
+      },
+      {
+        title: 'Magento',
+        description: 'Migrate your content from an existing Magento setup.',
+        composer_package: 'drupal/commerce_migrate',
+      },
+      {
+        title: 'Shopify',
+        description: 'Migrate your content from an existing Shopify setup.',
+        composer_package: 'drupal/commerce_migrate',
+        enabled: false,
       },
       {
         title: 'Demo Content',
-        description: 'Do we need a description with these things?',
+        description: 'Not yet available',
+        enabled: false,
       },
       {
         title: 'Clean',
-        description: 'Do we need a description with these things?',
+        description: 'Empty install, no migrations or demo content',
+      },
+    ],
+  },
+  ci: {
+    title: 'Continous Integration & Automated Testing',
+    description: 'Select a CI configuration to be included.',
+    options: [
+      {
+        title: 'None',
+      },
+      {
+        title: 'Gitlab CI',
+        description: '',
+        ci: 'gitlab',
+        enabled: false,
+
+      },
+      {
+        title: 'Travis CI',
+        description: '',
+        ci: 'travisci',
+      },
+      {
+        title: 'Circle CI',
+        description: '',
+        ci: 'circleci',
+        enabled: false,
       },
     ],
   },
   security: {
     title: 'Updates & Security',
-    description: 'Explain stuffs good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future.',
+    description: 'Change to a more generic signup + newsletter signup?',
   },
   build: {
     title: 'Build & Install',
-    description: 'Explain stuffs good... ok? commmerce is an open source Adaptive Sales Platfasily configured and integrated into the tools that drive your business today and in the future.',
+    description: 'The download below will contain a composer.json file and some associated helper scripts. To install your site, simply extra the folder to wherever you want to site to be built and run "composer install". If you are not familiar with composer, see the Drupal.org documentation to get started https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal',
   },
 }
 
