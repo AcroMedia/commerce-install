@@ -1,6 +1,6 @@
 <!--suppress CommaExpressionJS -->
 <template>
-  <div class="cards columns">
+  <div class="cards columns is-multiline is-mobile">
     <div
         v-for="(option, index) in sections[section].options"
         @click="[
@@ -11,7 +11,7 @@
         cardIsActive(index,section) ? 'active-option': '',
         !cardAvailableForLocation(index, section) ? 'disabled' : ''
         ]"
-        class="box__item column noselect">
+        class="box__item column is-one-quarter noselect">
       <div
           v-if="option.image_src"
           class="pay__logo"
