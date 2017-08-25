@@ -53,7 +53,6 @@
       width: 220px;
       display: inline-block;
       padding: 18px;
-      margin: 10px 4px;
       @include bp(mobil) {
         width: 100%;
       }

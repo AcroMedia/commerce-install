@@ -10,17 +10,18 @@
         :class="[
         cardIsActive(index,section) ? 'active-option': '',
         !cardAvailableForLocation(index, section) ? 'disabled' : ''
-        ]"
-        class="box__item column noselect">
-      <div
-          v-if="option.image_src"
-          class="pay__logo"
-      >
-        <img :src="option.image_src + ''" :alt="option.title">
-      </div>
-      <h3>{{ option.title }}</h3>
-      <div class="box__description">
-        {{ option.description }}
+        ]" class="column">
+      <div class="box__item noselect">
+        <div
+            v-if="option.image_src"
+            class="pay__logo"
+        >
+          <img :src="option.image_src + ''" :alt="option.title">
+        </div>
+        <h3>{{ option.title }}</h3>
+        <div class="box__description">
+          {{ option.description }}
+        </div>
       </div>
     </div>
   </div>
