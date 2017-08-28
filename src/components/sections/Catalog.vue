@@ -1,10 +1,10 @@
 <template>
-  <div class="payments product__build">
+  <div class="catalog product__build">
     <a class="arrow_up" @click="show = !show" :class="show ? '' : 'down'"></a>
     <div class="top__info">
       <div class="box__content">
         <h2>
-          <i class="material-icons section-icons credit_card">credit_card</i>
+          <i class="material-icons section-icons view_module">view_module</i>
           {{ sections[section].title }}
         </h2>
         <p>{{ sections[section].description }}</p>
@@ -12,7 +12,7 @@
     </div>
     <transition name="cards-slide">
       <div class="product__content" v-if="show">
-        <cards section="payments"></cards>
+        <cards section="catalog"></cards>
       </div>
     </transition>
   </div>
@@ -23,7 +23,7 @@
   import Cards from '@/components/Cards'
 
   export default {
-    name: 'payments',
+    name: 'catalog',
     props: ['section'],
     data () {
       return {

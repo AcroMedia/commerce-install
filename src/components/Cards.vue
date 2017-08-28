@@ -11,7 +11,7 @@
         ]"
         :class="[
         cardIsActive(index,section) ? 'active-option': '',
-        !cardAvailableForLocation(index, section) ? 'disabled' : ''
+        !cardIsAvailable(index, section) ? 'disabled' : ''
         ]"
         class="box__item noselect">
         <div
@@ -49,7 +49,11 @@
       cardIsActive (index, section) {
         return this.summary[section].activeIndex.indexOf(index) >= 0
       },
-      cardAvailableForLocation (index, section) {
+      cardIsAvailable (index, section) {
+        let enabled = this.sections[section].options[index].enabled
+        if (enabled === false) {
+          return false
+        }
         if (this.location === 'all' || section === 'locations') {
           // All cards available.
           return true
@@ -245,5 +249,17 @@
     }
   }
 
+  .pay__logo {
+    min-height: 113px;
+    text-align: center;
+  }
+
+  .pay-sponsor {
+    color: $light-blue;
+    display: block;
+    margin-top: 10px;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
 
 </style>

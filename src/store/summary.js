@@ -19,7 +19,27 @@ const summary = {
     activeOptions: [],
     section: ''
   },
+  shipping: {
+    activeIndex: [],
+    activeOptions: [],
+    section: ''
+  },
+  taxes: {
+    activeIndex: [],
+    activeOptions: [],
+    section: ''
+  },
+  catalog: {
+    activeIndex: [],
+    activeOptions: [],
+    section: ''
+  },
   content: {
+    activeIndex: [],
+    activeOptions: [],
+    section: ''
+  },
+  ci: {
     activeIndex: [],
     activeOptions: [],
     section: ''

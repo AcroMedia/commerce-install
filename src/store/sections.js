@@ -165,7 +165,71 @@ const sections = {
         composer_package: 'drupal/commerce_postcode_delivery',
         location: locations.LOCATION_INTL,
       }
-    ]
+    ],
+    multiselect: true,
+  },
+  taxes: {
+    title: 'Taxes and Accounting',
+    description: 'Choose your tax options.',
+    options: [
+      {
+        title: 'Commerce Taxes',
+        description: 'The basic options for taxes, includes manual setup as well as preconfigured taxes for EU and Canada',
+        location: locations.LOCATION_INTL,
+      },
+      {
+        title: 'AvaTax',
+        description: '',
+        composer_package: 'drupal/commerce_avatax',
+        location: locations.LOCATION_INTL,
+      },
+      {
+        title: 'Quickbooks',
+        description: '',
+        composer_package: 'drupal/commerce_qb_webconnect',
+        location: locations.LOCATION_INTL,
+        enabled: false,
+      },
+      {
+        title: 'Quickbooks Online',
+        description: '',
+        composer_package: 'drupal/commerce_qbo_ui',
+        location: locations.LOCATION_INTL,
+        enabled: false,
+      }
+    ],
+    multiselect: true,
+  },
+  catalog: {
+    title: 'Catalog',
+    description: 'Additional Catalog and Product display options',
+    options: [
+      {
+        title: 'Search API',
+        description: '',
+        composer_package: 'drupal/search_api',
+        location: locations.LOCATION_INTL,
+      },
+      {
+        title: 'Apache Solr',
+        description: '',
+        composer_package: 'drupal/search_api_solr',
+        location: locations.LOCATION_INTL,
+      },
+      {
+        title: 'ElasticSearch',
+        description: '',
+        composer_package: 'drupal/elasticsearch_connector',
+        location: locations.LOCATION_INTL,
+      },
+      {
+        title: 'Wishlist',
+        description: '',
+        composer_package: 'drupal/commerce_wishlist',
+        location: locations.LOCATION_INTL,
+      }
+    ],
+    multiselect: true,
   },
   content: {
     title: 'Content',
@@ -204,18 +268,17 @@ const sections = {
     ],
   },
   ci: {
-    title: 'Continous Integration & Automated Testing',
+    title: 'Continuous Integration & Automated Testing',
     description: 'Select a CI configuration to be included.',
     options: [
       {
         title: 'None',
+        description: '',
       },
       {
         title: 'Gitlab CI',
         description: '',
         ci: 'gitlab',
-        enabled: false,
-
       },
       {
         title: 'Travis CI',

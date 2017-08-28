@@ -19,7 +19,11 @@
         <drupal-base section="drupalBase"></drupal-base>
         <packages section="packages"></packages>
         <payments section="payments"></payments>
+        <shipping section="shipping"></shipping>
+        <taxes section="taxes"></taxes>
+        <catalog section="catalog"></catalog>
         <drupal-content section="content"></drupal-content>
+        <ci section="ci"></ci>
         <security section="security"></security>
         <build section="build"></build>
 
@@ -54,8 +58,12 @@
   import Locations from '@/components/sections/Locations'
   import Packages from '@/components/sections/Packages'
   import Payments from '@/components/sections/Payments'
+  import Shipping from '@/components/sections/Shipping'
+  import Taxes from '@/components/sections/Taxes'
+  import Catalog from '@/components/sections/Catalog'
   import DrupalBase from '@/components/sections/Base'
   import DrupalContent from '@/components/sections/Content'
+  import CI from '@/components/sections/CI'
   import Security from '@/components/sections/Security'
   import Build from '@/components/sections/Build'
   import CartSummary from '@/components/Summary'
@@ -67,8 +75,12 @@
       Locations,
       Packages,
       Payments,
+      Shipping,
+      Taxes,
+      Catalog,
       DrupalBase,
       DrupalContent,
+      CI,
       Security,
       Build,
       CartSummary,
