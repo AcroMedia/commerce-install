@@ -16,7 +16,10 @@ export default {
     }
     let base = vSections.drupalBase.options[state.summary.drupalBase.activeIndex[0]].base
     let content = ['demo']
-    let ci = vSections.drupalBase.options[state.summary.ci.activeIndex[0]].ci
+    let ci = []
+    if (state.summary.ci.activeIndex[0] !== undefined) {
+      ci = vSections.drupalBase.options[state.summary.ci.activeIndex[0]].ci
+    }
     let obj = {packages, base, content, ci}
     let parameters = param(obj)
 
