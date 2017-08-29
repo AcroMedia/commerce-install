@@ -3,7 +3,7 @@
   <div class="cards columns is-multiline is-mobile">
     <div
         v-for="(option, index) in sections[section].options"
-        class="column is-one-quarter">
+        class="column is-full-mobile is-half-tablet is-one-quarter-desktop">
       <div
         @click="[
         highlightSelection(index, section),

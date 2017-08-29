@@ -30,3 +30,29 @@
     }
   }
 }
+@media screen and (max-width: 1000px){
+  .footer__logos{
+    text-align: center;
+  } 
+}
+@media screen and (max-width: 1000px) and (min-width: $screen-sm) {
+  .kickstart {
+    &.container {
+      max-width:760px;
+      margin:0px auto;
+    }
+  } 
+}
+@media screen and  (max-width: 1000px){
+  .is-one-quarter:nth-child(3n+1){
+    clear:left;
+  }
+}
+@media screen and (max-width: 500px){
+  header.app-header{
+    padding: 20px 14px !important;
+  }
+  .brand__logos {
+    margin-left: 0 !important;
+  }
+}
