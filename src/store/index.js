@@ -7,8 +7,8 @@ import summary from '@/store/summary'
 
 let backendURL = 'https://install-service.acromedia.com'
 if (process.env.NODE_ENV === 'development') {
-  // This should be the URL defined in the backend docker-compose.yml file
-  backendURL = 'http://kickstart-backend.localhost'
+  // This should be the URL:Port defined in the backend docker-compose.yml file
+  backendURL = 'http://kickstart-backend.localhost:8989'
 }
 
 export default {

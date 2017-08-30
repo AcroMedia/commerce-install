@@ -26,11 +26,12 @@
   @import 'assets/styles/partials/kickstart';
 
   .kickstart-notification {
-    background: $c-blue !important;
+    background: $light-blue !important;
     color: $c-white;
     text-align: center;
     margin-top: 20px;
     margin-right: 20px;
+    border: 3px solid $c-white;
 
     .notification-title {
       text-decoration: underline;
