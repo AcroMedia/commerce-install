@@ -16,7 +16,6 @@
              class="columns">
           <a class="btn btn__download btn--blue column is-4 build__link"
              :href="downloadLink"
-             v-smoothscroll="{ duration : 500 }"
              :class="downloadLink ? '' : 'disabled btn--grey'">
             <span>download</span>
           </a>

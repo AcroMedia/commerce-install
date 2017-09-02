@@ -76,7 +76,6 @@ const sections = {
         description: 'A authoring based distribution built by Acquia, useful for managing lots of content that needs reviews and editors.',
         location: locations.LOCATION_INTL,
         base: 'lightning',
-        enabled: false,
       },
       {
         title: 'Thunder',
@@ -90,7 +89,6 @@ const sections = {
         description: 'Open Social is a distribution for building social communities and intranets, a successor to Drupal Commons',
         location: locations.LOCATION_INTL,
         base: 'open-social',
-        enabled: false,
       },
       {
         title: 'OpenEDU',
