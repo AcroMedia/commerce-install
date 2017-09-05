@@ -42,6 +42,13 @@
       </div>
       <div class="contact__section">
         <div class="site-url__block">
+          commerceguys.com
+        </div>
+        <div class="email__block">
+          sales@commerceguys.com
+        </div>
+        <div class="divider">&nbsp;|&nbsp;</div>
+        <div class="site-url__block">
           acromedia.com
         </div>
         <div class="email__block">

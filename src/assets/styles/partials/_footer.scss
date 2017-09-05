@@ -50,6 +50,7 @@ footer {
 }
 
 .logo__slogan {
+  text-align: center;
   font-size: 23px;
   margin-left: 17px;
   font-weight: 300;
@@ -80,6 +81,12 @@ footer {
     top: 5px;
     position: relative;
   }
+}
+
+.divider {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: inline-block;
 }
 
 .email__block {

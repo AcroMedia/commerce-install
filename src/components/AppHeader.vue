@@ -8,7 +8,7 @@
         The Adaptive Sales Platform
       </div>
       <div class="site-header__right">
-        Toll Free <span><a href="tel:18778834697">1.877.883.4697</a></span>
+
       </div>
     </div>
   </header>
