@@ -2,13 +2,13 @@
   <header class="app-header">
     <div class="container">
       <div class="site-header__logo">
-        <img src="../assets/gfx/logo.png" alt="Drupal Commerce">
+        <img src="../assets/gfx/logo.png" alt="Commerce Kickstart">
       </div>
       <div class="site-header__slogan">
-        The Adaptive Sales Platform
+        The quickest way to get up and running with Drupal Commerce
       </div>
       <div class="site-header__right">
-
+        <img src="../assets/gfx/drupal-commerce-logo.png" alt="Drupal Commerce">
       </div>
     </div>
   </header>

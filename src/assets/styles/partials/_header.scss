@@ -1,12 +1,13 @@
 header {
   background: $c-black url('../assets/gfx/header-bg.png') repeat-y;
-  padding: 20px 0;
+  padding: 13px 0;
 }
 
 .site-header__logo {
   display: inline-block;
   vertical-align: middle;
-  margin-right: 35px;
+  max-width: 312px;
+  margin: 0 20px 0 6px;
   @include bp(mobil) {
     width: 100%;
     margin: 0;
@@ -17,9 +18,11 @@ header {
 .site-header__slogan {
   display: inline-block;
   vertical-align: middle;
-  font-size: 24px;
+  margin-top: 36px;
+  font-size: 18px;
   color: #ccc;
   font-weight: 300;
+  letter-spacing: 0.025em;
   @include bp(mobil) {
     width: 100%;
     text-align: center;
@@ -40,6 +43,11 @@ header {
   @media(max-width: 860px) and (min-width: 769px) {
     float: inherit;
     text-align: center;
+  }
+
+  img {
+    margin-top: 6px;
+    max-width: 353px;
   }
 
   span {
