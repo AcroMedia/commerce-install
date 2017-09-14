@@ -5,6 +5,7 @@ export default {
   async generatePackage ({commit, state}) {
     // @TODO validate email address?
     // if(!app.emailAddress) // do something
+
     let packages = []
     let vSections = state.sections
     for (let section in state.summary) {
@@ -24,6 +25,7 @@ export default {
     let parameters = param(obj)
 
     // Set the download url when tarball link is returned.
-    commit('setDownloadLink', await kickstartService.getKickstartPackageURL(state.backendURL + '?' + parameters).then(response => response))
+    let response = await kickstartService.getKickstartPackageURL(state.backendURL + '?' + parameters).then(response => response)
+    window.location = response
   }
 }

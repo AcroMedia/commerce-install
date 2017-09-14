@@ -15,8 +15,7 @@
         <div id="download"
              class="columns">
           <a class="btn btn__download btn--blue column is-4 build__link"
-             :href="downloadLink"
-             :class="downloadLink ? '' : 'disabled btn--grey'">
+             @click.prevent="generatePackage">
             <span>download</span>
           </a>
         </div>
@@ -26,7 +25,7 @@
 </template>
 
 <script>
-  import { mapState, mapMutations, mapActions } from 'vuex'
+  import { mapState, mapActions } from 'vuex'
   import Cards from '@/components/Cards'
 
   export default {
@@ -39,7 +38,6 @@
       ...mapState(['sections', 'downloadLink', 'backendURL']),
     },
     methods: {
-      ...mapMutations(['setDownloadLink']),
       ...mapActions(['generatePackage']),
     },
   }
@@ -105,10 +103,6 @@
           top: -12px;
           position: relative;
         }
-        &.disabled {
-          pointer-events: none;
-          cursor: default;
-        }
       }
     }
 
@@ -130,17 +124,6 @@
       font-family: 'Material Icons';
     }
 
-    &--orange {
-      color: $orange;
-      border: solid 1px $orange;
-      &:before {
-        background: $orange;
-      }
-      &:hover {
-        color: $c-white;
-        background: $orange;
-      }
-    }
     &--blue {
       color: $light-blue;
       border: solid 1px $light-blue;
@@ -159,12 +142,6 @@
 
       &:before {
         background: $grey-01;
-      }
-    }
-
-    &__generate {
-      &:before {
-        content: '\E042';
       }
     }
 

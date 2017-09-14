@@ -6,24 +6,42 @@
         <div class="kickstart__description">
           <h1>Build & install</h1>
           <p>
-            <strong>Intro/overview text, exmplain what this is all about;</strong>
-            that means you
-            can keep, replace, grow, remove and or custom-modify any single portion
-            of your eCommerce experience, at your own pace. Drupal Commerce is an
-            open source Adaptive Sales Platfasily configured and integrated into
-            the tools that drive your business today and in the future.
+            <strong>Use this tool to build a Drupal Commerce composer file to install your commerce site.</strong>
+          </p>
+          <p>
+            Kickstart guides you through the basics to shape your site. This install goes far beyond the
+            typical SaaS solution, as it accounts for your actual business, instead of theirs.
+            The install exercise will guide you through setup, taking into consideration the key technical
+            elements required to build an eCommerce solution.
+          </p>
+          <br />
+          <p>
+            After you’ve configured a section, you’re welcome to go back through and make edits and changes
+            before you generate your site. Of course, once you’ve installed your package you can always make
+            configuration changes then, too.
+          </p>
+          <br />
+          <p>
+            Once you’re satisfied with the setup, click “Download”
+            at the bottom your pre-configured Drupal
+            Commerce profile will be ready to install.
+          </p>
+          <br />
+          <p>
+            If you have any issues or questions along the way, we are always here to help. Click the “Need a Hand”
+            section on the right to contact us!
           </p>
         </div>
 
         <locations section="locations"></locations>
         <drupal-base section="drupalBase"></drupal-base>
-        <packages section="packages"></packages>
+        <!-- <packages section="packages"></packages> -->
         <payments section="payments"></payments>
         <shipping section="shipping"></shipping>
         <taxes section="taxes"></taxes>
         <catalog section="catalog"></catalog>
         <drupal-content section="content"></drupal-content>
-        <ci section="ci"></ci>
+        <!-- <ci section="ci"></ci> -->
         <security section="security"></security>
         <build section="build"></build>
 

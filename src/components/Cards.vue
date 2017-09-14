@@ -40,7 +40,6 @@
     },
     methods: {
       ...mapMutations([
-        'setDownloadLink',
         'setStoreLocation',
         'resetSummaryOptions',
         'setSelectedOption',

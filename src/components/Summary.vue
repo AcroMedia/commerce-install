@@ -14,29 +14,16 @@
         </div>
       </div>
     </div>
-    <a
-        id="generate-package"
-        class="btn__secondary"
-        href="#"
-        v-scroll-to="'#scroll-to-offset'"
-        @click.prevent="generatePackage"
-    >
-      Generate package
-    </a>
   </div>
 </template>
 
 <script>
-  import { mapState, mapMutations, mapActions } from 'vuex'
+  import { mapState } from 'vuex'
 
   export default {
     name: 'summary',
     computed: {
       ...mapState(['sections', 'summary', 'backendURL']),
-    },
-    methods: {
-      ...mapMutations(['setDownloadLink']),
-      ...mapActions(['generatePackage']),
     },
   }
 </script>

@@ -3,7 +3,7 @@ let locations = require('./locations')
 const sections = {
   locations: {
     title: 'Region',
-    description: 'If your Commerce site will not be serving the whole world, you can pick your region to hide options only available in other parts of the world',
+    description: 'Select which location you do business. This will allow us to show information that applies specifically to your area of business.',
     required: true,
     options: [
       {
@@ -14,24 +14,25 @@ const sections = {
       },
       {
         title: 'North America',
-        description: '',
+        description: 'Exclude options that do not provide services in North America',
         location: locations.LOCATION_NA,
       },
       {
         title: 'European Union',
-        description: '',
+        description: 'Exclude options that do not operate in the European Union (+Britain and Switzerland)',
         location: locations.LOCATION_EU,
       },
       {
         title: 'Asia',
-        description: '',
+        description: 'Exclude options that do not provide services in Asia',
         location: locations.LOCATION_ASIA,
       },
     ],
   },
+/*
   packages: {
     title: 'Packages',
-    description: 'Packages are pre-selected option to help get you started with certian types of sites, you can still customize, but they help give you a good starting point.',
+    description: '',
     options: [
       {
         title: 'Base',
@@ -59,9 +60,10 @@ const sections = {
       },
     ],
   },
+  */
   drupalBase: {
     title: 'Distribution',
-    description: 'Commerce can be added to any distribution and is not itself a distribution, below you can pick what Drupal distribution you want to base you site off. If you\'re not sure, just go with "Drupal"',
+    description: 'Distributions are full copies of Drupal that include Drupal Core, along with additional modules and libraries. Selecting your distribution will allow for unique modules to be included in your setup to conduct business within your specific vertical. If you’re unsure, that’s okay - just select Drupal.',
     required: true,
     options: [
       {
@@ -79,7 +81,8 @@ const sections = {
       },
       {
         title: 'Thunder',
-        description: 'A publishing based distribution for content publishers, like news or magazine sites.',
+        description: 'Not yet available with Kickstart',
+        // description: 'A publishing based distribution for content publishers, like news or magazine sites.',
         location: locations.LOCATION_INTL,
         base: 'thunder',
         enabled: false,
@@ -92,7 +95,8 @@ const sections = {
       },
       {
         title: 'OpenEDU',
-        description: 'A pre-configured Drupal 8 implementation specifically built with the needs of higher education in mind.',
+        description: 'Not yet available with Kickstart',
+        // description: 'A pre-configured Drupal 8 implementation specifically built with the needs of higher education in mind.',
         location: locations.LOCATION_INTL,
         base: 'openedu',
         enabled: false,
@@ -101,29 +105,29 @@ const sections = {
   },
   payments: {
     title: 'Payments',
-    description: 'Add payment options to Drupal Commerce, you\'ll want to accept money somehow! You can also stack multiple different payment options.',
+    description: 'Payment processors are required for any eCommerce store to allow for customers to pay via credit card, PayPal and additional currency methods. The payment processors will take care of the money transit for you, securely.',
     options: [
       {
         title: 'Paypal',
         description: '',
-        image_src: '/static/gfx/paylogos/paypal.png',
-        sponsored: true,
+        // image_src: '/static/gfx/paylogos/paypal.png',
+        // sponsored: true,
         composer_package: 'drupal/commerce_paypal',
         location: locations.LOCATION_INTL,
       },
       {
         title: 'BrainTree',
         description: '',
-        image_src: '/static/gfx/paylogos/braintree.png',
-        sponsored: true,
+        // image_src: '/static/gfx/paylogos/braintree.png',
+        // sponsored: true,
         composer_package: 'drupal/commerce_braintree',
         location: locations.LOCATION_INTL,
       },
       {
         title: 'Auth.net',
         description: '',
-        image_src: '/static/gfx/paylogos/authorize.png',
-        sponsored: true,
+        // image_src: '/static/gfx/paylogos/authorize.png',
+        // sponsored: true,
         composer_package: 'drupal/commerce_authnet',
         location: locations.LOCATION_INTL,
       },
@@ -186,7 +190,7 @@ const sections = {
   },
   shipping: {
     title: 'Shipping',
-    description: 'Choose your shipping and fulfillment options.',
+    description: 'Your web store can successfully take an order, but that is only half of the equation. Configure your shipping and fulfillment setup to best match your business and ensure you can process, label and ship orders out the door.',
     options: [
       {
         title: 'Commerce Shipping',
@@ -196,19 +200,19 @@ const sections = {
       },
       {
         title: 'UPS',
-        description: '',
+        description: 'Provides real-time rates from UPS',
         composer_package: 'drupal/commerce_ups',
         location: locations.LOCATION_INTL,
       },
       {
         title: 'FedEx',
-        description: '',
+        description: 'Provides real-time rates from Fedex',
         composer_package: 'drupal/commerce_fedex',
         location: locations.LOCATION_INTL,
       },
       {
         title: 'USPS',
-        description: '',
+        description: 'Not Yet Available',
         composer_package: 'drupal/commerce_usps',
         location: locations.LOCATION_NA,
         enabled: false,
@@ -224,7 +228,7 @@ const sections = {
   },
   taxes: {
     title: 'Taxes and Accounting',
-    description: 'Choose your tax options.',
+    description: 'Your store needs to be accurate in the accounting department, and that means taxes for your customers must follow the rules. Charging taxes between various products, regions and countries can be handled by Drupal Commerce.',
     options: [
       {
         title: 'Commerce Taxes',
@@ -256,7 +260,7 @@ const sections = {
   },
   catalog: {
     title: 'Catalog',
-    description: 'Additional Catalog and Product display options',
+    description: 'How you display your products and categories drives the shopping experience.',
     options: [
       {
         title: 'Search API',
@@ -287,7 +291,7 @@ const sections = {
   },
   content: {
     title: 'Content',
-    description: 'Select what content, if any, you want to start with. You can migrate from an existing setup or use some provided demo content.',
+    description: 'The organization and housing of your site’s written content, images and product details are the heart of your business. Drupal’s famous CMS is seamlessly connected to the Commerce toolbox and allows for the ultimate in productization and marketing. You may select to use the default content and data setups, integrate to a third party tool, integrate to a custom legacy setup or migrate your information from your old platform.',
     options: [
       {
         title: 'Ubercart',
@@ -321,35 +325,9 @@ const sections = {
       },
     ],
   },
-  ci: {
-    title: 'Continuous Integration & Automated Testing',
-    description: 'Select a CI configuration to be included.',
-    options: [
-      {
-        title: 'None',
-        description: '',
-      },
-      {
-        title: 'Gitlab CI',
-        description: '',
-        ci: 'gitlab',
-      },
-      {
-        title: 'Travis CI',
-        description: '',
-        ci: 'travisci',
-      },
-      {
-        title: 'Circle CI',
-        description: '',
-        ci: 'circleci',
-        enabled: false,
-      },
-    ],
-  },
   security: {
     title: 'Updates & Security',
-    description: 'Change to a more generic signup + newsletter signup?',
+    description: 'We’ll send you Drupal Commerce information and a monthly report that will keeps you updated with the status of commerce modules in development. This is stuff you might want to know if you’re building around the Drupal Commerce platform. Besides, if you don’t want to be a part of this newsletter you can unsubscribe any time. It’s all good!',
   },
   build: {
     title: 'Build & Install',

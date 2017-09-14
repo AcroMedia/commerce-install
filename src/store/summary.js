@@ -9,11 +9,6 @@ const summary = {
     activeOptions: [{title: 'Drupal'}],
     section: 'Base'
   },
-  packages: {
-    activeIndex: [0],
-    activeOptions: [{title: 'Base'}],
-    section: 'Packages'
-  },
   payments: {
     activeIndex: [],
     activeOptions: [],
