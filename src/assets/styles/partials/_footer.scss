@@ -30,7 +30,6 @@ footer {
 
     .demo__info {
       display: inline-block;
-      width: calc(100% - 220px);
       vertical-align: middle;
       padding: 0 0 0 20px;
       font-size: 18px;
@@ -152,7 +151,7 @@ footer {
     a {
       margin: 0 15px;
       color: $dark-grey;
-      font-size: 19px;
+      font-size: 21px;
 
       @media(max-width: 1191px) {
         display: block;

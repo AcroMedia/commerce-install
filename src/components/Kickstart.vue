@@ -40,7 +40,7 @@
       </div>
 
       <div class="column is-3">
-        <div v-sticky="{ zIndex: 100, stickyTop: -215 }">
+        <div v-sticky="{ zIndex: 100, stickyTop: -330 }">
           <div>
             <div class="sidebar">
               <div class="sidebar__help">
