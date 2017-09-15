@@ -4,32 +4,24 @@
     <div class="kickstart__wrapper columns">
       <div class="kickstart__main column is-9">
         <div class="kickstart__description">
-          <h1>Build & install</h1>
+          <h1>Drupal Commerce Installation</h1>
           <p>
-            <strong>Use this tool to build a Drupal Commerce composer file to install your commerce site.</strong>
-          </p>
-          <p>
-            Kickstart guides you through the basics to shape your site. This install goes far beyond the
-            typical SaaS solution, as it accounts for your actual business, instead of theirs.
-            The install exercise will guide you through setup, taking into consideration the key technical
-            elements required to build an eCommerce solution.
+            <strong>This tool will build a Drupal Commerce composer file to install your site.</strong>
           </p>
           <br />
           <p>
-            After you’ve configured a section, you’re welcome to go back through and make edits and changes
-            before you generate your site. Of course, once you’ve installed your package you can always make
-            configuration changes then, too.
+            The steps below will take into consideration key elements that cater to your business needs.
           </p>
           <br />
           <p>
-            Once you’re satisfied with the setup, click “Download”
-            at the bottom your pre-configured Drupal
-            Commerce profile will be ready to install.
+            Make changes to previous steps at any point.
+            Configuration settings can be changed once the site has been installed as well.
+            Once you’re happy with your selections below, click the <strong>Download</strong> button to have your files packaged up for install.
+            Simple!
           </p>
           <br />
           <p>
-            If you have any issues or questions along the way, we are always here to help. Click the “Need a Hand”
-            section on the right to contact us!
+            If you have any issues or questions along the way, we are always here to help. Click the "Need a Hand" section on the right to contact us!
           </p>
         </div>
 
