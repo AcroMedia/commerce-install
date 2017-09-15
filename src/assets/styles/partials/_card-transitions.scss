@@ -14,20 +14,24 @@
 
 @keyframes slide-in {
   from {
-    transform: translateX(-1175px);
+    transform: translateY(-110px);
+    opacity: 0;
   }
   to {
-    transform: translateX(0);
+    transform: translateY(0);
+    opacity: 1;
   }
 
 }
 
 @keyframes slide-out {
   from {
-    transform: translateX(0);
+    transform: translateY(0);
+    opacity: 1;
   }
   to {
-    transform: translateX(-1175px);
+    transform: translateY(-110px);
+    opacity: 0;
   }
 
 }

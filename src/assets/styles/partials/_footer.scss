@@ -20,6 +20,7 @@ footer {
       width: 210px;
       vertical-align: middle;
       opacity: 1;
+      transition: opacity .1s ease-in-out;
 
       @include bp(mobil) {
         width: 100%;
@@ -41,6 +42,7 @@ footer {
         font-size: 22px;
         font-weight: 500;
         font-family: $roboto;
+        transition: color .1s ease-in-out;
       }
 
       @include bp(mobil) {

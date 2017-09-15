@@ -32,6 +32,8 @@ h1 {
 
 a {
   color: $light-blue;
+  transition: color .1s ease-in-out, background-color .1s ease-in-out, border-color .1s ease-in-out, opacity .1s ease-in-out;
+
   &:hover, &:focus {
     color: $dark-blue;
     text-decoration: underline;
