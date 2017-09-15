@@ -1,15 +1,15 @@
 <template>
   <header class="app-header">
     <div class="container">
+      <div class="site-header__right">
+        <img src="../assets/gfx/drupal-commerce-logo.png" alt="Drupal Commerce">
+        <span>The Adaptive Sales Platform</span>
+      </div>
       <div class="site-header__logo">
         <img src="../assets/gfx/logo.png" alt="Commerce Kickstart">
       </div>
       <div class="site-header__slogan">
         The quickest way to get up and running with <span>Drupal Commerce 2</span> and <span>Drupal 8</span>
-      </div>
-      <div class="site-header__right">
-        <img src="../assets/gfx/drupal-commerce-logo.png" alt="Drupal Commerce">
-        The Adaptive Sales Platform
       </div>
     </div>
   </header>

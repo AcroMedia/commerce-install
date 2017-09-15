@@ -1,6 +1,10 @@
 header {
   background: $c-black url('../assets/gfx/header-bg.png') repeat-y;
   padding: 13px 15px;
+
+  @media (max-width: $screen-sm-max) {
+    text-align: center;
+  }
 }
 
 .site-header__logo {
@@ -13,7 +17,7 @@ header {
     margin: 0;
     text-align: center;
   }
-  @media (max-width: 1191px) and (min-width: 861px) {
+  @media (max-width: 1191px) {
     max-width: 250px;
   }
 }
@@ -21,14 +25,16 @@ header {
 .site-header__slogan {
   display: inline-block;
   vertical-align: bottom;
-  max-width: 350px;
+  max-width: 380px;
   font-size: 18px;
-
+  text-align: left;
   color: #ccc;
   font-weight: 300;
   letter-spacing: 0.025em;
   @include bp(mobil) {
+    display: block;
     width: 100%;
+    margin: 20px auto 10px;
     text-align: center;
   }
 
@@ -46,18 +52,29 @@ header {
   font-size: 17px;
   font-weight: 300;
   text-align: center;
-  @include bp(mobil) {
-    width: 100%;
-    float: inherit;
-  }
-  @media (max-width: 1191px) and (min-width: 861px) {
-    max-width: 240px;
-  }
-  @media(max-width: 860px) and (min-width: 769px) {
-    float: inherit;
-  }
 
   img {
     margin-bottom: 3px;
+  }
+
+  span {
+    display: block;
+  }
+
+  @media (max-width: 1191px) {
+    max-width: 240px;
+  }
+  @media (max-width: $screen-sm-max) {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $black-01;
+
+    img {
+      max-width: 240px;
+    }
   }
 }
