@@ -1,4 +1,6 @@
 .kickstart {
+  padding: 0 15px;
+
   &__main {
     padding: 0 14px;
     @media(max-width: 864px) and (min-width: 769px) {

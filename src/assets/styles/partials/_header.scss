@@ -1,6 +1,6 @@
 header {
   background: $c-black url('../assets/gfx/header-bg.png') repeat-y;
-  padding: 13px 0;
+  padding: 13px 15px;
 }
 
 .site-header__logo {
@@ -13,13 +13,17 @@ header {
     margin: 0;
     text-align: center;
   }
+  @media (max-width: 1191px) and (min-width: 861px) {
+    max-width: 250px;
+  }
 }
 
 .site-header__slogan {
   display: inline-block;
-  vertical-align: middle;
-  margin-top: 36px;
+  vertical-align: bottom;
+  max-width: 350px;
   font-size: 18px;
+
   color: #ccc;
   font-weight: 300;
   letter-spacing: 0.025em;
@@ -27,45 +31,33 @@ header {
     width: 100%;
     text-align: center;
   }
+
+  span {
+    color: #ddd;
+    font-weight: 500;
+  }
 }
 
 .site-header__right {
   float: right;
-  color: $c-blue;
-  font-size: 22px;
-  margin-top: 20px;
+  max-width: 315px;
+  margin-top: 27px;
+  color: #ccc;
+  font-size: 17px;
+  font-weight: 300;
+  text-align: center;
   @include bp(mobil) {
     width: 100%;
     float: inherit;
-    font-size: 18px;
-    text-align: center;
+  }
+  @media (max-width: 1191px) and (min-width: 861px) {
+    max-width: 240px;
   }
   @media(max-width: 860px) and (min-width: 769px) {
     float: inherit;
-    text-align: center;
   }
 
   img {
-    margin-top: 6px;
-    max-width: 353px;
-  }
-
-  span {
-    font-size: 30px;
-    a:hover {
-      color: $dark-blue;
-    }
-    @include bp(mobil) {
-      font-size: 18px;
-    }
-    @media(max-width: 860px) and (min-width: 769px) {
-      font-size: 20px;
-    }
-    color: $dark-grey;
-
-    a {
-      color: $dark-grey;
-      text-decoration: none;
-    }
+    margin-bottom: 3px;
   }
 }

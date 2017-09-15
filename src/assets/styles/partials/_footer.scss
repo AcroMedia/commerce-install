@@ -3,13 +3,13 @@ footer {
 }
 
 .footer__section {
-  padding: 40px;
+  padding: 40px 15px;
 }
 
 .portfolio__content {
-  background: $c-white;
   width: 100%;
-  padding: 40px 0;
+  padding: 40px 15px;
+  background: $c-white;
 
   h3 {
     text-align: center;
