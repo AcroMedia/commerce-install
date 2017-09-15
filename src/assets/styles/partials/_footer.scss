@@ -216,7 +216,7 @@ footer {
   a:first-child {
     color: $dark-grey;
 
-    &:hover {
+    &:hover, &:focus {
       color: #999999;
     }
   }
