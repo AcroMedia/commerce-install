@@ -2,107 +2,181 @@ footer {
   background: $c-black;
 }
 
-.footer__section {
-  padding: 40px 15px;
+.demo__content {
+  width: 100%;
+  padding: 35px 15px;
+  background: $c-white;
+
+  .container {
+    padding-bottom: 35px;
+    border-bottom: 1px solid $c-grey;
+  }
+
+  .demo__link {
+    display: inline-block;
+
+    .demo__screenshot {
+      display: inline-block;
+      width: 210px;
+      vertical-align: middle;
+      opacity: 1;
+
+      @include bp(mobil) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .demo__info {
+      display: inline-block;
+      width: calc(100% - 220px);
+      vertical-align: middle;
+      padding: 0 0 0 20px;
+      font-size: 18px;
+      font-weight: 300;
+      color: $dark-grey;
+
+      h3 {
+        color: $light-blue;
+        font-size: 22px;
+        font-weight: 500;
+        font-family: $roboto;
+      }
+
+      @include bp(mobil) {
+        width: 100%;
+        padding: 0;
+        text-align: center;
+      }
+    }
+
+    &:hover, &:focus {
+      text-decoration: none;
+
+      .demo__screenshot {
+        opacity: 0.8;
+      }
+
+      .demo__info {
+        h3 {
+          color: $dark-blue;
+        }
+      }
+    }
+  }
 }
 
 .portfolio__content {
   width: 100%;
-  padding: 40px 15px;
+  padding: 5px 15px 30px;
   background: $c-white;
 
   h3 {
     text-align: center;
-    padding: 10px;
+    padding: 5px 10px 15px;
     font-size: 30px;
     font-weight: 300;
     font-family: $roboto;
   }
 }
 
+.footer__section {
+  padding: 40px 15px;
+}
+
 .footer__logos {
+  text-align: center;
+
   img {
     margin: 15px 20px;
   }
 }
 
 .brand__logos {
-  margin-left: 80px;
-
-  .acromedia,
-  .commerce-guy {
-    width: 190px;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  div {
-    display: inline-block;
-  }
-  a {
-    color: transparent;
-    &:hover {
-      color: transparent;
-    }
-  }
-}
-
-.logo__slogan {
+  padding: 5px 0;
   text-align: center;
-  font-size: 23px;
-  margin-left: 17px;
-  font-weight: 300;
   color: #999;
-}
+  font-weight: 300;
 
-.contact__section {
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 30px;
-  padding: 20px 0;
-  border-top: 1px solid $black-01;
-  border-bottom: 1px solid $black-01;
-}
-
-.site-url__block {
-  display: inline-block;
-  color: $dark-grey;
-  font-size: 20px;
-
-  &:hover {
-    color: $c-white;
+  .column:first-of-type {
+    border-right: 1px solid $black-01;
+    @include bp(mobil) {
+      margin-bottom: 30px;
+    }
   }
 
-  &:before {
-    content: '\E894';
-    font-family: 'Material Icons';
-    top: 5px;
-    position: relative;
-  }
-}
+  .acro-media,
+  .commerce-guys {
+    display: inline-block;
+    max-width: 600px;
 
-.divider {
-  padding-left: 10px;
-  padding-right: 10px;
-  display: inline-block;
-}
-
-.email__block {
-  display: inline-block;
-  margin-left: 20px;
-  font-size: 20px;
-
-  &:hover {
-    color: $c-white;
+    .acro-media__logo,
+    .commerce-guys__logo {
+      display: inline-block;
+      width: 190px;
+    }
   }
 
-  &:before {
-    content: '\E0BE';
-    font-family: 'Material Icons';
-    top: 5px;
-    position: relative;
+  .brand__slogan {
+    display: inline-block;
+    font-size: 22px;
+    margin-left: 20px;
+
+    @media(max-width: 1191px) {
+      margin-top: 10px;
+      display: block;
+    }
+  }
+
+  .brand__info {
+    display: block;
+    margin-top: 28px;
+    font-size: 19px;
+    line-height: 1.3em;
+    @include bp(mobil) {
+      display: none;
+    }
+    @media(max-width: 1191px) {
+      font-size: 17px;
+    }
+  }
+
+  .brand__links {
+    margin-top: 48px;
+    @include bp(mobil) {
+      margin-top: 10px;
+    }
+
+    a {
+      margin: 0 15px;
+      color: $dark-grey;
+      font-size: 19px;
+
+      @media(max-width: 1191px) {
+        display: block;
+      }
+
+      &.web-icon:before {
+        content: '\E894';
+        font-family: 'Material Icons';
+        font-size: 21px;
+        top: 5px;
+        position: relative;
+      }
+
+      &.email-icon:before {
+        content: '\E0BE';
+        font-family: 'Material Icons';
+        font-size: 21px;
+        top: 5px;
+        position: relative;
+      }
+
+      &:hover, &:focus {
+        color: $c-white;
+        text-decoration: none;
+      }
+    }
   }
 }
 
@@ -131,8 +205,11 @@ footer {
 }
 
 .footer__copyright {
+  margin-top: 28px;
+  padding: 23px 0;
   text-align: center;
   font-size: 12px;
+  border-top: 1px solid $black-01;
 
   a:first-child {
     color: $dark-grey;
