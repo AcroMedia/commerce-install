@@ -38,3 +38,25 @@ new Vue({
   components: {App},
   store,
 })
+
+var helpModal = new Vue({
+  methods: {
+    helpModal: function () {
+      // Open Help Modal.
+      document.getElementById('help-me-out').onclick = openModal
+      function openModal () {
+        document.getElementById('helpModal').className += ' ' + 'is-active'
+      }
+
+      // Close Help Modal.
+      document.getElementById('modal-content__close-button').onclick = closeModal
+      document.getElementById('modal-background').onclick = closeModal
+      document.getElementById('modal-close').onclick = closeModal
+      function closeModal () {
+        document.getElementById('helpModal').classList.remove('is-active')
+      }
+    }
+  }
+})
+
+helpModal.helpModal()

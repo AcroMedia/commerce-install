@@ -22,6 +22,11 @@ body {
   background: $c-grey;
   max-width: none;
   margin: 0;
+
+  #app {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 h1 {
@@ -47,4 +52,124 @@ a {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+// Help Modal
+.modal-content {
+  padding: 20px 30px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: visible;
+
+  h2 {
+    padding: 0;
+    margin: 0;
+    color: $c-blue;
+    font-size: 40px;
+  }
+
+  .modal-content__intro {
+    span {
+      display: block;
+      margin-top: 15px;
+      padding: 10px 0;
+      font-size: 12px;
+
+      strong {
+        font-size: 16px;
+        font-weight: normal;
+        color: $c-blue;
+      }
+    }
+  }
+
+  .modal-content__form {
+
+    fieldset {
+      max-width: 100%;
+
+      &.form-columns-1 .hs-form-field,
+      &.form-columns-2 .hs-form-field {
+        padding-right: 20px;
+        margin-bottom: .75rem;
+      }
+
+      @media (max-width: $screen-xs-max) {
+        &.form-columns-2 .hs-form-field {
+          width: 100%;
+        }
+      }
+    }
+
+    label {
+      color: $c-blue;
+
+      .hs-form-required {
+        padding-left: 5px;
+      }
+    }
+
+    .hs-input {
+      width: 100% !important;
+      border: none;
+      background-color: transparent;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .input, .textarea {
+      min-height: 2.25em;
+      height: auto;
+    }
+
+    textarea.hs-input {
+      min-height: 64px;
+    }
+
+    .hs-error-msgs label {
+      color: red;
+      font-size: 12px;
+    }
+
+    .hs_submit {
+      margin-top: 20px;
+
+      .hs-button {
+        min-width: 150px;
+        padding: 10px 20px;
+        margin: 0;
+        border: none;
+        background: $c-blue;
+        outline: 0;
+        font-size: 20px;
+        color: #fff;
+        transition: background .1s ease-in-out;
+        cursor: pointer;
+
+        &:hover, &:focus {
+          background: $dark-blue;
+        }
+      }
+    }
+  }
+
+  .modal-content__close {
+    text-align: right;
+
+    .modal-content__close-button {
+      padding: 5px 10px;
+      margin: 0;
+      border: none;
+      background: #fff;
+      outline: 0;
+      color: $grey-01;
+      font-size: 20px;
+      transition: color .1s ease-in-out;
+      cursor: pointer;
+
+      &:hover, &:focus {
+        color: $grey-03;
+      }
+    }
+  }
 }

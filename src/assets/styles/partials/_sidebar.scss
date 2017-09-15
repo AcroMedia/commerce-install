@@ -54,9 +54,17 @@
     color: $c-blue;
     font-size: 18px;
     font-weight: bold;
+    border: 0;
     border-bottom: 4px solid $c-blue;
+    transition: color .1s ease-in-out, border-color .1s ease-in-out;
+    cursor: pointer;
     @media(max-width: 1192px) and (min-width: 769px) {
       width: 100%;
+    }
+
+    &:hover, &:focus {
+      color: $dark-blue;
+      border-bottom: 4px solid $dark-blue;
     }
   }
 }

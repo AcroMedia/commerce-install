@@ -5,10 +5,37 @@
     <title>Drupal Commerce | Welcome </title>
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css">
   </head>
   <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <div id="helpModal" class="modal">
+      <div id="modal-background" class="modal-background"></div>
+      <div class="modal-content">
+        <h2>Let us help</h2>
+        <div class="modal-content__intro">
+          Fill out the form to have one of our Drupal Commerce experts contact you.
+          <span class="small">Fields marked with <strong>*</strong> are required.</span>
+        </div>
+        <div class="modal-content__form">
+          <!--[if lte IE 8]>
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+          <![endif]-->
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+          <script>
+            hbspt.forms.create({
+              css: '',
+              portalId: '1659229',
+              formId: 'c5d267f0-ff1b-4950-9da6-c8264888c14a'
+            });
+          </script>
+        </div>
+        <div class="modal-content__close">
+          <button id="modal-content__close-button" class="modal-content__close-button" aria-label="close"><i class="material-icons">close</i></button>
+        </div>
+      </div>
+      <button id="modal-close" class="modal-close is-large" aria-label="close"></button>
+    </div>
   </body>
 </html>

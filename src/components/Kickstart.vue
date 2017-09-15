@@ -48,9 +48,9 @@
                 <div class="side__description">
                   Want to setup a Drupal Commerce site, but not sure what all this means?
                 </div>
-                <div class="btn__primary">
+                <button id="help-me-out" class="btn__primary" aria-label="Help">
                   Yeah, Help Me Out!
-                </div>
+                </button>
               </div>
               <div class="sidebar__summary">
                 <cart-summary></cart-summary>
