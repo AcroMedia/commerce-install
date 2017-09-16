@@ -34,11 +34,11 @@ const summary = {
     activeOptions: [],
     section: ''
   },
-  ci: {
-    activeIndex: [],
-    activeOptions: [],
-    section: ''
-  }
+  // ci: {
+  //   activeIndex: [],
+  //   activeOptions: [],
+  //   section: ''
+  // }
 }
 
 module.exports = summary

@@ -70,7 +70,6 @@
         }
       },
       highlightSelection (index, section) {
-        this.setDownloadLink('')
         let clicked = this.summary[section].activeIndex.indexOf(index)
         if (clicked > -1) {
           // If not required or another item is selected, do nothing
