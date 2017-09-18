@@ -64,8 +64,8 @@
               <a href="https://www.acromedia.com" class="web-icon" target="_blank" title="Go to Acro Media's website">
                 acromedia.com
               </a>
-              <a href="mailto:solutions@acromediainc.com" class="email-icon" target="_blank" title="Email solutions@acromediainc.com">
-                solutions@acromediainc.com
+              <a href="mailto:solutions@acromedia.com" class="email-icon" target="_blank" title="Email solutions@acromedia.com">
+                solutions@acromedia.com
               </a>
             </div>
           </div>
