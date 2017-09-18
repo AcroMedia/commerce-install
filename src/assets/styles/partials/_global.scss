@@ -35,6 +35,11 @@ h1 {
   font-weight: 300;
 }
 
+h3 {
+  line-height: 1.1em;
+  margin: 5px 0 8px;
+}
+
 a {
   color: $light-blue;
   transition: color .1s ease-in-out, background-color .1s ease-in-out, border-color .1s ease-in-out, opacity .1s ease-in-out;
