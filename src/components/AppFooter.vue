@@ -38,7 +38,6 @@
               Drupal Commerce
             </div>
             <div class="brand__info">
-              Giving industry leaders proident molestiae lobortis incidunt error, pariatur conubia beatae nulla, esse tempor lorem pretium lacus cursus
             </div>
             <div class="brand__links">
               <a href="https://www.commerceguys.com" class="web-icon" target="_blank" title="Go to the Commerce Guys' website">
@@ -60,7 +59,6 @@
               Drupal Commerce Provider
             </div>
             <div class="brand__info">
-              Giving industry leaders proident molestiae lobortis incidunt error, pariatur conubia beatae nulla, esse tempor lorem pretium lacus cursus
             </div>
             <div class="brand__links">
               <a href="https://www.acromedia.com" class="web-icon" target="_blank" title="Go to Acro Media's website">
