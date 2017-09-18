@@ -45,7 +45,7 @@
                 commerceguys.com
               </a>
               <a href="mailto:sales@commerceguys.com" class="email-icon" target="_blank" title="Email sales@commerceguys.com">
-                sales@commerceguys.com
+                info@commerceguys.com
               </a>
             </div>
           </div>
