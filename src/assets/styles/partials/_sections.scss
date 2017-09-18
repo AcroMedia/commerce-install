@@ -121,3 +121,24 @@ h2 {
     background-size: contain;
   }
 }
+
+
+// Build and install.
+.product__build {
+  .box__content a {
+    color: $c-white;
+    text-decoration: underline;
+
+    &:hover, &:focus {
+      color: #b2e9ff;
+    }
+  }
+
+  .build__link {
+    max-width: 230px;
+    padding-left: 60px;
+    font-size: 22px;
+  }
+}
+
+

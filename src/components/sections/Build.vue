@@ -12,8 +12,7 @@
     </div>
     <div class="product__content">
       <div class="btn__row">
-        <div id="download"
-             class="columns">
+        <div id="download" class="columns">
           <a class="btn btn__download btn--blue column is-4 build__link"
              @click.prevent="generatePackage">
             <span>download</span>
