@@ -14,17 +14,17 @@ const sections = {
       },
       {
         title: 'North America',
-        description: 'Exclude options that do not provide services in North America',
+        description: 'Exclude options that do not provide services in North America.',
         location: locations.LOCATION_NA,
       },
       {
         title: 'European Union',
-        description: 'Exclude options that do not operate in the European Union (+Britain and Switzerland)',
+        description: 'Exclude options that do not operate in the European Union (+Britain and Switzerland).',
         location: locations.LOCATION_EU,
       },
       {
         title: 'Asia',
-        description: 'Exclude options that do not provide services in Asia',
+        description: 'Exclude options that do not provide services in Asia.',
         location: locations.LOCATION_ASIA,
       },
     ],
@@ -68,7 +68,7 @@ const sections = {
     options: [
       {
         title: 'Drupal',
-        description: 'Stock Drupal, nothing extra',
+        description: 'Stock Drupal, nothing extra.',
         location: locations.LOCATION_INTL,
         base: 'drupal',
         default: true,
@@ -81,7 +81,7 @@ const sections = {
       },
       {
         title: 'Thunder',
-        description: 'Not yet available with Kickstart',
+        description: 'Not yet available with Kickstart.',
         // description: 'A publishing based distribution for content publishers, like news or magazine sites.',
         location: locations.LOCATION_INTL,
         base: 'thunder',
@@ -89,13 +89,13 @@ const sections = {
       },
       {
         title: 'Open Social',
-        description: 'Open Social is a distribution for building social communities and intranets, a successor to Drupal Commons',
+        description: 'Open Social is a distribution for building social communities and intranets, a successor to Drupal Commons.',
         location: locations.LOCATION_INTL,
         base: 'open-social',
       },
       {
         title: 'OpenEDU',
-        description: 'Not yet available with Kickstart',
+        description: 'Not yet available with Kickstart.',
         // description: 'A pre-configured Drupal 8 implementation specifically built with the needs of higher education in mind.',
         location: locations.LOCATION_INTL,
         base: 'openedu',
@@ -194,32 +194,32 @@ const sections = {
     options: [
       {
         title: 'Commerce Shipping',
-        description: 'The basic options for shipping, allows simple flat rate shipping options',
+        description: 'The basic options for shipping, allows simple flat rate shipping options.',
         composer_package: 'drupal/commerce_shipping',
         location: locations.LOCATION_INTL,
       },
       {
         title: 'UPS',
-        description: 'Provides real-time rates from UPS',
+        description: 'Provides real-time rates from UPS.',
         composer_package: 'drupal/commerce_ups',
         location: locations.LOCATION_INTL,
       },
       {
         title: 'FedEx',
-        description: 'Provides real-time rates from Fedex',
+        description: 'Provides real-time rates from Fedex.',
         composer_package: 'drupal/commerce_fedex',
         location: locations.LOCATION_INTL,
       },
       {
         title: 'USPS',
-        description: 'Not Yet Available',
+        description: 'Not Yet Available.',
         composer_package: 'drupal/commerce_usps',
         location: locations.LOCATION_NA,
         enabled: false,
       },
       {
         title: 'Postcode',
-        description: 'Provides simple postal code based shipping options that can be provided via CSV',
+        description: 'Provides simple postal code based shipping options that can be provided via CSV.',
         composer_package: 'drupal/commerce_postcode_delivery',
         location: locations.LOCATION_INTL,
       }
@@ -232,7 +232,7 @@ const sections = {
     options: [
       {
         title: 'Commerce Taxes',
-        description: 'The basic options for taxes, includes manual setup as well as preconfigured taxes for EU and Canada',
+        description: 'The basic options for taxes, includes manual setup as well as preconfigured taxes for EU and Canada.',
         location: locations.LOCATION_INTL,
       },
       {
@@ -316,12 +316,12 @@ const sections = {
       },
       {
         title: 'Demo Content',
-        description: 'Not yet available',
+        description: 'Not yet available.',
         enabled: false,
       },
       {
         title: 'Clean',
-        description: 'Empty install, no migrations or demo content',
+        description: 'Empty install, no migrations or demo content.',
       },
     ],
   },
