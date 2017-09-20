@@ -19,7 +19,7 @@
                 <span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
                 <div class="email__container">
                   <input v-validate="'email'" @change="setEmailAddress" class="input" type="text"
-                       name="email" placeholder="Email Address*">
+                       name="email" placeholder="Email Address">
                 </div>
                 <div class="newsletter__container">
                   <label for="cbx" class="label-cbx">
