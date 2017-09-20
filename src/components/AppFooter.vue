@@ -29,27 +29,6 @@
     <div class="footer__section container">
       <div class="brand__logos columns">
         <div class="column">
-          <div class="commerce-guys">
-            <div class="commerce-guys__logo">
-              <img src="../assets/gfx/commerce-guy-logo.png" alt="">
-            </div>
-            <div class="brand__slogan">
-              Creators of<br>
-              Drupal Commerce
-            </div>
-            <div class="brand__info">
-            </div>
-            <div class="brand__links">
-              <a href="https://www.commerceguys.com" class="web-icon" target="_blank" title="Go to the Commerce Guys' website">
-                commerceguys.com
-              </a>
-              <a href="mailto:sales@commerceguys.com" class="email-icon" target="_blank" title="Email sales@commerceguys.com">
-                info@commerceguys.com
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="column">
           <div class="acro-media">
             <div class="acro-media__logo">
               <img src="../assets/gfx/acromedia-logo.png" alt="">
@@ -59,6 +38,7 @@
               Drupal Commerce Provider
             </div>
             <div class="brand__info">
+              Need a hand on your Drupal Commerce project? Talk to one of our experts today!
             </div>
             <div class="brand__links">
               <a href="https://www.acromedia.com" class="web-icon" target="_blank" title="Go to Acro Media's website">
@@ -66,6 +46,28 @@
               </a>
               <a href="mailto:solutions@acromedia.com" class="email-icon" target="_blank" title="Email solutions@acromedia.com">
                 solutions@acromedia.com
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="commerce-guys">
+            <div class="commerce-guys__logo">
+              <img src="../assets/gfx/commerce-guy-logo.png" alt="">
+            </div>
+            <div class="brand__slogan">
+              Creators of<br>
+              Drupal Commerce
+            </div>
+            <div class="brand__info">
+              Interested in getting involved? Contact us for Drupal Commerce partnerships and sponsorship.
+            </div>
+            <div class="brand__links">
+              <a href="https://www.commerceguys.com" class="web-icon" target="_blank" title="Go to the Commerce Guys' website">
+                commerceguys.com
+              </a>
+              <a href="mailto:sales@commerceguys.com" class="email-icon" target="_blank" title="Email sales@commerceguys.com">
+                info@commerceguys.com
               </a>
             </div>
           </div>
