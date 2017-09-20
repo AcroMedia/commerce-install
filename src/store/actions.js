@@ -3,8 +3,12 @@ import kickstartService from '../services/kickstart'
 
 export default {
   async generatePackage ({commit, state}) {
-    // @TODO validate email address?
-    // if(!app.emailAddress) // do something
+    let email = state.emailAddress
+    let newsletter = state.newsletter
+
+    if (!email) {
+      email = 'anonymous'
+    }
 
     let packages = []
     let vSections = state.sections
@@ -21,7 +25,7 @@ export default {
     // if (state.summary.ci.activeIndex[0] !== undefined) {
     //   ci = vSections.drupalBase.options[state.summary.ci.activeIndex[0]].ci
     // }
-    let obj = {packages, base, content}
+    let obj = {packages, base, content, email, newsletter}
     let parameters = param(obj)
 
     // Set the download url when tarball link is returned.

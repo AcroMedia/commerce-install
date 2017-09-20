@@ -5,6 +5,7 @@ import Vuex from 'vuex'
 import VueResource from 'vue-resource'
 import Notifications from 'vue-notification'
 import VueScrollTo from 'vue-scrollto'
+import VeeValidate from 'vee-validate'
 
 import kickstartInfo from '@/store/index'
 import App from './App'
@@ -25,6 +26,7 @@ Vue.use(VueScrollTo, {
   onDone: false,
   onCancel: false,
 })
+Vue.use(VeeValidate)
 
 Vue.config.productionTip = false
 

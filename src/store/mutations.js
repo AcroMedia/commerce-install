@@ -38,5 +38,5 @@ export default {
   removeSelectedOption (state, payload) {
     state.summary[payload.section].activeIndex.splice(payload.clicked, 1)
     state.summary[payload.section].activeOptions.splice(payload.clicked, 1)
-  }
+  },
 }

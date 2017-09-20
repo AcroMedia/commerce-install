@@ -17,6 +17,7 @@ export default {
     summary,
     location: 'all',
     emailAddress: '',
+    newsletter: '',
     downloadLink: '',
     backendURL,
   },
