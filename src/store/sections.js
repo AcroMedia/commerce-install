@@ -110,8 +110,8 @@ const sections = {
       {
         title: 'Paypal',
         description: '',
-        // image_src: '/static/gfx/paylogos/paypal.png',
-        // sponsored: true,
+        image_src: '/static/gfx/paylogos/paypal.png',
+        sponsored: true,
         composer_package: 'drupal/commerce_paypal',
         location: locations.LOCATION_INTL,
       },
