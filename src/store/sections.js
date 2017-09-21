@@ -292,7 +292,13 @@ const sections = {
   content: {
     title: 'Content',
     description: 'The organization and housing of your site’s written content, images and product details are the heart of your business. Drupal’s famous CMS is seamlessly connected to the Commerce toolbox and allows for the ultimate in productization and marketing. You may select to use the default content and data setups, integrate to a third party tool, integrate to a custom legacy setup or migrate your information from your old platform.',
+    required: true,
     options: [
+      {
+        title: 'Clean',
+        description: 'Empty install, no migrations or demo content.',
+        default: true,
+      },
       {
         title: 'Ubercart',
         description: 'Migrate your content over from a Drupal 6 or Drupal 7 Ubercart install.',
@@ -318,10 +324,6 @@ const sections = {
         title: 'Demo Content',
         description: 'Not yet available.',
         enabled: false,
-      },
-      {
-        title: 'Clean',
-        description: 'Empty install, no migrations or demo content.',
       },
     ],
   },
