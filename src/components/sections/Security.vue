@@ -30,7 +30,7 @@
                         <polyline points="4 11 8 15 16 6"></polyline>
                       </svg>
                     </div>
-                    <span>Send me security updates</span>
+                    <span>Send me newsletters and security updates</span>
                   </label>
                 </div>
               </div>
