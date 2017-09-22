@@ -12,14 +12,13 @@
     </div>
     <transition name="cards-slide">
       <div class="product__content" v-if="show">
-        <div class="column is-8">
+        <div class="column">
           <div class="email__form">
             <div class="field">
               <div class="control">
                 <span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
                 <div class="email__container">
-                  <input v-validate="'email'" @change="setEmailAddress" class="input" type="text"
-                       name="email" placeholder="Email Address">
+                  <input v-validate="'email'" @change="setEmailAddress" class="input" type="text" name="email" placeholder="Email Address">
                 </div>
                 <div class="newsletter__container">
                   <label for="cbx" class="label-cbx">
@@ -85,15 +84,23 @@
   @import '../../assets/styles/partials/card-transitions';
 
   .email__form {
+    .control {
+      &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    }
     .email__container {
       float: left;
       display: inline-block;
+      margin-bottom: 5px;
+      padding-right: 20px;
     }
     .newsletter__container {
       float: left;
       display: inline-block;
-      padding-left: 10px;
-      padding-top: 5px;
+      padding-top: 6px;
     }
     .label-cbx {
       user-select: none;
@@ -151,7 +158,6 @@
       pointer-events: none;
       vertical-align: middle;
     }
-
     .invisible {
       position: absolute;
       z-index: -1;
