@@ -80,18 +80,18 @@ const sections = {
         base: 'lightning',
       },
       {
+        title: 'Open Social',
+        description: 'Open Social is a distribution for building social communities and intranets, a successor to Drupal Commons.',
+        location: locations.LOCATION_INTL,
+        base: 'open-social',
+      },
+      {
         title: 'Thunder',
         description: 'Not yet available with Kickstart.',
         // description: 'A publishing based distribution for content publishers, like news or magazine sites.',
         location: locations.LOCATION_INTL,
         base: 'thunder',
         enabled: false,
-      },
-      {
-        title: 'Open Social',
-        description: 'Open Social is a distribution for building social communities and intranets, a successor to Drupal Commons.',
-        location: locations.LOCATION_INTL,
-        base: 'open-social',
       },
       {
         title: 'OpenEDU',
@@ -118,17 +118,25 @@ const sections = {
       {
         title: 'BrainTree',
         description: '',
-        // image_src: '/static/gfx/paylogos/braintree.png',
-        // sponsored: true,
+        image_src: '/static/gfx/paylogos/braintree.png',
+        sponsored: true,
         composer_package: 'drupal/commerce_braintree',
         location: locations.LOCATION_INTL,
       },
       {
         title: 'Auth.net',
         description: '',
-        // image_src: '/static/gfx/paylogos/authorize.png',
-        // sponsored: true,
+        image_src: '/static/gfx/paylogos/authorize.png',
+        sponsored: true,
         composer_package: 'drupal/commerce_authnet',
+        location: locations.LOCATION_INTL,
+      },
+      {
+        title: 'Square',
+        description: '',
+        image_src: '/static/gfx/paylogos/square.png',
+        sponsored: true,
+        composer_package: 'drupal/commerce_square',
         location: locations.LOCATION_INTL,
       },
       {
@@ -147,12 +155,6 @@ const sections = {
         title: 'Vantiv',
         description: '',
         composer_package: 'drupal/commerce_vantiv',
-        location: locations.LOCATION_INTL,
-      },
-      {
-        title: 'Square',
-        description: '',
-        composer_package: 'drupal/commerce_square',
         location: locations.LOCATION_INTL,
       },
       {
@@ -236,7 +238,9 @@ const sections = {
         location: locations.LOCATION_INTL,
       },
       {
-        title: 'AvaTax',
+        title: 'Avalara',
+        image_src: '/static/gfx/taxlogos/avalara.png',
+        sponsored: true,
         description: '',
         composer_package: 'drupal/commerce_avatax',
         location: locations.LOCATION_INTL,
