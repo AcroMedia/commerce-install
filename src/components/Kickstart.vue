@@ -2,7 +2,7 @@
   <div class="kickstart container">
 
     <div class="kickstart__wrapper columns">
-      <div class="kickstart__main column is-9">
+      <div class="kickstart__main column is-8-tablet is-9-desktop">
         <div class="kickstart__description">
           <h1>Drupal Commerce Installation</h1>
           <p>
@@ -39,7 +39,7 @@
 
       </div>
 
-      <div class="column is-3">
+      <div class="column is-4-tablet is-3-desktop">
         <div v-sticky="{ zIndex: 100, stickyTop: -330 }">
           <div>
             <div class="sidebar">
