@@ -6,6 +6,7 @@ import VueResource from 'vue-resource'
 import Notifications from 'vue-notification'
 import VueScrollTo from 'vue-scrollto'
 import VeeValidate from 'vee-validate'
+import VueAnalytics from 'vue-analytics'
 
 import kickstartInfo from '@/store/index'
 import App from './App'
@@ -30,16 +31,40 @@ Vue.use(VeeValidate)
 
 Vue.config.productionTip = false
 
+Vue.use(VueAnalytics, {
+  id: 'UA-106984196-1',
+  router
+})
+
 const store = new Vuex.Store(kickstartInfo)
 
 /* eslint-disable no-new */
-new Vue({
+var app = new Vue({
   el: '#app',
   router,
   template: '<App/>',
   components: {App},
   store,
 })
+
+var gaTracking = new Vue({
+  methods: {
+    gaTracking: function () {
+      // Open Help Modal.
+      document.getElementById('download-button').onclick = trackEvent
+      function trackEvent () {
+        app.$ga.event({
+          eventCategory: 'Module',
+          eventAction: 'Commerce',
+          eventLabel: 'Downloaded'
+          // eventValue: 1
+        })
+      }
+    }
+  }
+})
+
+gaTracking.gaTracking()
 
 var helpModal = new Vue({
   methods: {
