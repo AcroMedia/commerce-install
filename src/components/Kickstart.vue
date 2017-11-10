@@ -55,6 +55,15 @@
               <div class="sidebar__summary">
                 <cart-summary></cart-summary>
               </div>
+              <div class="sidebar__issues">
+                <div class="side__issues-icon">
+                  <img src="../assets/gfx/github-icon.png">
+                </div>
+                <div class="side__issues-description">
+                  <span class="side__spot">Spot an issue?</span>
+                  <span class="side__letknow">Let us know on <a href="#">Github ></a></span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

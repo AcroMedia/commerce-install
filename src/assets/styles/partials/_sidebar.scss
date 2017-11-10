@@ -76,7 +76,7 @@
   display: inline-block;
   color: #fff;
   width: 100%;
-  padding: 10px 0 50px;
+  padding: 10px 0 35px;
   text-align: center;
   .side__description div {
     text-align: left;
@@ -159,5 +159,31 @@
     text-align: center;
     display: inline-block;
     height: 50px;
+  }
+}
+
+.sidebar__issues {
+  .side__issues-icon {
+    float: left;
+    margin-left: 25px;
+  }
+}
+
+.side__issues-description {
+  margin-left: 10px;
+  float: left;
+  padding: 5px 0;
+  span {
+    display: block;
+    line-height: 18px;
+  }
+  .side__spot {
+    font-size: 18px;
+  }
+  .side__letknow {
+    font-size: 14px;
+    a {
+      color: #ff9900;
+    }
   }
 }
