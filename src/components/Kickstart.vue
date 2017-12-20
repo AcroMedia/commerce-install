@@ -61,7 +61,7 @@
                 </div>
                 <div class="side__issues-description">
                   <span class="side__spot">Spot an issue?</span>
-                  <span class="side__letknow">Let us know on <a href="#">Github ></a></span>
+                  <span class="side__letknow">Let us know on <a href="https://github.com/AcroMedia/commerce-install">Github ></a></span>
                 </div>
               </div>
             </div>
