@@ -337,7 +337,7 @@ const sections = {
   },
   build: {
     title: 'Build & Install',
-    description: 'The download below will contain a composer.json file and some associated helper scripts. To install your site, simply extra the folder to wherever you want to site to be built and run "composer install". If you are not familiar with composer, see the Drupal.org documentation to get started',
+    description: 'The download below will contain a composer.json file and some associated helper scripts. To install your site, simply extract the folder to wherever you want to site to be built and run "composer install". If you are not familiar with composer, see the Drupal.org documentation to get started',
     url: 'https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal',
   },
 }
