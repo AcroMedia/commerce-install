@@ -7,7 +7,7 @@
           <span class="section-icons__custom section-icons build"></span>
           {{ sections[section].title }}
         </h2>
-        <p>{{ sections[section].description }}</p>
+        <p>{{ sections[section].description }} <a target="_blank" v-bind:href="sections[section].url">click here</a></p>
       </div>
     </div>
     <div class="product__content">
