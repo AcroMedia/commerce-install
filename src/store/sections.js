@@ -71,18 +71,21 @@ const sections = {
         description: 'Stock Drupal, nothing extra.',
         location: locations.LOCATION_INTL,
         base: 'drupal',
+        package_link: 'http://google.com',
         default: true,
       },
       {
         title: 'Lightning',
         description: 'A authoring based distribution built by Acquia, useful for managing lots of content that needs reviews and editors.',
         location: locations.LOCATION_INTL,
+        package_link: 'http://yahoo.com',
         base: 'lightning',
       },
       {
         title: 'Open Social',
         description: 'Open Social is a distribution for building social communities and intranets, a successor to Drupal Commons.',
         location: locations.LOCATION_INTL,
+        package_link: 'http://yahoo.com',
         base: 'open-social',
       },
       {
@@ -91,6 +94,7 @@ const sections = {
         // description: 'A publishing based distribution for content publishers, like news or magazine sites.',
         location: locations.LOCATION_INTL,
         base: 'thunder',
+        package_link: 'http://yahoo.com',
         enabled: false,
       },
       {

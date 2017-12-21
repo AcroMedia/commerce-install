@@ -14,6 +14,9 @@
         !cardIsAvailable(index, section) ? 'disabled' : ''
         ]"
         class="box__item noselect">
+        <a target="_blank" v-if="option.package_link" class="item-link" :href=" option.package_link ">
+          <i class="material-icons item-icon">open_in_new</i>
+        </a>
         <div
             v-if="option.image_src"
             class="pay__logo"
