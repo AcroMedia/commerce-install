@@ -26,7 +26,7 @@
   @import 'assets/styles/partials/kickstart';
 
   .kickstart-notification {
-    background: $light-blue !important;
+    background: $yellow-warning !important;
     color: $c-white;
     text-align: center;
     margin-top: 20px;

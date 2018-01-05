@@ -34,9 +34,11 @@ export default {
     state.summary[section].activeIndex.push(index)
     state.summary[section].activeOptions.push({title: title})
     state.summary[section].section = state.sections[section].title
+    state.packageChanged = true
   },
   removeSelectedOption (state, payload) {
     state.summary[payload.section].activeIndex.splice(payload.clicked, 1)
     state.summary[payload.section].activeOptions.splice(payload.clicked, 1)
+    state.packageChanged = true
   },
 }

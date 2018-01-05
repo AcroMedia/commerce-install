@@ -21,17 +21,12 @@ export default {
     }
     let base = vSections.drupalBase.options[state.summary.drupalBase.activeIndex[0]].base
     let content = ['demo']
-    // let ci = []
-    // if (state.summary.ci.activeIndex[0] !== undefined) {
-    //   ci = vSections.drupalBase.options[state.summary.ci.activeIndex[0]].ci
-    // }
     let obj = {packages, base, content, email, newsletter}
     let parameters = param(obj)
 
-    // Set the download url when tarball link is returned.
-    // commit('setDownloadLink', await kickstartService.getKickstartPackageURL(state.backendURL + '?' + parameters).then(response => response))
-
     let response = await kickstartService.getKickstartPackageURL(state.backendURL + '?' + parameters).then(response => response)
+    state.generatedPackage = true
+    state.packageChanged = false
     window.location = response
   }
 }

@@ -84,7 +84,7 @@
               title: 'Required Section',
               text: 'You must choose at least one option from the <b>' + sectionTitle + '</b> section.',
               duration: 4500,
-              speed: 250,
+              speed: 500,
             })
           }
         } else {

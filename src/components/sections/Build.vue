@@ -13,10 +13,11 @@
     <div class="product__content">
       <div class="btn__row">
         <div id="download" class="columns">
-          <a id="download-button" class="btn btn__download btn--blue column is-11-mobile is-7-tablet is-4-desktop build__link"
+          <a id="download-button" class="btn btn__download btn--orange column is-11-mobile is-7-tablet is-4-desktop build__link"
              @click.prevent="generatePackage">
             <span>download</span>
           </a>
+          <p v-if="packageChanged && generatedPackage" class="package-changed">Looks like you made some changes, click download to get an updated package.</p>
         </div>
       </div>
     </div>
@@ -34,7 +35,7 @@
       Cards,
     },
     computed: {
-      ...mapState(['sections', 'downloadLink', 'backendURL']),
+      ...mapState(['sections', 'packageChanged', 'generatedPackage']),
     },
     methods: {
       ...mapActions(['generatePackage']),
@@ -60,6 +61,30 @@
     &__content {
       padding-top: 40px;
       border: 2px solid $light-blue;
+
+      & p {
+        &.package-changed {
+          line-height: 51px;
+          margin-left: 30px;
+          padding-left: 30px;
+          font-style: italic;
+          font-size: .9em;
+          position: relative;
+
+          &:before {
+            position: absolute;
+            font-style: normal;
+            height: 50px;
+            width: 50px;
+            left: 0;
+            top: -4px;
+            color: $yellow-warning;
+            font-size: 1.6em;
+            font-family: 'Material Icons';
+            content: '\E8B2';
+          }
+        }
+      }
     }
   }
 
@@ -121,6 +146,18 @@
       color: $c-white;
       font-size: 30px;
       font-family: 'Material Icons';
+    }
+
+    &--orange {
+      color: $orange;
+      border: solid 1px $orange;
+      &:before {
+        background: $orange;
+      }
+      &:hover {
+        color: $c-white;
+        background: $orange;
+      }
     }
 
     &--blue {
