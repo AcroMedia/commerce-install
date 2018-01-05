@@ -30,15 +30,10 @@ const summary = {
     section: ''
   },
   content: {
-    activeIndex: [],
-    activeOptions: [],
-    section: ''
+    activeIndex: [0],
+    activeOptions: [{title: 'Clean'}],
+    section: 'Content',
   },
-  // ci: {
-  //   activeIndex: [],
-  //   activeOptions: [],
-  //   section: ''
-  // }
 }
 
 module.exports = summary
