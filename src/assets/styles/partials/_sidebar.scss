@@ -1,6 +1,6 @@
 .sidebar {
   position: relative;
-  padding-top: 350px;
+  padding-top: 180px;
   width: 100%;
   z-index: 10;
   @include bp(mobil) {
@@ -8,18 +8,11 @@
     top: inherit;
     width: 100%;
   }
-  @media(max-width: 1190px) and (min-width: 1026px) {
-    padding-top: 255px;
-  }
-  @media(max-width: 1026px) and (min-width: 864px) {
-    padding-top: 255px;
-  }
-  @media(max-width: 864px) {
+  @media (max-width: 864px) {
     display: none;
     position: absolute;
     right: 0;
   }
-
 }
 
 .sidebar__help {
@@ -184,6 +177,66 @@
     font-size: 14px;
     a {
       color: #ff9900;
+    }
+  }
+}
+
+// D7 Commerce Kickstart CTA.
+.column .d7-commerce-kickstart-cta {
+  margin-top: 91px;
+
+  @media (max-width: 864px) {
+    display: none;
+  }
+}
+.d7-commerce-kickstart-cta__top {
+  padding: 0 0 6px 0;
+  font-size: 18px;
+}
+.d7-commerce-kickstart-cta__middle {
+  padding: 0 0 6px 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: $c-blue;
+}
+.d7-commerce-kickstart-cta__bottom {
+  font-size: 16px;
+  line-height: 1.6;
+
+  .material-icons {
+    position: relative;
+    top: 1px;
+    right: -2px;
+    padding: 2px 0 0 0;
+    width: 28px;
+    height: 27px;
+    color: #efefef;
+    vertical-align: top;
+    background: $light-blue;
+  }
+}
+.d7-commerce-kickstart-cta {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 290px;
+  color: #666;
+  line-height: 1.0;
+  text-align: center;
+  text-decoration: none;
+
+  div,
+  i {
+    transition: color .1s ease-in-out, background-color .1s ease-in-out, border-color .1s ease-in-out, opacity .1s ease-in-out;
+  }
+
+  &:hover,
+  &:focus {
+    .d7-commerce-kickstart-cta__middle {
+      color: $dark-blue;
+    }
+    .material-icons {
+      background: $dark-blue;
     }
   }
 }

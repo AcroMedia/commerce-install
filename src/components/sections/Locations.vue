@@ -13,6 +13,7 @@
     <transition name="cards-slide">
       <div class="product__content" v-if="show">
         <cards section="locations"></cards>
+        <a href="mailto:sales@commerceguys.com" class="technology-partner-cta">Interested in being a technology partner?</a>
       </div>
     </transition>
   </div>

@@ -40,29 +40,32 @@
       </div>
 
       <div class="column is-4-tablet is-3-desktop">
-        <div v-sticky="{ zIndex: 100, stickyTop: -330 }">
-          <div>
-            <div class="sidebar">
-              <div class="sidebar__help">
-                <h2>Need a Hand?</h2>
-                <div class="side__description">
-                  Want to setup a Drupal Commerce site, but not sure what all this means?
-                </div>
-                <button id="help-me-out" class="btn__primary" aria-label="Help">
-                  Yeah, Help Me Out!
-                </button>
+        <a href="https://www.drupal.org/project/commerce_kickstart" target="_blank" class="d7-commerce-kickstart-cta">
+          <div class="d7-commerce-kickstart-cta__top">Looking for the D7</div>
+          <div class="d7-commerce-kickstart-cta__middle">Commerce Kickstart Demo?</div>
+          <div class="d7-commerce-kickstart-cta__bottom">view the original distribution <i class="material-icons">&#xE01F;</i></div>
+        </a>
+        <div v-sticky="{ zIndex: 100, stickyTop: -160 }">
+          <div class="sidebar">
+            <div class="sidebar__help">
+              <h2>Need a Hand?</h2>
+              <div class="side__description">
+                Want to setup a Drupal Commerce site, but not sure what all this means?
               </div>
-              <div class="sidebar__summary">
-                <cart-summary></cart-summary>
+              <button id="help-me-out" class="btn__primary" aria-label="Help">
+                Yeah, Help Me Out!
+              </button>
+            </div>
+            <div class="sidebar__summary">
+              <cart-summary></cart-summary>
+            </div>
+            <div class="sidebar__issues">
+              <div class="side__issues-icon">
+                <img src="../assets/gfx/github-icon.png">
               </div>
-              <div class="sidebar__issues">
-                <div class="side__issues-icon">
-                  <img src="../assets/gfx/github-icon.png">
-                </div>
-                <div class="side__issues-description">
-                  <span class="side__spot">Spot an issue?</span>
-                  <span class="side__letknow">Let us know on <a href="https://github.com/AcroMedia/commerce-install">Github ></a></span>
-                </div>
+              <div class="side__issues-description">
+                <span class="side__spot">Spot an issue?</span>
+                <span class="side__letknow">Let us know on <a href="https://github.com/AcroMedia/commerce-install">Github ></a></span>
               </div>
             </div>
           </div>
