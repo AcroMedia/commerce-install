@@ -235,19 +235,19 @@ const sections = {
         package_link: 'https://www.drupal.org/project/commerce_fedex',
       },
       {
-        title: 'USPS',
-        description: 'Not Yet Available.',
-        composer_package: 'drupal/commerce_usps',
-        location: locations.LOCATION_NA,
-        package_link: 'https://www.drupal.org/project/commerce_usps',
-        enabled: false,
-      },
-      {
         title: 'Postcode',
         description: 'Provides simple postal code based shipping options that can be provided via CSV.',
         composer_package: 'drupal/commerce_postcode_delivery',
         location: locations.LOCATION_INTL,
         package_link: 'https://www.drupal.org/project/commerce_postcode_delivery',
+      },
+      {
+        title: 'USPS',
+        description: 'Not yet available with Kickstart.',
+        composer_package: 'drupal/commerce_usps',
+        location: locations.LOCATION_NA,
+        package_link: 'https://www.drupal.org/project/commerce_usps',
+        enabled: false,
       }
     ],
     multiselect: true,
