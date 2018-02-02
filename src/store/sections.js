@@ -29,7 +29,7 @@ const sections = {
       },
     ],
   },
-/*
+  /*
   packages: {
     title: 'Packages',
     description: '',
@@ -213,13 +213,6 @@ const sections = {
         location: locations.LOCATION_INTL,
       },
       {
-        title: 'USPS',
-        description: 'Not Yet Available.',
-        composer_package: 'drupal/commerce_usps',
-        location: locations.LOCATION_NA,
-        enabled: false,
-      },
-      {
         title: 'Postcode',
         description: 'Provides simple postal code based shipping options that can be provided via CSV.',
         composer_package: 'drupal/commerce_postcode_delivery',
@@ -244,20 +237,6 @@ const sections = {
         description: '',
         composer_package: 'drupal/commerce_avatax',
         location: locations.LOCATION_INTL,
-      },
-      {
-        title: 'Quickbooks',
-        description: '',
-        composer_package: 'drupal/commerce_qb_webconnect',
-        location: locations.LOCATION_INTL,
-        enabled: false,
-      },
-      {
-        title: 'Quickbooks Online',
-        description: '',
-        composer_package: 'drupal/commerce_qbo_ui',
-        location: locations.LOCATION_INTL,
-        enabled: false,
       }
     ],
     multiselect: true,
@@ -267,7 +246,7 @@ const sections = {
     description: 'How you display your products and categories drives the shopping experience.',
     options: [
       {
-        title: 'Search API',
+        title: 'Database Search',
         description: '',
         composer_package: 'drupal/search_api',
         location: locations.LOCATION_INTL,

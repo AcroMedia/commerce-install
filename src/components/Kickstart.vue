@@ -4,7 +4,7 @@
     <div class="kickstart__wrapper columns">
       <div class="kickstart__main column is-8-tablet is-9-desktop">
         <div class="kickstart__description">
-          <h1>Drupal Commerce Installation</h1>
+          <h1>Drupal Commerce 2.x Installer</h1>
           <p>
             <strong>This tool will build a Drupal Commerce composer file to install your site.</strong>
           </p>
@@ -41,9 +41,9 @@
 
       <div class="column is-4-tablet is-3-desktop">
         <a href="https://www.drupal.org/project/commerce_kickstart" target="_blank" class="d7-commerce-kickstart-cta">
-          <div class="d7-commerce-kickstart-cta__top">Looking for the D7</div>
-          <div class="d7-commerce-kickstart-cta__middle">Commerce Kickstart Demo?</div>
-          <div class="d7-commerce-kickstart-cta__bottom">view the original distribution <i class="material-icons">&#xE01F;</i></div>
+          <div class="d7-commerce-kickstart-cta__top">Click to access the</div>
+          <div class="d7-commerce-kickstart-cta__middle">Commerce Kickstart 2.x</div>
+          <div class="d7-commerce-kickstart-cta__bottom">demo for <strong>Drupal 7</strong><!-- <i class="material-icons">&#xE01F;</i>--></div>
         </a>
         <div v-sticky="{ zIndex: 100, stickyTop: -160 }">
           <div class="sidebar">

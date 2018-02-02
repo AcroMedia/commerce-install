@@ -63,10 +63,10 @@
               Interested in getting involved? Contact us for Drupal Commerce partnerships and sponsorship.
             </div>
             <div class="brand__links">
-              <a href="https://www.commerceguys.com" class="web-icon" target="_blank" title="Go to the Commerce Guys' website">
+              <a href="https://commerceguys.com" class="web-icon" target="_blank" title="Go to the Commerce Guys' website">
                 commerceguys.com
               </a>
-              <a href="mailto:sales@commerceguys.com" class="email-icon" target="_blank" title="Email sales@commerceguys.com">
+              <a href="mailto:info@commerceguys.com" class="email-icon" target="_blank" title="Email info@commerceguys.com">
                 info@commerceguys.com
               </a>
             </div>

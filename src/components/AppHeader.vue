@@ -9,7 +9,7 @@
         <img src="../assets/gfx/logo.png" alt="Commerce Kickstart">
       </div>
       <div class="site-header__slogan">
-        The quickest way to get up & running with <span>Drupal Commerce 2</span> & <span>Drupal 8</span>
+        The quickest way to get up and running with <span>Drupal Commerce</span> on <span>Drupal 8</span>
       </div>
     </div>
   </header>
