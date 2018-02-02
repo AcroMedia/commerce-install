@@ -73,10 +73,6 @@
           </div>
         </div>
       </div>
-
-      <div class="footer__copyright">
-        © 1998 - 2017 <a href="#">Acro Media Inc.</a> <a href="#">Privacy Policy </a>
-      </div>
     </div>
 
   </footer>

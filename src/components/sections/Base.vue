@@ -22,6 +22,7 @@
     <transition name="cards-slide">
       <div class="product__content" v-if="show">
         <cards section="drupalBase"></cards>
+        <button id="technology-partner-cta" class="technology-partner-cta" aria-label="Get your company featured here!">Get your company featured here!</button>
       </div>
     </transition>
   </div>

@@ -76,9 +76,9 @@ var helpModal = new Vue({
       }
 
       // Close Help Modal.
-      document.getElementById('modal-content__close-button').onclick = closeModal
-      document.getElementById('modal-background').onclick = closeModal
-      document.getElementById('modal-close').onclick = closeModal
+      document.getElementById('help-modal-content__close-button').onclick = closeModal
+      document.getElementById('help-modal-background').onclick = closeModal
+      document.getElementById('help-modal-close').onclick = closeModal
       function closeModal () {
         document.getElementById('helpModal').classList.remove('is-active')
       }
@@ -87,3 +87,28 @@ var helpModal = new Vue({
 })
 
 helpModal.helpModal()
+
+var techPartnerModal = new Vue({
+  methods: {
+    techPartnerModal: function () {
+      // Open Technology Partner Modal (from multiple buttons).
+      var techPartnerCTAs = document.getElementsByClassName('technology-partner-cta');
+      [].forEach.call(techPartnerCTAs, function (cta) {
+        cta.onclick = openModal
+        function openModal () {
+          document.getElementById('techPartnerModal').className += ' ' + 'is-active'
+        }
+      })
+
+      // Close Technology Partner Modal.
+      document.getElementById('technology-modal-content__close-button').onclick = closeModal
+      document.getElementById('technology-modal-background').onclick = closeModal
+      document.getElementById('technology-modal-close').onclick = closeModal
+      function closeModal () {
+        document.getElementById('techPartnerModal').classList.remove('is-active')
+      }
+    }
+  }
+})
+
+techPartnerModal.techPartnerModal()

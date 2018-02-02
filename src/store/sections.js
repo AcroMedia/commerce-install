@@ -217,6 +217,13 @@ const sections = {
         description: 'Provides simple postal code based shipping options that can be provided via CSV.',
         composer_package: 'drupal/commerce_postcode_delivery',
         location: locations.LOCATION_INTL,
+      },
+      {
+        title: 'USPS',
+        description: 'Not yet available with Kickstart.',
+        composer_package: 'drupal/commerce_usps',
+        location: locations.LOCATION_NA,
+        enabled: false,
       }
     ],
     multiselect: true,
@@ -226,8 +233,8 @@ const sections = {
     description: 'Your store needs to be accurate in the accounting department, and that means taxes for your customers must follow the rules. Charging taxes between various products, regions and countries can be handled by Drupal Commerce.',
     options: [
       {
-        title: 'Commerce Taxes',
-        description: 'The basic options for taxes, includes manual setup as well as preconfigured taxes for EU and Canada.',
+        title: 'Custom Taxes',
+        description: 'The basic options for taxes, includes custom rate setup as well as predefined rates for EU, Switzerland, Norway and Canada.',
         location: locations.LOCATION_INTL,
       },
       {
@@ -237,7 +244,22 @@ const sections = {
         description: '',
         composer_package: 'drupal/commerce_avatax',
         location: locations.LOCATION_INTL,
+      },
+      {
+        title: 'Quickbooks',
+        description: 'Not yet available with Kickstart.',
+        composer_package: 'drupal/commerce_qb_webconnect',
+        location: locations.LOCATION_INTL,
+        enabled: false,
+      },
+      {
+        title: 'Quickbooks Online',
+        description: 'Not yet available with Kickstart.',
+        composer_package: 'drupal/commerce_qbo_ui',
+        location: locations.LOCATION_INTL,
+        enabled: false,
       }
+
     ],
     multiselect: true,
   },
@@ -305,7 +327,7 @@ const sections = {
       },
       {
         title: 'Demo Content',
-        description: 'Not yet available.',
+        description: 'Not yet available with Kickstart.',
         enabled: false,
       },
     ],

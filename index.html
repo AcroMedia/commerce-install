@@ -32,10 +32,15 @@
   <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+
+    <!-- Let Us Help modal -->
     <div id="helpModal" class="modal">
-      <div id="modal-background" class="modal-background"></div>
+      <div id="help-modal-background" class="modal-background"></div>
       <div class="modal-content">
-        <h2>Let us help</h2>
+        <div class="modal-content__close">
+          <button id="help-modal-content__close-button" class="modal-content__close-button" aria-label="close"><i class="material-icons">close</i></button>
+        </div>
+        <h2>Let Us Help</h2>
         <div class="modal-content__intro">
           Fill out the form to have one of our Drupal Commerce experts contact you.
           <span class="small">Fields marked with <strong>*</strong> are required.</span>
@@ -53,11 +58,38 @@
             });
           </script>
         </div>
+      </div>
+      <button id="help-modal-close" class="modal-close is-large" aria-label="close"></button>
+    </div>
+
+    <!-- Technology Partner modal -->
+    <div id="techPartnerModal" class="modal">
+      <div id="technology-modal-background" class="modal-background"></div>
+      <div class="modal-content">
         <div class="modal-content__close">
-          <button id="modal-content__close-button" class="modal-content__close-button" aria-label="close"><i class="material-icons">close</i></button>
+          <button id="technology-modal-content__close-button" class="modal-content__close-button" aria-label="close"><i class="material-icons">close</i></button>
+        </div>
+        <h2>Become a Technology Partner</h2>
+        <div class="modal-content__intro">
+          Get your company featured on the Drupal Commerce 2.x Installer website. Complete this form and we will contact you.
+          <span class="small">Fields marked with <strong>*</strong> are required.</span>
+        </div>
+        <div class="modal-content__form">
+          <!--[if lte IE 8]>
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+          <![endif]-->
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+          <script>
+            hbspt.forms.create({
+              css: '',
+              portalId: '1659229',
+              formId: '613dbf57-beb7-4997-98a0-f71a57efaac1'
+            });
+          </script>
         </div>
       </div>
-      <button id="modal-close" class="modal-close is-large" aria-label="close"></button>
+      <button id="technology-modal-close" class="modal-close is-large" aria-label="close"></button>
     </div>
+
   </body>
 </html>

@@ -2,7 +2,9 @@
   <header class="app-header">
     <div class="container">
       <div class="site-header__right">
-        <img src="../assets/gfx/drupal-commerce-logo.png" alt="Drupal Commerce">
+        <a href="https://drupalcommerce.org" target="_blank" title="Visit drupalcommerce.org">
+          <img src="../assets/gfx/drupal-commerce-logo.png" alt="Drupal Commerce">
+        </a>
         <span>The Adaptive Sales Platform</span>
       </div>
       <div class="site-header__logo">

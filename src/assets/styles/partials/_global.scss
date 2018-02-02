@@ -59,18 +59,24 @@ a {
   user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
-// Help Modal
+// Modals
 .modal-content {
-  padding: 20px 30px 20px;
+  padding: 20px 20px 40px 30px;
   background-color: #fff;
   border-radius: 10px;
   overflow: visible;
 
   h2 {
+    display: inline-block;
     padding: 0;
-    margin: 0;
+    margin: -10px 0 10px;
     color: $c-blue;
     font-size: 40px;
+    line-height: 1.1em;
+
+    @media (max-width: $screen-xs-max) {
+      font-size: 32px;
+    }
   }
 
   .modal-content__intro {

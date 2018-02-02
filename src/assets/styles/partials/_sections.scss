@@ -226,6 +226,9 @@ h2 {
   display: inline-block;
   margin: 0;
   padding:  1px 0 0 40px;
+  background: none;
+  border: none;
+  outline: none;
   font-size: 15px;
   line-height: 1.0;
   color: #666;
@@ -236,6 +239,7 @@ h2 {
   &:focus {
     color: $light-blue;
     text-decoration: none;
+    cursor: pointer;
   }
 
   // Icon.

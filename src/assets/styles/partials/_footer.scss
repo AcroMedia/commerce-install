@@ -204,19 +204,3 @@ footer {
     height: 2.8em;
   }
 }
-
-.footer__copyright {
-  margin-top: 28px;
-  padding: 23px 0;
-  text-align: center;
-  font-size: 12px;
-  border-top: 1px solid $black-01;
-
-  a:first-child {
-    color: $dark-grey;
-
-    &:hover, &:focus {
-      color: #999999;
-    }
-  }
-}
