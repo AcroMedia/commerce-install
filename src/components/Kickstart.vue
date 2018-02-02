@@ -5,23 +5,13 @@
       <div class="kickstart__main column is-8-tablet is-9-desktop">
         <div class="kickstart__description">
           <h1>Drupal Commerce 2.x Installer</h1>
+
           <p>
-            <strong>This tool will build a Drupal Commerce composer file to install your site.</strong>
+            Use the form below to select options for your Drupal Commerce 2.x installation. When you're done, click the download button at the bottom to get the install package.
           </p>
           <br />
           <p>
-            The steps below will take into consideration key elements that cater to your business needs.
-          </p>
-          <br />
-          <p>
-            Make changes to previous steps at any point.
-            Configuration settings can be changed once the site has been installed as well.
-            Once you’re happy with your selections below, click the <strong>Download</strong> button to have your files packaged up for install.
-            Simple!
-          </p>
-          <br />
-          <p>
-            If you have any issues or questions along the way, we are always here to help. Click the "Need a Hand" section on the right to contact us!
+            The package includes a JSON file containing your selections. With this file, and the Composer command line tool, you have everything needed to install Drupal Commerce 2.x. <a href="https://docs.drupalcommerce.org/commerce2/developer-guide/install-update/using-composer#how-to-use-it" aria-label="Using Composer documentation">Our documentation</a> will help you get you up and running with Composer.
           </p>
         </div>
 
@@ -45,7 +35,7 @@
           <div class="d7-commerce-kickstart-cta__middle">Commerce Kickstart 2.x</div>
           <div class="d7-commerce-kickstart-cta__bottom">demo for <strong>Drupal 7</strong><!-- <i class="material-icons">&#xE01F;</i>--></div>
         </a>
-        <div v-sticky="{ zIndex: 100, stickyTop: -160 }">
+        <div v-sticky="{ zIndex: 100, stickyTop: -80 }">
           <div class="sidebar">
             <div class="sidebar__help">
               <h2>Need a Hand?</h2>

@@ -1,6 +1,6 @@
 .sidebar {
   position: relative;
-  padding-top: 180px;
+  padding-top: 100px;
   width: 100%;
   z-index: 10;
   @include bp(mobil) {
@@ -156,34 +156,37 @@
 }
 
 .sidebar__issues {
+  display: inline-block;
+  padding-bottom: 35px;
+
   .side__issues-icon {
     float: left;
     margin-left: 25px;
   }
-}
 
-.side__issues-description {
-  margin-left: 10px;
-  float: left;
-  padding: 5px 0;
-  span {
-    display: block;
-    line-height: 18px;
-  }
-  .side__spot {
-    font-size: 18px;
-  }
-  .side__letknow {
-    font-size: 14px;
-    a {
-      color: #ff9900;
+  .side__issues-description {
+    margin-left: 10px;
+    float: left;
+    padding: 5px 0;
+    span {
+      display: block;
+      line-height: 18px;
+    }
+    .side__spot {
+      font-size: 18px;
+    }
+    .side__letknow {
+      font-size: 14px;
+      a {
+        color: #ff9900;
+      }
     }
   }
 }
 
 // D7 Commerce Kickstart CTA.
 .column .d7-commerce-kickstart-cta {
-  margin-top: 91px;
+  margin-top: 101px;
 
   @media (max-width: 864px) {
     display: none;

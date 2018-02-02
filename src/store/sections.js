@@ -296,7 +296,7 @@ const sections = {
   },
   content: {
     title: 'Content',
-    description: 'The organization and housing of your site’s written content, images and product details are the heart of your business. Drupal’s famous CMS is seamlessly connected to the Commerce toolbox and allows for the ultimate in productization and marketing. You may select to use the default content and data setups, integrate to a third party tool, integrate to a custom legacy setup or migrate your information from your old platform.',
+    description: 'The organization and housing of your site’s written content, images and product details are the heart of your business. Drupal’s famous CMS is seamlessly connected to the Commerce toolbox and allows for the ultimate in productization and marketing. You may select to use the default content and data setups, integrate to a third party tool, integrate to a custom legacy setup or migrate your information from your old platform. Note that migrating content may require technical understanding and Drush familiarity.',
     required: true,
     options: [
       {
