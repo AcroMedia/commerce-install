@@ -14,8 +14,17 @@ export default {
     let vSections = state.sections
     for (let section in state.summary) {
       state.summary[section].activeIndex.forEach(function (index) {
+        let require = []
+        // Add the package name if exists.
         if (vSections[section].options[index].composer_package) {
-          packages.push(vSections[section].options[index].composer_package)
+          require.push(vSections[section].options[index].composer_package)
+          // Add the package version if specified.
+          if (vSections[section].options[index].composer_package_version) {
+            require.push(vSections[section].options[index].composer_package_version)
+          } else {
+            require.push('*')
+          }
+          packages.push(require)
         }
       })
     }
