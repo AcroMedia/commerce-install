@@ -29,38 +29,38 @@ const sections = {
       },
     ],
   },
-/*
-  packages: {
-    title: 'Packages',
-    description: '',
-    options: [
-      {
-        title: 'Base',
-        description: 'Nothing extra pre-selected',
-        location: locations.LOCATION_INTL,
-        default: true,
-      },
-      {
-        title: 'Catalog',
-        description: 'Extra functionality commonly needed for a traditional catalog style site.',
-        location: locations.LOCATION_INTL,
-        enabled: false,
-      },
-      {
-        title: 'Events',
-        description: 'Extra functionality for events, such as concerts or training, with some of the more traditional product based extras removed.',
-        location: locations.LOCATION_INTL,
-        enabled: false,
-      },
-      {
-        title: 'Subscriptions',
-        description: 'Recurring billing functionality, to allow for subscriptions, licensing and other time based billing functionality.',
-        location: locations.LOCATION_INTL,
-        enabled: false,
-      },
-    ],
-  },
-  */
+  /*
+    packages: {
+      title: 'Packages',
+      description: '',
+      options: [
+        {
+          title: 'Base',
+          description: 'Nothing extra pre-selected',
+          location: locations.LOCATION_INTL,
+          default: true,
+        },
+        {
+          title: 'Catalog',
+          description: 'Extra functionality commonly needed for a traditional catalog style site.',
+          location: locations.LOCATION_INTL,
+          enabled: false,
+        },
+        {
+          title: 'Events',
+          description: 'Extra functionality for events, such as concerts or training, with some of the more traditional product based extras removed.',
+          location: locations.LOCATION_INTL,
+          enabled: false,
+        },
+        {
+          title: 'Subscriptions',
+          description: 'Recurring billing functionality, to allow for subscriptions, licensing and other time based billing functionality.',
+          location: locations.LOCATION_INTL,
+          enabled: false,
+        },
+      ],
+    },
+    */
   drupalBase: {
     title: 'Distribution',
     description: 'Distributions are full copies of Drupal that include Drupal Core, along with additional modules and libraries. Selecting your distribution will allow for unique modules to be included in your setup to conduct business within your specific vertical. If you’re unsure, that’s okay - just select Drupal.',
@@ -71,32 +71,38 @@ const sections = {
         description: 'Stock Drupal, nothing extra.',
         location: locations.LOCATION_INTL,
         base: 'drupal',
+        package_link: 'https://www.drupal.org',
         default: true,
       },
       {
         title: 'Lightning',
         description: 'A authoring based distribution built by Acquia, useful for managing lots of content that needs reviews and editors.',
         location: locations.LOCATION_INTL,
+        package_link: 'https://lightning.acquia.com/',
         base: 'lightning',
       },
       {
         title: 'Open Social',
         description: 'Open Social is a distribution for building social communities and intranets, a successor to Drupal Commons.',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.getopensocial.com/',
         base: 'open-social',
       },
       {
         title: 'Thunder',
         description: 'Not yet available with Kickstart.',
-        // description: 'A publishing based distribution for content publishers, like news or magazine sites.',
+        // description: 'A publishing based distribution for content
+        // publishers, like news or magazine sites.',
         location: locations.LOCATION_INTL,
         base: 'thunder',
+        package_link: 'https://thunder.org/',
         enabled: false,
       },
       {
         title: 'OpenEDU',
         description: 'Not yet available with Kickstart.',
-        // description: 'A pre-configured Drupal 8 implementation specifically built with the needs of higher education in mind.',
+        // description: 'A pre-configured Drupal 8 implementation specifically
+        // built with the needs of higher education in mind.',
         location: locations.LOCATION_INTL,
         base: 'openedu',
         enabled: false,
@@ -114,6 +120,7 @@ const sections = {
         sponsored: true,
         composer_package: 'drupal/commerce_paypal',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/commerce_paypal',
       },
       {
         title: 'BrainTree',
@@ -122,6 +129,7 @@ const sections = {
         sponsored: true,
         composer_package: 'drupal/commerce_braintree',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/commerce_braintree',
       },
       {
         title: 'Auth.net',
@@ -130,6 +138,7 @@ const sections = {
         sponsored: true,
         composer_package: 'drupal/commerce_authnet',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/commerce_authnet',
       },
       {
         title: 'Square',
@@ -138,54 +147,63 @@ const sections = {
         sponsored: true,
         composer_package: 'drupal/commerce_square',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/commerce_square',
       },
       {
         title: 'Moneris',
         description: '',
         composer_package: 'drupal/commerce_moneris',
         location: locations.LOCATION_NA,
+        package_link: 'https://www.drupal.org/project/commerce_moneris',
       },
       {
         title: 'Stripe',
         description: '',
         composer_package: 'drupal/commerce_stripe',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/commerce_stripe',
       },
       {
         title: 'Vantiv',
         description: '',
         composer_package: 'drupal/commerce_vantiv',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/commerce_vantiv',
       },
       {
         title: 'Paytrail',
         description: '',
         composer_package: 'drupal/commerce_paytrail',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/commerce_paytrail',
       },
       {
         title: 'Payplug',
         description: '',
         composer_package: 'drupal/commerce_payplug',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/commerce_payplug',
       },
       {
         title: 'PayUMoney',
         description: '',
         composer_package: 'drupal/commerce_payumoney',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/commerce_payumoney',
       },
       {
         title: 'AliPay',
         description: '',
         composer_package: 'drupal/commerce_alipay',
         location: locations.LOCATION_ASIA,
+        package_link: 'https://www.drupal.org/project/commerce_alipay',
       },
       {
         title: 'CCAvenue',
         description: '',
         composer_package: 'drupal/commerce_ccavenue',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/commerce_ccavenue',
       }
     ],
     multiselect: true,
@@ -199,24 +217,28 @@ const sections = {
         description: 'The basic options for shipping, allows simple flat rate shipping options.',
         composer_package: 'drupal/commerce_shipping',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/commerce_shipping',
       },
       {
         title: 'UPS',
         description: 'Provides real-time rates from UPS.',
         composer_package: 'drupal/commerce_ups',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/commerce_ups',
       },
       {
         title: 'FedEx',
         description: 'Provides real-time rates from Fedex.',
         composer_package: 'drupal/commerce_fedex',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/commerce_fedex',
       },
       {
         title: 'USPS',
         description: 'Not Yet Available.',
         composer_package: 'drupal/commerce_usps',
         location: locations.LOCATION_NA,
+        package_link: 'https://www.drupal.org/project/commerce_usps',
         enabled: false,
       },
       {
@@ -224,6 +246,7 @@ const sections = {
         description: 'Provides simple postal code based shipping options that can be provided via CSV.',
         composer_package: 'drupal/commerce_postcode_delivery',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/commerce_postcode_delivery',
       }
     ],
     multiselect: true,
@@ -244,12 +267,14 @@ const sections = {
         description: '',
         composer_package: 'drupal/commerce_avatax',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/commerce_avatax',
       },
       {
         title: 'Quickbooks',
         description: '',
         composer_package: 'drupal/commerce_qb_webconnect',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/commerce_qb_webconnect',
         enabled: false,
       },
       {
@@ -257,6 +282,7 @@ const sections = {
         description: '',
         composer_package: 'drupal/commerce_qbo_ui',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/commerce_qbo_ui',
         enabled: false,
       }
     ],
@@ -271,24 +297,28 @@ const sections = {
         description: '',
         composer_package: 'drupal/search_api',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/search_api',
       },
       {
         title: 'Apache Solr',
         description: '',
         composer_package: 'drupal/search_api_solr',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/search_api_solr',
       },
       {
         title: 'ElasticSearch',
         description: '',
         composer_package: 'drupal/elasticsearch_connector',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/elasticsearch_connector',
       },
       {
         title: 'Wishlist',
         description: '',
         composer_package: 'drupal/commerce_wishlist',
         location: locations.LOCATION_INTL,
+        package_link: 'https://www.drupal.org/project/commerce_wishlist',
       }
     ],
     multiselect: true,
@@ -307,21 +337,25 @@ const sections = {
         title: 'Ubercart',
         description: 'Migrate your content over from a Drupal 6 or Drupal 7 Ubercart install.',
         composer_package: 'drupal/commerce_migrate',
+        package_link: 'https://www.drupal.org/project/commerce_migrate',
       },
       {
         title: 'Commerce',
         description: 'Migrate your content from an existing Drupal 7 Commerce install.',
         composer_package: 'drupal/commerce_migrate',
+        package_link: 'https://www.drupal.org/project/commerce_migrate',
       },
       {
         title: 'Magento',
         description: 'Migrate your content from an existing Magento setup.',
         composer_package: 'drupal/commerce_migrate',
+        package_link: 'https://www.drupal.org/project/commerce_migrate',
       },
       {
         title: 'Shopify',
         description: 'Migrate your content from an existing Shopify setup.',
         composer_package: 'drupal/commerce_migrate',
+        package_link: 'https://www.drupal.org/project/commerce_migrate',
         enabled: false,
       },
       {

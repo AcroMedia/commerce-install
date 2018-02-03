@@ -103,6 +103,26 @@ h2 {
   }
 }
 
+.product__content{
+  .box__item {
+    position: relative;
+  }
+  .item-link{
+    position: absolute;
+    right: 0.35em;
+    top: 0.35em;
+    font-size: 12px;
+  }
+  .item-icon{
+    font-size: 20px;
+  }
+  .disabled{
+    .item-link{
+      color: #ccc;
+    }
+  }
+}
+
 .section-icons {
   width: 36px;
   height: 32px;

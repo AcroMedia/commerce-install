@@ -1,6 +1,6 @@
 <template>
   <div class="drupal-content product__build">
-    <a class="arrow_up" @click="show = !show" :class="show ? 'down' : ''"></a>
+    <a class="arrow_up" @click="show = !show" :class="show ? '' : 'down'"></a>
     <div class="top__info">
       <div class="box__content">
         <h2>
