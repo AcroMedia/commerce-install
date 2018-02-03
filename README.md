@@ -72,6 +72,10 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
           "type": "string",
           "description": "The composer package to be added to the download."
         },
+        "composer_package_version": {
+          "type": "string",
+          "description": "The composer package version. Defaults to *"
+        },
         "sponsored": {
           "type": "boolean",
           "description": "Flag a sponsored card."
