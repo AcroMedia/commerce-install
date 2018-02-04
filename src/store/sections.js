@@ -119,7 +119,7 @@ const sections = {
         image_src: '/static/gfx/paylogos/paypal.png',
         sponsored: true,
         composer_package: 'drupal/commerce_paypal',
-        // composer_package_version: '*',
+        composer_package_version: '1.0',
         location: locations.LOCATION_INTL,
         package_link: 'https://www.drupal.org/project/commerce_paypal',
       },
