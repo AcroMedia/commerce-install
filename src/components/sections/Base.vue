@@ -17,6 +17,7 @@
           <i class="material-icons section-icons view_module">view_module</i>
           {{ sections[section].title }}
         </h2>
+        <div class="box__instructions">Select one.</div>
       </div>
     </div>
     <transition name="cards-slide">

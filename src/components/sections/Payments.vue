@@ -17,6 +17,7 @@
           <i class="material-icons section-icons credit_card">credit_card</i>
           {{ sections[section].title }}
         </h2>
+        <div class="box__instructions">Select any you desire.</div>
       </div>
     </div>
     <transition name="cards-slide">

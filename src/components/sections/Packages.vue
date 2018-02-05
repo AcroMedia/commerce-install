@@ -17,6 +17,7 @@
           <div class="section-icons__custom section-icons packages"></div>
           {{ sections[section].title }}
         </h2>
+        <div class="box__instructions">Select one.</div>
       </div>
     </div>
     <transition name="cards-slide">
