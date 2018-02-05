@@ -186,15 +186,16 @@ h2 {
 .product__content{
   .box__item {
     position: relative;
+    padding: 15px 0.75rem;
   }
   .item-link{
     position: absolute;
-    right: 0.35em;
-    top: 0.35em;
+    right: 1px;
+    top: 1px;
     font-size: 12px;
   }
   .item-icon{
-    font-size: 20px;
+    font-size: 18px;
   }
   .disabled{
     .item-link{

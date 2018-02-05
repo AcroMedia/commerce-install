@@ -11,7 +11,7 @@
           </p>
           <br />
           <p>
-            The package includes a JSON file containing your selections. With this file, and the Composer command line tool, you have everything needed to install Drupal Commerce 2.x. <a href="https://docs.drupalcommerce.org/commerce2/developer-guide/install-update/using-composer#how-to-use-it" aria-label="Using Composer documentation">Our documentation</a> will help you get you up and running with Composer.
+            The package includes a JSON file containing your selections. With this file and the Composer command line tool, you have everything needed to install Drupal Commerce 2.x. <a href="https://docs.drupalcommerce.org/commerce2/developer-guide/install-update/using-composer#how-to-use-it" aria-label="Using Composer documentation">Our documentation</a> will help you get you up and running with Composer.
           </p>
         </div>
 
