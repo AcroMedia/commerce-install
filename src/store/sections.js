@@ -345,7 +345,7 @@ const sections = {
         default: true,
       },
       {
-        title: 'Commerce D7',
+        title: 'Commerce 1.x',
         description: 'Migrate your content from an existing Drupal 7 Commerce install.',
         composer_package: 'drupal/commerce_migrate',
         composer_package_version: '^2.0@alpha',
