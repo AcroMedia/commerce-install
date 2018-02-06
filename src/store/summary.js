@@ -31,8 +31,8 @@ const summary = {
   },
   content: {
     activeIndex: [0],
-    activeOptions: [{title: 'Clean'}],
-    section: 'Content',
+    activeOptions: [{title: 'None'}],
+    section: 'Data Migration',
   },
 }
 

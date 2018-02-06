@@ -215,7 +215,7 @@ const sections = {
     description: 'Your web store can successfully take an order, but that is only half of the equation. Configure your shipping and fulfillment setup to best match your business and ensure you can process, label and ship orders out the door.',
     options: [
       {
-        title: 'Commerce Shipping',
+        title: 'Flat Rate',
         description: 'The basic options for shipping, allows simple flat rate shipping options.',
         composer_package: 'drupal/commerce_shipping',
         composer_package_version: '^2.0@beta',
@@ -335,17 +335,17 @@ const sections = {
     multiselect: true,
   },
   content: {
-    title: 'Content',
-    description: 'The organization and housing of your site’s written content, images and product details are the heart of your business. Drupal’s famous CMS is seamlessly connected to the Commerce toolbox and allows for the ultimate in productization and marketing. You may select to use the default content and data setups, integrate to a third party tool, integrate to a custom legacy setup or migrate your information from your old platform. Note that migrating content may require technical understanding and Drush familiarity.',
+    title: 'Data Migration',
+    description: 'The organization and housing of your site’s content, images and product details are the heart of your business. Drupal’s famous CMS is seamlessly connected to the Commerce toolbox and allows for the ultimate in productization and marketing. By default there is no default content, however, if you would like to migrate content from another source, choose the source here. Note that migrating content may require technical understanding and Drush familiarity.',
     required: true,
     options: [
       {
-        title: 'Clean',
-        description: 'Empty install, no migrations or demo content.',
+        title: 'None',
+        description: 'Clean install, no migrations or demo content.',
         default: true,
       },
       {
-        title: 'Commerce',
+        title: 'Commerce D7',
         description: 'Migrate your content from an existing Drupal 7 Commerce install.',
         composer_package: 'drupal/commerce_migrate',
         composer_package_version: '^2.0@alpha',
@@ -380,13 +380,6 @@ const sections = {
         composer_package: 'drupal/commerce_migrate',
         composer_package_version: '^2.0@alpha',
         package_link: 'https://www.drupal.org/project/commerce_migrate',
-        enabled: false,
-      },
-      {
-        title: 'Demo Content',
-        description: 'Provides a demo store and content for Commerce 2.x.',
-        composer_package: 'drupal/commerce_demo',
-        package_link: 'https://www.drupal.org/project/commerce_demo',
         enabled: false,
       },
     ],
