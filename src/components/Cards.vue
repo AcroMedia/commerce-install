@@ -84,8 +84,8 @@
               group: 'required',
               type: 'warning',
               position: 'top center',
-              title: 'Required Section',
-              text: 'You must choose at least one option from the <b>' + sectionTitle + '</b> section.',
+              title: sectionTitle + ' Required',
+              text: 'At least one ' + sectionTitle + ' option must be selected. You can choose a different option if you like.',
               duration: 4500,
               speed: 500,
             })

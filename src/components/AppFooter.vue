@@ -7,8 +7,8 @@
              <img src="../assets/gfx/urban-hipster-screenshot.png" alt="Drupal Commerce demo site screenshot">
            </div>
            <div class="demo__info">
-              <h3>Drupal Commerce - Live Demo</h3>
-              Check out this live out-of-the-box demo of Drupal Commerce.
+              <h3>Try a Drupal Commerce 2.x demo!</h3>
+              The Urban Hipster demo site is a fully-functional example of what can be created with Drupal Commerce 2.x. This is not what you get from the Drupal Commerce 2.x Installer, but what you can achieve after configuration and theming. Be inspired!
            </div>
          </a>
        </div>
@@ -63,19 +63,15 @@
               Interested in getting involved? Contact us for Drupal Commerce partnerships and sponsorship.
             </div>
             <div class="brand__links">
-              <a href="https://www.commerceguys.com" class="web-icon" target="_blank" title="Go to the Commerce Guys' website">
+              <a href="https://commerceguys.com" class="web-icon" target="_blank" title="Go to the Commerce Guys' website">
                 commerceguys.com
               </a>
-              <a href="mailto:sales@commerceguys.com" class="email-icon" target="_blank" title="Email sales@commerceguys.com">
+              <a href="mailto:info@commerceguys.com" class="email-icon" target="_blank" title="Email info@commerceguys.com">
                 info@commerceguys.com
               </a>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="footer__copyright">
-        © 1998 - 2017 <a href="#">Acro Media Inc.</a> <a href="#">Privacy Policy </a>
       </div>
     </div>
 

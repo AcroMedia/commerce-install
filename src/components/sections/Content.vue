@@ -1,13 +1,23 @@
 <template>
   <div class="drupal-content product__build">
-    <a class="arrow_up" @click="show = !show" :class="show ? '' : 'down'"></a>
+    <a class="arrow_up" @click="show = !show" :class="show ? 'down' : ''"></a>
+    <div class="tooltip">
+      <div class="tooltip_icon" @click="openTooltip = !openTooltip" :class="openTooltip ? 'open-tooltip' : ''">?</div>
+      <div class="tooltip_description" v-if="openTooltip">
+        <div class="close" @click="openTooltip = !openTooltip" :class="openTooltip ? 'open-tooltip' : ''"><i class="material-icons">&#xE5CD;</i></div>
+        <div class="tooltip_title">
+          <i class="material-icons section-icons help">help</i>What is this?
+        </div>
+        {{ sections[section].description }}
+      </div>
+    </div>
     <div class="top__info">
       <div class="box__content">
         <h2>
           <div class="section-icons__custom section-icons content"></div>
           {{ sections[section].title }}
         </h2>
-        <p>{{ sections[section].description }}</p>
+        <div class="box__instructions">Select one.</div>
       </div>
     </div>
     <transition name="cards-slide">
@@ -27,7 +37,8 @@
     props: ['section'],
     data () {
       return {
-        show: true
+        show: true,
+        openTooltip: false
       }
     },
     computed: {
@@ -47,6 +58,7 @@
 
   .section-icons {
     background-image: url('../../assets/gfx/package-icon.png');
+    top: 4px;
     margin-right: 4px;
   }
 </style>

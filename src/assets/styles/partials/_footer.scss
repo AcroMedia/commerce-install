@@ -30,6 +30,7 @@ footer {
 
     .demo__info {
       display: inline-block;
+      width: calc(100% - 230px);
       vertical-align: middle;
       padding: 0 0 0 20px;
       font-size: 18px;
@@ -202,21 +203,5 @@ footer {
 .email__form {
   input {
     height: 2.8em;
-  }
-}
-
-.footer__copyright {
-  margin-top: 28px;
-  padding: 23px 0;
-  text-align: center;
-  font-size: 12px;
-  border-top: 1px solid $black-01;
-
-  a:first-child {
-    color: $dark-grey;
-
-    &:hover, &:focus {
-      color: #999999;
-    }
   }
 }
