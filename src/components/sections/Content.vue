@@ -16,8 +16,11 @@
         <h2>
           <div class="section-icons__custom section-icons content"></div>
           {{ sections[section].title }}
+          <div class="box__instructions">(Select any you desire)</div>
         </h2>
-        <div class="box__instructions">Select one.</div>
+        <div class="box__warning">
+          <strong>Note:</strong> Migrating content from another source may requires technical understanding and Drush familiarity.
+        </div>
       </div>
     </div>
     <transition name="cards-slide">
@@ -59,6 +62,6 @@
   .section-icons {
     background-image: url('../../assets/gfx/package-icon.png');
     top: 4px;
-    margin-right: 4px;
+    margin: 0 4px 0 0;
   }
 </style>

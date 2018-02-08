@@ -16,8 +16,11 @@
         <h2>
           <i class="material-icons section-icons view_module">view_module</i>
           {{ sections[section].title }}
+          <div class="box__instructions">(Select one)</div>
         </h2>
-        <div class="box__instructions">Select one.</div>
+        <div class="box__warning">
+          <strong>Note:</strong> Drupal Commerce is developed for and tested against the core Drupal distribution. The Commerce team does not maintain this distribution or any of the others shown here and therefore can not provide specific support for them.
+        </div>
       </div>
     </div>
     <transition name="cards-slide">

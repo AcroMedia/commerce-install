@@ -174,8 +174,24 @@ h2 {
     padding: 10px 38px 10px;
   }
   &__instructions {
-    padding: 0 0 5px 44px;
+    display: inline-block;
     font-size: 15px;
+    font-weight: 300;
+
+    @media(max-width: $screen-sm-max) {
+      padding-top: 7px;
+      display: block;
+    }
+  }
+  &__warning {
+    position: relative;
+    padding: 9px 0 5px 45px;
+    font-size: 15px;
+    font-weight: 300;
+
+    @media(max-width: $screen-sm-max) {
+      padding: 9px 0 5px 0;
+    }
   }
 }
 
@@ -191,6 +207,11 @@ h2 {
   .box__item {
     position: relative;
     padding: 15px 0.75rem;
+  }
+  .box__description {
+    @media(max-width: $screen-md-max) {
+      font-size: 14px;
+    }
   }
   .item-link{
     position: absolute;

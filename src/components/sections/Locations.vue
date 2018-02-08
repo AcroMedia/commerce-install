@@ -16,8 +16,8 @@
         <h2>
           <i class="material-icons section-icons language">language</i>
           {{ sections[section].title }}
+          <div class="box__instructions">(Select one)</div>
         </h2>
-        <div class="box__instructions">Select one.</div>
       </div>
     </div>
     <transition name="cards-slide">
