@@ -16,7 +16,7 @@
         <h2>
           <div class="section-icons__custom section-icons content"></div>
           {{ sections[section].title }}
-          <div class="box__instructions">(Select any you desire)</div>
+          <div class="box__instructions">(Select one)</div>
         </h2>
         <div class="box__warning">
           <strong>Note:</strong> Migrating content from another source may requires technical understanding and Drush familiarity.
