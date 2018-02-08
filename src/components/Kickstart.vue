@@ -16,7 +16,7 @@
           <br />
           <div class="kickstart__description-warning">
             <i class="material-icons warning">warning</i>
-            Some modules below may not yet have a stable release. If this important to your project, visit the module's Drupal.org project page (<i class="material-icons item-icon">open_in_new</i>) for its current status.
+            Some modules below may not yet have a stable release. If this is important to your project, visit the module's Drupal.org project page (<i class="material-icons item-icon">open_in_new</i>) for its current status.
           </div>
         </div>
 

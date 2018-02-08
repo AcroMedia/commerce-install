@@ -342,6 +342,7 @@ const sections = {
       {
         title: 'None',
         description: 'Clean install, no migrations or demo content.',
+        location: locations.LOCATION_INTL,
         default: true,
       },
       {
@@ -350,6 +351,7 @@ const sections = {
         composer_package: 'drupal/commerce_migrate',
         composer_package_version: '^2.0@alpha',
         package_link: 'https://www.drupal.org/project/commerce_migrate',
+        location: locations.LOCATION_INTL,
       },
       {
         title: 'Ubercart',
@@ -357,6 +359,7 @@ const sections = {
         composer_package: 'drupal/commerce_migrate',
         composer_package_version: '^2.0@alpha',
         package_link: 'https://www.drupal.org/project/commerce_migrate',
+        location: locations.LOCATION_INTL,
       },
       {
         title: 'Magento',
@@ -364,6 +367,7 @@ const sections = {
         composer_package: 'drupal/commerce_migrate',
         composer_package_version: '^2.0@alpha',
         package_link: 'https://www.drupal.org/project/commerce_migrate',
+        location: locations.LOCATION_INTL,
         enabled: false,
       },
       {
@@ -372,6 +376,7 @@ const sections = {
         composer_package: 'drupal/commerce_migrate',
         composer_package_version: '^2.0@alpha',
         package_link: 'https://www.drupal.org/project/commerce_migrate',
+        location: locations.LOCATION_INTL,
         enabled: false,
       },
       {
@@ -380,6 +385,7 @@ const sections = {
         composer_package: 'drupal/commerce_migrate',
         composer_package_version: '^2.0@alpha',
         package_link: 'https://www.drupal.org/project/commerce_migrate',
+        location: locations.LOCATION_INTL,
         enabled: false,
       },
     ],

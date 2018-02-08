@@ -4,6 +4,7 @@
     <router-view></router-view>
     <app-footer></app-footer>
     <notifications classes="kickstart-notification"/>
+    <notifications group="kickstart-notification" />
   </div>
 </template>
 
@@ -28,6 +29,7 @@
   .kickstart-notification {
     background: $yellow-warning !important;
     color: $c-white;
+    font-size: 15px;
     text-align: center;
     margin-top: 20px;
     margin-right: 20px;
@@ -35,6 +37,7 @@
 
     .notification-title {
       text-decoration: underline;
+      font-size: 18px;
     }
   }
 </style>
