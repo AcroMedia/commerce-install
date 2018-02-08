@@ -67,7 +67,7 @@
     }
   }
 }
-@media screen and  (max-width: 1000px){
+@media screen and  (max-width: $screen-md-max){
   .is-one-quarter:nth-child(3n+1){
     clear:left;
   }

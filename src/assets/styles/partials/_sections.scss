@@ -207,6 +207,11 @@ h2 {
   .box__item {
     position: relative;
     padding: 15px 0.75rem;
+    @media(max-width: $screen-md-max) {
+      h3 {
+        font-size: 20px;
+      }
+    }
   }
   .box__description {
     @media(max-width: $screen-md-max) {

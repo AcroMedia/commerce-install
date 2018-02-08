@@ -81,9 +81,8 @@
           } else {
             let sectionTitle = this.sections[section].title
             this.$notify({
-              group: 'required',
-              type: 'warning',
-              position: 'top center',
+              group: 'kickstart-notification',
+              type: 'kickstart-notification',
               title: sectionTitle + ' Required',
               text: 'At least one ' + sectionTitle + ' option must be selected. You can choose a different option if you like.',
               duration: 4500,
