@@ -13,6 +13,11 @@
           <p>
             The package includes a JSON file containing your selections. With this file and the Composer command line tool, you have everything needed to install Drupal Commerce 2.x. <a href="https://docs.drupalcommerce.org/commerce2/developer-guide/install-update/using-composer#how-to-use-it" aria-label="Using Composer documentation">Our documentation</a> will help you get you up and running with Composer.
           </p>
+          <br />
+          <div class="kickstart__description-warning">
+            <i class="material-icons warning">warning</i>
+            Some modules below may not yet have a stable release. If this important to your project, visit the module's Drupal.org project page (<i class="material-icons item-icon">open_in_new</i>) for its current status.
+          </div>
         </div>
 
         <locations section="locations"></locations>
@@ -35,7 +40,7 @@
           <div class="d7-commerce-kickstart-cta__middle">Commerce Kickstart 2.x</div>
           <div class="d7-commerce-kickstart-cta__bottom">demo for <strong>Drupal 7</strong><!-- <i class="material-icons">&#xE01F;</i>--></div>
         </a>
-        <div v-sticky="{ zIndex: 100, stickyTop: -80 }">
+        <div v-sticky="{ zIndex: 100, stickyTop: -125 }">
           <div class="sidebar">
             <div class="sidebar__help">
               <h2>Need a Hand?</h2>

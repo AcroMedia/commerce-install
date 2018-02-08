@@ -1,6 +1,6 @@
 .sidebar {
   position: relative;
-  padding-top: 100px;
+  padding-top: 145px;
   width: 100%;
   z-index: 10;
   @include bp(mobil) {
@@ -186,7 +186,7 @@
 
 // D7 Commerce Kickstart CTA.
 .column .d7-commerce-kickstart-cta {
-  margin-top: 101px;
+  margin-top: 150px;
 
   @media (max-width: 864px) {
     display: none;

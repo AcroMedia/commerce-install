@@ -2,12 +2,12 @@ const summary = {
   locations: {
     activeIndex: [0],
     activeOptions: [{title: 'International'}],
-    section: 'Locations'
+    section: 'Region'
   },
   drupalBase: {
     activeIndex: [0],
     activeOptions: [{title: 'Drupal'}],
-    section: 'Base'
+    section: 'Distribution'
   },
   payments: {
     activeIndex: [],
