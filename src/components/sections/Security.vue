@@ -17,6 +17,9 @@
           <i class="material-icons section-icons security">security</i>
           {{ sections[section].title }}
         </h2>
+        <div class="box__warning">
+          Optionally enter your email address and check the confirmation box to receive a monthly Commerce status report. Clicking the 'Download' button below will add your email to the list.
+        </div>
       </div>
     </div>
     <transition name="cards-slide">
