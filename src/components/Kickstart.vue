@@ -35,7 +35,7 @@
       </div>
 
       <div class="column is-4-tablet is-3-desktop">
-        <a href="http://d7demo.commercekickstart.com" target="_blank" class="d7-commerce-kickstart-cta">
+        <a href="http://d7.commercekickstart.com " target="_blank" class="d7-commerce-kickstart-cta">
           <div class="d7-commerce-kickstart-cta__top">Click to access the</div>
           <div class="d7-commerce-kickstart-cta__middle">Commerce Kickstart 2.x</div>
           <div class="d7-commerce-kickstart-cta__bottom">demo for <strong>Drupal 7</strong><!-- <i class="material-icons">&#xE01F;</i>--></div>
