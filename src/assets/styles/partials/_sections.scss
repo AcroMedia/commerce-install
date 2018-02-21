@@ -4,7 +4,7 @@ h2 {
   font-weight: 300;
 }
 
-.tooltip {
+.tooltip_icon {
   float: right;
   display: inline-block;
   position: relative;
@@ -13,28 +13,28 @@ h2 {
   width: 28px;
   height: 28px;
   margin-right: 10px;
+  font-size: 24px;
+  text-align: center;
+  color: #7a7a7a;
+  cursor: pointer;
+  line-height: 1;
+  font-family: $roboto;
+  border-radius: 50%;
+  border: solid 2px #d1d1d1;
+  transition: background-color .2s ease-in-out, border .2s ease-in-out, color .2s ease-in-out;
 
-  .tooltip_icon {
-    display: inline-block;
-    font-size: 24px;
-    text-align: center;
-    color: #7a7a7a;
-    cursor: pointer;
-    line-height: 1;
-    width: 28px;
-    height: 28px;
-    position: relative;
-    font-family: $roboto;
-    border-radius: 50%;
-    border: solid 2px #d1d1d1;
-    transition: background-color .2s ease-in-out, border .2s ease-in-out, color .2s ease-in-out;
-
-    &:hover, &:focus {
-      background-color: #fff;
-      border: solid 2px #7a7a7a;
-      color: #000;
-    }
+  &:hover, &:focus {
+    background-color: #fff;
+    border: solid 2px #7a7a7a;
+    color: #000;
   }
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  right: 0;
 
   .tooltip_title {
     display: block;
@@ -58,8 +58,8 @@ h2 {
     display: inline-block;
     position: absolute;
     z-index: 2;
-    top: 40px;
-    right: -40px;
+    top: 60px;
+    right: 20px;
     width: 600px;
     padding: 15px 35px 30px;
     background-color: #fff;
@@ -255,6 +255,8 @@ h2 {
 
 // Build and install.
 .product__build {
+  position: relative;
+
   .box__content a {
     color: $c-white;
     text-decoration: underline;

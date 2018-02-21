@@ -1,8 +1,8 @@
 <template>
   <div class="locations product__build">
     <a class="arrow_up" @click="show = !show" :class="show ? '' : 'down'"></a>
+    <div class="tooltip_icon" @click="openTooltip = !openTooltip" :class="openTooltip ? 'open-tooltip' : ''">?</div>
     <div class="tooltip">
-      <div class="tooltip_icon" @click="openTooltip = !openTooltip" :class="openTooltip ? 'open-tooltip' : ''">?</div>
       <div class="tooltip_description" v-if="openTooltip">
         <div class="close" @click="openTooltip = !openTooltip" :class="openTooltip ? 'open-tooltip' : ''"><i class="material-icons">&#xE5CD;</i></div>
         <div class="tooltip_title">
