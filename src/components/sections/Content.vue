@@ -19,7 +19,7 @@
           <div class="box__instructions">(Select one)</div>
         </h2>
         <div class="box__warning">
-          <strong>Note:</strong> Migrating content from another source may requires technical understanding and Drush familiarity.
+          <strong>Note:</strong> Migrating content from another source requires technical understanding and Drush familiarity.
         </div>
       </div>
     </div>
