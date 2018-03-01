@@ -112,7 +112,10 @@ footer {
     display: inline-block;
     max-width: 600px;
 
-    .acro-media__logo,
+    .acro-media__logo {
+      display: inline-block;
+      width: 160px;
+    }
     .commerce-guys__logo {
       display: inline-block;
       width: 190px;
