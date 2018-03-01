@@ -31,7 +31,7 @@
         <div class="column">
           <div class="acro-media">
             <div class="acro-media__logo">
-              <img src="../assets/gfx/acromedia-logo.png" alt="">
+              <img src="../assets/gfx/acromedia-logo.svg" alt="Acro Media Inc">
             </div>
             <div class="brand__slogan">
               North America's #1<br>
@@ -53,7 +53,7 @@
         <div class="column">
           <div class="commerce-guys">
             <div class="commerce-guys__logo">
-              <img src="../assets/gfx/commerce-guy-logo.png" alt="">
+              <img src="../assets/gfx/commerce-guy-logo.png" alt="Commerce Guys">
             </div>
             <div class="brand__slogan">
               Creators of<br>
