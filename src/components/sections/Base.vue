@@ -19,7 +19,7 @@
           <div class="box__instructions">(Select one)</div>
         </h2>
         <div class="box__warning">
-          <strong>Note:</strong> Drupal Commerce is developed for and tested against the core Drupal distribution. The Commerce team does not maintain this distribution or any of the others shown here and therefore can not provide specific support for them.
+          <strong>Note:</strong> Drupal Commerce is developed for and tested against the core Drupal distribution. The Commerce team does not maintain this distribution or any of the others shown here and therefore can not provide specific support for them. Specifically, there may be drupal core version incompatibilities and may require manual intervention.
         </div>
       </div>
     </div>
