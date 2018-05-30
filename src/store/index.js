@@ -7,7 +7,9 @@ import summary from '@/store/summary'
 
 let backendURL = 'https://install-service.acromedia.com'
 if (process.env.NODE_ENV === 'development') {
-  // This should be the URL:Port defined in the backend docker-compose.yml file
+  // This is the URL for kickstart-backend. Uncomment the corresponding
+  // URL used by lando, docker-compose or your custom server.
+  // backendURL = 'https://kickstartbackend.lndo.site'
   backendURL = 'http://kickstart-backend.localhost:8989'
 }
 
