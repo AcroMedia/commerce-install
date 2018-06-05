@@ -89,6 +89,13 @@ const sections = {
         base: 'open-social',
       },
       {
+        title: 'Varbase',
+        description: 'Varbase is an enhanced Drupal distribution built by Vardot, packed with adaptive functionalities and essential modules that speed up your development.',
+        location: locations.LOCATION_INTL,
+        package_link: 'https://www.vardot.com/varbase/',
+        base: 'varbase',
+      },
+      {
         title: 'Thunder',
         description: 'A publishing based distribution for content publishers, like news or magazine sites.',
         location: locations.LOCATION_INTL,
